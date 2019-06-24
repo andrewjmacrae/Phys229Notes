@@ -39,7 +39,7 @@ G_\text{dB} = 10\log\frac{P_\text{out}}{P_\text{in}}
 \caption{The simplest of amplifiers: the output is the input multiplied by a constant gain $G$.}
 \label{fig:simple_amp}
 \begin{center}
-\includegraphics{Images/SimpleAmplfifier.pdf}
+\includegraphics{Images/SimpleAmplifier.pdf}
 \end{center}
 \end{figure}
 
@@ -52,13 +52,21 @@ We can model the non-ideal amplifier as an ideal amplifier inside a black box, p
 \caption{We model the finite input impedance of the amplifier as a internal resistor $R_\text{in}$ to ground before an ideal amplifier all in a black box.}
 \label{fig:real_amp_int}
 \begin{center}
-\includegraphics{Images/RealAmplfifier_int.pdf}
+\includegraphics{Images/RealAmplifier_int.pdf}
 \end{center}
 \end{figure}
 
 The true output, given the input impedance can be calculated given the output impedance of whatever follows. For example, with a $100$~$\Omega$ input impedance amplifier with $G = 10$, 
 
 \subsubsection{Effects of Finite Output Impedance}
+The operation of our ideal amplifier can be seen as a two part process: first it senses the voltage at its input (with the effect of finite input impedance causing some loading error), and second, it acts as a new voltage source, producing a voltage $v_\text{out} Gc_\text{in}$. As with any \textit{real} source, it will be equivalent to an ideal source, in series with an output impedance $R_\text{out}$. This finite output impedance leads to a maximum short-circuit current of $v_\text{out}/R_\text{out}$ and will lead to all of the loading issues discussed in chapter XXX. Figure \ref{fig:real_amp_int_out} shows our improved model of how a real amplifier behaves.
+\begin{figure}[h]
+\caption{A better model of a real amplifier has an input resistance to ground in parallel with the inpput and an output resistance in series with its output.}
+\label{fig:real_amp_int_out}
+\begin{center}
+\includegraphics{Images/RealAmplifier_int_out.pdf}
+\end{center}
+\end{figure}
 
 \subsubsection{Effects of Finite Frequency Response}
 
