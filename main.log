@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.6.6)  27 JUN 2019 16:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.6.6)  28 JUN 2019 16:17
 entering extended mode
 **C:/Users/macrae/Documents/Teaching/Phys229/Phys229Notes/main.tex
 (C:/Users/macrae/Documents/Teaching/Phys229/Phys229Notes/main.tex
@@ -236,59 +236,62 @@ impleAmplifier.pdf>]
 <Images/RealAmplifier_int.pdf, id=24, 186.64037pt x 119.18077pt>
 File: Images/RealAmplifier_int.pdf Graphic file (type pdf)
 <use Images/RealAmplifier_int.pdf>
-Package pdftex.def Info: Images/RealAmplifier_int.pdf  used on input line 55.
+Package pdftex.def Info: Images/RealAmplifier_int.pdf  used on input line 56.
 (pdftex.def)             Requested size: 186.63991pt x 119.18047pt.
 <Images/RealAmplifier_int_out.pdf, id=25, 207.81477pt x 119.2374pt>
 File: Images/RealAmplifier_int_out.pdf Graphic file (type pdf)
 <use Images/RealAmplifier_int_out.pdf>
 Package pdftex.def Info: Images/RealAmplifier_int_out.pdf  used on input line 6
-7.
+8.
 (pdftex.def)             Requested size: 207.81425pt x 119.23709pt.
  [2 <./Images/RealAmplifier_int.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
 <Images/amp_example.pdf, id=40, 512.66295pt x 125.31184pt>
 File: Images/amp_example.pdf Graphic file (type pdf)
 <use Images/amp_example.pdf>
-Package pdftex.def Info: Images/amp_example.pdf  used on input line 88.
+Package pdftex.def Info: Images/amp_example.pdf  used on input line 89.
 (pdftex.def)             Requested size: 345.0pt x 84.32944pt.
 [3 <./Images/RealAmplifier_int_out.pdf>]
-Overfull \hbox (29.25008pt too wide) in paragraph at lines 101--101
-[]\OT1/cmr/bx/n/12 Characterizing Dif-fer-en-tial Am-pli-fier Per-for-mance: CM
-RR 
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+
  []
 
-[4 <./Images/amp_example.pdf>] (main.aux) ) 
+[4 <./Images/amp_example.pdf>] [5] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 2354 strings out of 492895
- 32852 string characters out of 3123269
- 97212 words of memory out of 3000000
- 6239 multiletter control sequences out of 15000+200000
+ 2360 strings out of 492895
+ 32967 string characters out of 3123269
+ 97264 words of memory out of 3000000
+ 6245 multiletter control sequences out of 15000+200000
  10303 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,27p,813b,266s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/macrae/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/macrae/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/User
-s/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/
-cmex8.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/macrae/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/macrae/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/macrae
-/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/
+ 41i,8n,27p,903b,266s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/macrae/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/macrae/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
 Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr7.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmr8.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/macrae/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/macrae/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (4 pages, 213178 bytes).
+mex10.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cmextra/cmex8.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/macrae/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/macrae/AppData
+/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/m
+acrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pf
+b><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmr5.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr6.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/macrae/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/macrae/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/macra
+e/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C
+:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy7.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmsy8.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (5 pages, 244815 bytes).
 PDF statistics:
- 153 PDF objects out of 1000 (max. 8388607)
+ 168 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

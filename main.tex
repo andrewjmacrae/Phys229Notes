@@ -47,6 +47,7 @@ G_\text{dB} = 10\log\frac{P_\text{out}}{P_\text{in}}
 There are several limitations to the ideal amplifier that come into effect in practice. For example the amplifier will have to draw at least a small current from the source in order to operate. As we've learned, this is equivalent to a finite \textit{input impedance} $R_\text{in}$. The amplifier will also have a limit to how much current it can output due to its internal resistances. This leads to a finite \textit{output impedance} $R_{out}$. There are also limits to how fast the amplifier can respond to a changing input signal. This leads to a finite \textit{gain bandwidth}, or in general, a frequency dependant gain $G(\omega)$. We will examine each of these effects presently.
 
 \subsubsection{Effects of Finite Input Impedance}
+\label{sec:AMP_effect_input}
 We can model the non-ideal amplifier as an ideal amplifier inside a black box, precisely as we did with ideal vs real voltage sources. Inside the black-box, the input impedance is models as an internal resistance $R_\text{in}$ to ground placed before the ideal amplifier. This forms a voltage divider with the input impedance from the rest of the circuit so that there is some voltage drop. The ideal amplifier thus sees a different voltage than $v_\text{in}$, which we denote $v^\prime_\text{in}$. The output of the real amplifier is thus less than we would expect: $v_\text{out} = Gv^\prime_\text{in} < Gv_\text{in}$
 \begin{figure}[h]
 \caption{We model the finite input impedance of the amplifier as a internal resistor $R_\text{in}$ to ground before an ideal amplifier all in a black box.}
@@ -97,13 +98,40 @@ From this we can infer the ideal characteristrics of a real amplifier: we want t
 \subsection{Effects of Noise: Noise Factor and SNR}
 
 \subsection{Differential Amplifiers}
+Often in physics, it is a small deviation from a fixed value that is of interest rather than the absolute value itself. For example, a beam of light may pick up a small oscillation in intensity as compared to a reference beam when passed through a sample. In this case, a \textit{differential amplifier} may be used. As diagrammed in figure XXX, a differential amplier has two inputs and a single output corresponding to the difference between the signals. This is operation can be seen as first inverting one input and then adding it to the other. The input which is inverted $V_-$ is fitting called the ``inverting input'', while the normal input is verbosely titled the ``non-inverting input'', $V_+$. The multiplication factor is known as the ``differential gain'' $G_\text{diff}$ and is defined through the relation
+\begin{equation}
+\label{eq:def_diff_amp}
+v_\text{out} = G_\text{diff}\left(v_+-v_-\right).
+\end{equation}
 
-\subsection{Characterizing Differential Amplifier Performance: CMRR}
+\textit{Example:} A differential amplifier with $G_\text{diff} = 40$~dB has, at its inputs: $v_+ = 3.7$~mV and $v_- = 4.2$~mV. What is the output voltage?\\\\
+\textit{Solution:} The gain of 40~dB implies that $20\log_{10}\frac{v_\text{out}}{v_+-v_-} = 40$, so that $v_\text{out} = 100\left(v_+-v_-\right)$. Since, $\left(v_+-v_-\right) = \left(3.7-4.2\right)~\text{mV} = -0.5~\text{mV}$, we will find $v_\text{out} = -500~$mV.
 \subsubsection{Common Mode Gain}
+From equation \ref{eq:def_diff_amp}, we expect that if $v_+ = v_-$, we will have $v_\text{out} = 0$ regardless of the value of $v_+$ and $v_-$. In practice however, this is not the case. This can be due, for example, to differences in the input impedances of the individual inputs so that internally, $v_-^\prime \neq v_+^\prime$ even though $v_- = v_+$ (see the previous section \ref{sec:AMP_effect_input}). To quantify this, we define the \textit{common-mode voltage} as the average of the inverting vs. non-inverting input voltages:
+\begin{equation}
+\label{eq:common_mode_voltage}
+v_\text{com} \equiv \frac{v_+-v_-}{2}
+\end{equation}
+
+The amount of signal that gets through defines the \textit{common-mode gain}
+\begin{equation}
+\label{eq:common_mode_gain}
+v_\text{out} = G_\text{com}\frac{v_++v_-}{2}
+\end{equation}
+An ideal differntial amplifier would have $G_\text{com} = 0$ or $-\infty$~dB. The true output of the \textit{real} differential amplifier is thus:
+\begin{equation}
+\label{eq:real_diff_amp}
+v_\text{out} = G_\text{diff}\left(v_+-v_-\right) + G_\text{com}\frac{v_++v_-}{2}.
+\end{equation}
+
 \subsubsection{Common Mode Rejection Ratio}
+The ``goodness'' of a differential amplifier is how much it behaves like one! Mathematically we can quantify this by saying that for a good differential amp, $G_\text{com} \ll G_\text{diff}$. THis is represented by the so-called ``common-mode rejection ratio'' or CMRR. The CMRR is usually stated in decibels and is given by:
+\begin{equation}
+\label{eq:def_CMRR}
+\text{CMRR} \equiv 20\log_{10}\left[\frac{G_\text{diff}}{G_\text{com}}\right]
+\end{equation}
+ 
+ Decent differential amplifiers have CMRR$^\text{s}$ of at least 70~dB but some applications require 120~dB or higher.
 \subsection{Special Purpose Amplifiers}
-\subsubsection{Audio Amplifiers}
-\subsubsection{Power Amplifiers}
-\subsubsection{Instrumentation Amplifiers}
-\subsubsection{Lock-In Amplifiers}
+Power amplifiers, Audio Amplifiers, Instrumentation Amplifiers, oh my! Also Lock-In Amplifiers!
 \end{document}
