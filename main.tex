@@ -93,9 +93,30 @@ $$
 We thus see that the effect of finite input and output impedance is to lessen the effective gain of the real amplifier. Even if we used an ideal voltmeter with infinite input impedance, we'd still see 222~mV $<$ 250~mV. Equivalently, we could try to build an amplifier with $R_\text{out} \rightarrow 0~\Omega$ and again we'd see 222~mV, regardless of the impedance of the voltmeter. To get the full 250~mV however, we'd need to also have $R_\text{in} \rightarrow \infty$, so that $v_\text{in}^\prime = v_\text{in} = 25$~mV. 
 
 From this we can infer the ideal characteristrics of a real amplifier: we want the input impedance as high as possible while having output impedance as low as possible. This can be accomplished using solid state transistors, discussed later in the course. 
-\subsubsection{Effects of Finite Frequency Response}
 
 \subsection{Effects of Noise: Noise Factor and SNR}
+The ideal amplifier will amplify the voltage present at it's input, regardless of whether we consider that voltage to be useful signal or to be noise. This can lead to fundamental issues in isolating very weak signals since eventually, we will just be scaling up Johnson, Shot, or technical noise. 
+
+For example, if you have a 10~nV signal atop 25~nV of Johnson noise, you can send your signal to a 120~dB amplifier to get 100~mV of signal, but it will still be lost in the Johnson noise, which is now at 250~mV.  We amplified the signal level, but have not improved the signal level as compared to the signal. This ratio of signal vs noise has, in a spark of linguistic creativity, been dubbed the ``signal to noise ratio'' or SNR. since the voltage of the noise is usually stochastic \footnote{ A high-brow term, effectively meaning ``random''}, usually the signal to noise ratio is usually specified in terms of power, rather than voltage\footnote{ ...wait, what $R$ should we use here? Well power is energy per unit time and that energy has to be delivered to something. That something is the load resistance, so that a given voltage noise will deliver more power to a 1$00~\Omega$ than a $100~\text{k}\Omega$ resistor} (ie. $v_{RMS}^2/R)$
+
+\begin{equation}
+\label{eq:def_snr}
+\text{SNR} \equiv \frac{P_\text{sig}}{P_\text{noise}} = 10\log_{10}\left[\frac{P_\text{sig}}{P_\text{noise}}\right] \text{dB}
+\end{equation}
+
+So an amplifier on its own will not help you discern signals dominated by noise and the SNR must be improved though separate means. If your signal exits within a given range of frequencies but your noise exists at all frequencies, a filter can be applied to the input of the amplifier to greatly improve the SNR. If the  signal and noise coexist at the same range of frequencies, you have to be more clever. For example, a common source of noise is thermal motion of electrons through a load resistance. To improve the SNR, circuits are often cooled to -40 $^\circ$C or even as low as several Kelvin, when extremely faint signals are being detected.
+
+To make matters worse, the amplifier often adds its own noise to the system - that is the SNR of the output is typically even higher than that of the input! This is quantified by the so-called noise figure:
+
+\begin{equation}
+\label{eq:def_noise_figure}
+\text{NF} \equiv \frac{\text{SNR}_\text{out}}{\text{SNR}_\text{in}} = 10\log_{10}\left[\frac{\text{SNR}_\text{out}}{\text{SNR}_\text{in}}\right]
+\end{equation}
+
+\noindent Good amplifiers will have NF $2$~dB or less.
+
+\subsubsection{Effects of Finite Frequency Response}
+Since every circuit element has some finite capacitance and inductance, we can replace the internal input and output resistances with an input impedance $Z_\text{in}$ and output impedance $Z_\text{out}$. The net effect of this is to produce a frequency dependant gain $G(\omega)$. This can be modelled as internal frequency filter that is applied to the input or output. This bug can be rebranded as a feature as an amplifier may actually filter out high frequency noise present in the signal, as discussed in the previous section.
 
 \subsection{Differential Amplifiers}
 Often in physics, it is a small deviation from a fixed value that is of interest rather than the absolute value itself. For example, a beam of light may pick up a small oscillation in intensity as compared to a reference beam when passed through a sample. In this case, a \textit{differential amplifier} may be used. As diagrammed in figure XXX, a differential amplier has two inputs and a single output corresponding to the difference between the signals. This is operation can be seen as first inverting one input and then adding it to the other. The input which is inverted $V_-$ is fitting called the ``inverting input'', while the normal input is verbosely titled the ``non-inverting input'', $V_+$. The multiplication factor is known as the ``differential gain'' $G_\text{diff}$ and is defined through the relation
@@ -132,6 +153,5 @@ The ``goodness'' of a differential amplifier is how much it behaves like one! Ma
 \end{equation}
  
  Decent differential amplifiers have CMRR$^\text{s}$ of at least 70~dB but some applications require 120~dB or higher.
-\subsection{Special Purpose Amplifiers}
-Power amplifiers, Audio Amplifiers, Instrumentation Amplifiers, oh my! Also Lock-In Amplifiers!
+%\subsection{Special Purpose Amplifiers}Power amplifiers, Audio Amplifiers, Instrumentation Amplifiers, oh my! Also Lock-In Amplifiers!
 \end{document}
