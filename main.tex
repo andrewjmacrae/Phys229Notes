@@ -152,6 +152,24 @@ The ``goodness'' of a differential amplifier is how much it behaves like one! Ma
 \text{CMRR} \equiv 20\log_{10}\left[\frac{G_\text{diff}}{G_\text{com}}\right]
 \end{equation}
  
- Decent differential amplifiers have CMRR$^\text{s}$ of at least 70~dB but some applications require 120~dB or higher.
+Decent differential amplifiers have CMRR$^\text{s}$ of at least 70~dB but some applications require 120~dB or higher.
 %\subsection{Special Purpose Amplifiers}Power amplifiers, Audio Amplifiers, Instrumentation Amplifiers, oh my! Also Lock-In Amplifiers!
+
+\section{Feedback and Op Amps}
+By far and wide, the amplifier that you will see the most of in the labs is a very high gain, differential amplifier known as an ``operational amplifier'', or \textit{Op Amp}. Op-amps form the basis of a very wide range of applications: adding and subtracting voltages, frequency filters, low-noise single-input amplifiers, circuit protection, oscillators/fucntion generators, and analog to digital converters, (to name a few). The typical differential gain of an op-ampo is insanely high - 1,000,000 or higher. The gain is so high infact that it renders opamps useless when used as standard differential op-amps. The utility of an op-amp comes in by employing the crucial concept of negative feedback, which we will explore presently.
+
+\subsubsection{Negative Feedback}
+Feedback refers to a configuration in which the output of a system is connected back into its input (ie. ``fed back''). Feedback systems are everywhere in nature: in the human body the amount of insulin in the bloodstream is sensed and fed back into beta cells in the pancreas which determine the amount of insulin to be secreted. In climatology, a mechanism for ice ages is thought to be that colder weather creates more snow and thus more light is reflected back into space, creating more snow, etc. Of course, feedback systems can be engineered by us humans as well. The formal theory of feedback is a part of the field known as control theory.
+
+A simple feedback system is shown in figure \ref{fig:simple_feedback}.
+
+\begin{figure}[ht]
+\caption{The simplest feedback system.}
+\label{fig:simple_feedback}
+\begin{center}
+\includegraphics[]{Images/simple_feedback.pdf}
+\end{center}
+\end{figure}
+
+
 \end{document}
