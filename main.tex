@@ -197,7 +197,7 @@ The first rule is merely a restatment that opamps have very large input impedanc
 Of course, we can do much more with opamps than to create a voltage buffer. There are, quite literally, shelves in libraries filled with entire books on opamps. We'll go through the more common opamp applications in the following sections. We can use the golden rules of opamps throughout to analyze the functionality of these circuits.
 
 \subsection{Inverting Opamps}
-The next simplest opamp to analyze is the inverting opamp, seen in figure [xxx]. Here the gain is a negative number so that a positive input produced a negative output and vice versa. 
+The next simplest opamp to analyze is the inverting opamp, seen in figure \ref{fig:inv_noninv_opamps}a. Here the gain is a negative number so that a positive input produced a negative output and vice versa. 
 
 To understand the functionality of this opamp, we apply the golden rules. First, since the non-inverting output is shorted to ground \textbf{GR II} tells us that the noninverting terminal is also clamped to ground. In this situation, the node at the inverting terminal is said to be a \textit{virtual ground}. The current through the first resistor $R_1$ is thus:
 
@@ -221,8 +221,17 @@ v_\text{out} = -\left(\frac{R_2}{R_1}\right)v_+
 
 The gain is negative and adjustable by adjusting $R_1$ or $R_2$.
 
+\begin{figure}[ht]
+\caption{a) Inverting opamp with gain $G=-R_2/R1$. b) Non-inverting opamp with gain $G = 1+R_2/R_1$}
+\label{fig:inv_noninv_opamps}
+	\begin{center}
+		\includegraphics[]{Images/inv_noninv_opamps.pdf}
+	\end{center}
+\end{figure}
+
+
 \subsection{Non-Inverting Opamps}
-The next opamp that we will analyze is the ``non-inverting'' opamp of figure [YYY]. Here we can use the second golden rule to note that the inverting terminal is held at whatever $v_\text{in}$ is. In order to determine the output voltage, we note again that \textbf{GR I} tells us that no current runs into the $v_-$ terminal and so that $R_1$ and $R_2$ form a voltage divider from $v_\text{out}$ to ground with $v_- = v_\text{in}$ as the intermediate voltage:
+The next opamp that we will analyze is the ``non-inverting'' opamp of figure \ref{fig:inv_noninv_opamps}b. Here we can use the second golden rule to note that the inverting terminal is held at whatever $v_\text{in}$ is. In order to determine the output voltage, we note again that \textbf{GR I} tells us that no current runs into the $v_-$ terminal and so that $R_1$ and $R_2$ form a voltage divider from $v_\text{out}$ to ground with $v_- = v_\text{in}$ as the intermediate voltage:
 
 \begin{equation}
 \label{eq:noninverting_opamp_deriv_1}
@@ -269,7 +278,7 @@ We thus have a differential amplifier with adjustible gain ($R_2/R_1$). There ar
 We now consider the effect of general impedances in the construction of opamp feedback circuits. Fortunately, out generalized Ohm's law analysis that we analyzed earlier allows us to quickly determine the gain of the circuit, which when using reactive components is generally frequency dependant. 
 
 \subsubsection{Differentiator Circuit}
-Consider first, the circuit in figure [YYZ]. \textbf{GR I} tells us that the current throught the capacitor is equal to that of the resistor $i_C = i_R \equiv \left(v_--v_\text{out}\right)/R$, while \textbf{GR II} tells us that $v_-$ is a virtual ground ($v_- = 0$). Recalling the definition of a capacitor:
+Consider first, the circuit in figure \ref{fig:differentiator_opamp}a. \textbf{GR I} tells us that the current throught the capacitor is equal to that of the resistor $i_C = i_R \equiv \left(v_--v_\text{out}\right)/R$, while \textbf{GR II} tells us that $v_-$ is a virtual ground ($v_- = 0$). Recalling the definition of a capacitor:
 
 \begin{equation}
 \label{eq:defn_capacitor_rep}
@@ -284,6 +293,13 @@ v_\text{out} = -RC\frac{dv_\text{in}}{dt}
 \end{equation}
 \noindent ... ie. the output is the derivative of the input voltage, scaled by a factor of $-RC$.
 
+\begin{figure}[ht]
+\caption{a) Differentiator opamp: $v_\text{out} = -RCv_\text{in}^\prime(t)$. b) The addition of a ``roll-off'' capacitor fixes the differentiator's susceptibility to high frequency noise.}
+\label{fig:differentiator_opamp}
+	\begin{center}
+		\includegraphics[]{Images/differentiator_opamp.pdf}
+	\end{center}
+\end{figure}
 \subsubsection{A better Differentiator Circuit}
 A problem with derivatives is that very fast signals will produce enourmous outputs. Even small amounts of noise can be greatly amplified, for a Fourier component at frequency $\omega$, given by $v_\omega(t) = v_0e^{j\omega t}$ has a derivative with magnitude:
 
@@ -291,10 +307,10 @@ $$
 \left\vert\frac{dv_\omega(t)}{dt}\right\vert = \omega \vert v_\omega(t)\vert
 $$
 
-Thus a $1~\mu$V signal at 10~MHz will have an amplitude of over 30~V! A stadard trick to overcome this is to put a small, roll-off capacitor in parallel with the feedback resistor (figure [YYJ]). At lower frequecies ($\omega \ll 1/RC$) the extra capacitor has very high resistance and the feedback current is completely dominated by the resistor ($Z_2 \approx R$). The situation is identical to the previous analysis. For very high frequencies however, the capacitance now has vanishing impedance and the current would rather ignore the resistor and take this path ($Z_2\approx -j/\omega C$) and the gain rolls off to zero at high frequencies.
+Thus a $1~\mu$V signal at 10~MHz will have an amplitude of over 30~V! A stadard trick to overcome this is to put a small, roll-off capacitor $C_\text{ro}$ in parallel with the feedback resistor (figure \ref{fig:differentiator_opamp}b). At lower frequecies ($\omega \ll 1/RC_\text{ro}$) the extra capacitor has very high resistance and the feedback current is completely dominated by the resistor ($Z_2 \approx R$). The situation is identical to the previous analysis. For very high frequencies however, the capacitance now has vanishing impedance and the current would rather ignore the resistor and take this path ($Z_2\approx -j/\omega C_\text{ro}$) and the gain rolls off to zero at high frequencies.
 
 \subsubsection{Integrator Circuit}
-A slight modification to the differentiator circuit isshown in figure [XXX]. Here the non-inverting input is still held at a virtual ground but the positions of the resistor and capacitor are swapped. Now, we have
+A slight modification to the differentiator circuit is shown in figure \ref{fig:integrator_opamp}a. Here the non-inverting input is still held at a virtual ground but the positions of the resistor and capacitor are swapped. Now, we have
 $$
 i_C = -C\frac{dv_\text{out}}{dt} = \frac{v_\text{in}}{R}
 $$
@@ -307,7 +323,15 @@ v_\text{out}(t) = -\frac{1}{RC}\int_{t_0}^{t}v_\text{in}(t)dt =  -\frac{1}{RC}\i
 
 \noindent so that we have an output that is the integral of the input. The constant of integration is given by the value of the input at $t_0$, ie. $k_0 = -\frac{v_\text{in}(t_0)}{RC}$.
 
-\subsubsection{A better Integrator Circuit}
-Much like the differentiator, the intrgator circuit experiences its own drawbacks. The primary is that of ``wind-up''. Wind-up is merely a statement that the integral of a constant is a constantly increasing (or decreasing) signal.
+\begin{figure}[ht]
+\caption{a) Integrator opamp: $v_\text{out} = -\frac{1}{RC}\int v_\text{in}(t)dt$. b) The addition of an ``anti-windup'' resistor prevents a DC bias from overwhelming the signal.}
+\label{fig:integrator_opamp}
+	\begin{center}
+		\includegraphics[]{Images/integrator_opamp.pdf}
+	\end{center}
+\end{figure}
+
+\subsubsection{A Better Integrator Circuit}
+Much like the differentiator, the intrgator circuit experiences its own drawbacks. The primary is that of ``wind-up''. Wind-up is merely a statement that the integral of a constant is a constantly increasing (or decreasing) signal. Figure \ref{fig:integrator_opamp}b.
 
 \end{document}
