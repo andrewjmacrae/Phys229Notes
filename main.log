@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.6.6)  10 JUL 2019 14:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.6.6)  11 JUL 2019 11:52
 entering extended mode
 **C:/Users/macrae/Documents/Teaching/Phys229/Phys229Notes/main.tex
 (C:/Users/macrae/Documents/Teaching/Phys229/Phys229Notes/main.tex
@@ -255,78 +255,97 @@ File: Images/amp_example.pdf Graphic file (type pdf)
 Package pdftex.def Info: Images/amp_example.pdf  used on input line 89.
 (pdftex.def)             Requested size: 345.0pt x 84.32944pt.
 [3 <./Images/RealAmplifier_int_out.pdf>] [4 <./Images/amp_example.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 129--131
+<Images/differential_amplifier.pdf, id=111, 201.94751pt x 65.1425pt>
+File: Images/differential_amplifier.pdf Graphic file (type pdf)
+<use Images/differential_amplifier.pdf>
+Package pdftex.def Info: Images/differential_amplifier.pdf  used on input line 
+133.
+(pdftex.def)             Requested size: 201.947pt x 65.14233pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--140
 
  []
 
-[5] [6]
-<Images/simple_feedback.pdf, id=119, 163.25453pt x 72.47043pt>
+[5 <./Images/differential_amplifier.pdf>] [6]
+<Images/simple_feedback.pdf, id=128, 308.18745pt x 77.17336pt>
 File: Images/simple_feedback.pdf Graphic file (type pdf)
 <use Images/simple_feedback.pdf>
-Package pdftex.def Info: Images/simple_feedback.pdf  used on input line 171.
-(pdftex.def)             Requested size: 163.25412pt x 72.47023pt.
+Package pdftex.def Info: Images/simple_feedback.pdf  used on input line 180.
+(pdftex.def)             Requested size: 308.1867pt x 77.17316pt.
  [7 <./Images/simple_feedback.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 189--194
+Underfull \hbox (badness 10000) in paragraph at lines 198--203
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--194
+Underfull \hbox (badness 10000) in paragraph at lines 198--203
 
  []
 
 [8]
-<Images/inv_noninv_opamps.pdf, id=135, 296.90186pt x 109.42271pt>
+<Images/feedback_time_dep.png, id=144, 501.875pt x 211.79124pt>
+File: Images/feedback_time_dep.png Graphic file (type png)
+<use Images/feedback_time_dep.png>
+Package pdftex.def Info: Images/feedback_time_dep.png  used on input line 210.
+(pdftex.def)             Requested size: 276.00105pt x 116.47908pt.
+ [9 <./Images/feedback_time_dep.png>]
+<Images/inv_noninv_opamps.pdf, id=150, 296.90186pt x 109.42271pt>
 File: Images/inv_noninv_opamps.pdf Graphic file (type pdf)
 <use Images/inv_noninv_opamps.pdf>
-Package pdftex.def Info: Images/inv_noninv_opamps.pdf  used on input line 228.
+Package pdftex.def Info: Images/inv_noninv_opamps.pdf  used on input line 245.
 (pdftex.def)             Requested size: 296.90112pt x 109.42244pt.
- [9 <./Images/inv_noninv_opamps.pdf>] [10]
-<Images/differentiator_opamp.pdf, id=150, 275.06148pt x 85.46504pt>
+ [10 <./Images/inv_noninv_opamps.pdf>]
+[11]
+<Images/differentiator_opamp.pdf, id=165, 275.06148pt x 85.46504pt>
 File: Images/differentiator_opamp.pdf Graphic file (type pdf)
 <use Images/differentiator_opamp.pdf>
-Package pdftex.def Info: Images/differentiator_opamp.pdf  used on input line 30
-0.
+Package pdftex.def Info: Images/differentiator_opamp.pdf  used on input line 31
+7.
 (pdftex.def)             Requested size: 275.06079pt x 85.46483pt.
- [11 <./Images/differentiator_opamp.pdf>]
-<Images/integrator_opamp.pdf, id=162, 289.39195pt x 80.87003pt>
+ [12 <./Images/differentiator_opamp.pdf>]
+<Images/integrator_opamp.pdf, id=177, 439.96214pt x 81.43077pt>
 File: Images/integrator_opamp.pdf Graphic file (type pdf)
 <use Images/integrator_opamp.pdf>
-Package pdftex.def Info: Images/integrator_opamp.pdf  used on input line 330.
-(pdftex.def)             Requested size: 289.39124pt x 80.86981pt.
- [12 <./Images/integrator_opamp.pdf>] (main.aux) ) 
+Package pdftex.def Info: Images/integrator_opamp.pdf  used on input line 347.
+(pdftex.def)             Requested size: 345.0pt x 63.85742pt.
+<Images/windup_error.png, id=178, 501.875pt x 211.79124pt>
+File: Images/windup_error.png Graphic file (type png)
+<use Images/windup_error.png>
+Package pdftex.def Info: Images/windup_error.png  used on input line 369.
+(pdftex.def)             Requested size: 276.00105pt x 116.47908pt.
+ [13 <./Images/integrator_opamp.pdf>] [14 <./Images/windup_error.png>] (main.au
+x) ) 
 Here is how much of TeX's memory you used:
- 2397 strings out of 492895
- 34061 string characters out of 3123269
- 98418 words of memory out of 3000000
- 6278 multiletter control sequences out of 15000+200000
+ 2416 strings out of 492895
+ 34614 string characters out of 3123269
+ 98448 words of memory out of 3000000
+ 6293 multiletter control sequences out of 15000+200000
  10303 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,27p,1534b,266s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/macrae/AppData/Loca
-l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/macra
-e/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
+ 41i,11n,27p,1559b,274s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmbx10.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmbx12.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/macrae/AppData/Local/Pr
+ograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/macra
+e/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmex10.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cmextra/cmex8.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/macrae/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/macrae/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/User
-s/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10
-.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr5.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmr6.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/macrae/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/macrae/AppData/L
-ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ma
-crae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb
-><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmsy8.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (12 pages, 318149 bytes).
+m/cmmi7.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/macrae/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/macrae/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/macrae/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/U
+sers/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r8.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmsy5.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/macrae/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/macrae/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (14 pages, 377337 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
+ 248 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

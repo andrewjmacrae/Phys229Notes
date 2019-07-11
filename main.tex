@@ -19,7 +19,7 @@ x_\text{out} = Gx_\text{in}
 
 \noindent ... where $G$ is known as the gain.
 
-There is the question of what input $x_\text{in}$ is being amplified. In our course, normally $x_\text{in}$ will be a voltage and so we will have a voltage amplifier. In this case the gain is often expressed in decibals as:
+There is the question of what input $x_\text{in}$ is being amplified. In our course, normally $x_\text{in}$ will be a voltage and so we will have a voltage amplifier. In this case the gain is often expressed in decibels as:
 
 \begin{equation}
 \label{eq:voltage_amp_dB}
@@ -120,11 +120,20 @@ Since every circuit element has some finite capacitance and inductance, we can r
 
 \subsection{Differential Amplifiers}
 \label{sec:diff_amps}
-Often in physics, it is a small deviation from a fixed value that is of interest rather than the absolute value itself. For example, a beam of light may pick up a small oscillation in intensity as compared to a reference beam when passed through a sample. In this case, a \textit{differential amplifier} may be used. As diagrammed in figure XXX, a differential amplier has two inputs and a single output corresponding to the difference between the signals. This is operation can be seen as first inverting one input and then adding it to the other. The input which is inverted $V_-$ is fitting called the ``inverting input'', while the normal input is verbosely titled the ``non-inverting input'', $V_+$. The multiplication factor is known as the ``differential gain'' $G_\text{diff}$ and is defined through the relation
+Often in physics, it is a small deviation from a fixed value that is of interest rather than the absolute value itself. For example, a beam of light may pick up a small oscillation in intensity as compared to a reference beam when passed through a sample. In this case, a \textit{differential amplifier} may be used. As diagrammed in figure \ref{fig:differential_amplifier}, a differential amplier has two inputs and a single output corresponding to the difference between the signals. This is operation can be seen as first inverting one input and then adding it to the other. The input which is inverted $V_-$ is fitting called the ``inverting input'', while the normal input is verbosely titled the ``non-inverting input'', $V_+$. The multiplication factor is known as the ``differential gain'' $G_\text{diff}$ and is defined through the relation
 \begin{equation}
 \label{eq:def_diff_amp}
 v_\text{out} = G_\text{diff}\left(v_+-v_-\right).
 \end{equation}
+
+\begin{figure}[ht]
+\caption{A Differential Amplifier.}
+\label{fig:differential_amplifier}
+\begin{center}
+\includegraphics[]{Images/differential_amplifier.pdf}
+\end{center}
+\end{figure}
+
 
 \textit{Example:} A differential amplifier with $G_\text{diff} = 40$~dB has, at its inputs: $v_+ = 3.7$~mV and $v_- = 4.2$~mV. What is the output voltage?\\\\
 \textit{Solution:} The gain of 40~dB implies that $20\log_{10}\frac{v_\text{out}}{v_+-v_-} = 40$, so that $v_\text{out} = 100\left(v_+-v_-\right)$. Since, $\left(v_+-v_-\right) = \left(3.7-4.2\right)~\text{mV} = -0.5~\text{mV}$, we will find $v_\text{out} = -500~$mV.
@@ -162,10 +171,10 @@ By far and wide, the amplifier that you will see the most of in the labs is a ve
 \subsection{Negative Feedback}
 Feedback refers to a configuration in which the output of a system is connected back into its input (ie. ``fed back''). Feedback systems are everywhere in nature: in the human body the amount of insulin in the bloodstream is sensed and fed back into beta cells in the pancreas which determine the amount of insulin to be secreted. In climatology, a mechanism for ice ages is thought to be that colder weather creates more snow and thus more light is reflected back into space, creating more snow, etc. Of course, feedback systems can be engineered by us humans as well. The formal theory of feedback is a part of the field known as control theory.
 
-A simple feedback system is shown in figure \ref{fig:simple_feedback}.
+A simple feedback system is shown in figure \ref{fig:simple_feedback}a.
 
 \begin{figure}[ht]
-\caption{The simplest feedback system.}
+\caption{a) The simplest feedback system. b) Opamp in negative feedback configuration. If the output was wired to the non-inverting input, it would be ``positive feedback''.}
 \label{fig:simple_feedback}
 \begin{center}
 \includegraphics[]{Images/simple_feedback.pdf}
@@ -173,7 +182,7 @@ A simple feedback system is shown in figure \ref{fig:simple_feedback}.
 \end{figure}
 
 \subsection{Op Amps in Negative Feedback: The Golden Rules}
-Let's observe the operating characteristics of an ideal opamp, operating in a simple negative feedback configuration as diagrammed in figure [XXX]. We can look at both in terms of an abstract feedback system and also try to get a picture of what's going on ``under the hood''. Let's start with the former: We don't know what the output actually is, but from the definition of a differential amplifier (equation \ref{eq:def_diff_amp}), and from the fact that the output is wired to the the inverting input (hence negative feedback) we see that $v_+ = v_\text{in}$ and $v_-=\text{out}$. Thus:
+Let's observe the operating characteristics of an ideal opamp, operating in a simple negative feedback configuration as diagrammed in figure \ref{fig:simple_feedback}b. We can look at both in terms of an abstract feedback system and also try to get a picture of what's going on ``under the hood''. Let's start with the former: We don't know what the output actually is, but from the definition of a differential amplifier (equation \ref{eq:def_diff_amp}), and from the fact that the output is wired to the the inverting input (hence negative feedback) we see that $v_+ = v_\text{in}$ and $v_-=\text{out}$. Thus:
 
 \begin{equation*}
 v_\text{out} \equiv G\left(v_+ - v_-\right)  = Gv_\text{in} - Gv_\text{out}
@@ -192,7 +201,15 @@ The above example illustrates the most important features of opamps in negative 
 \\\\
 \textbf{Golden Rule II}: In negative feedback, the opamp's output adjusts itself so that it' inputs are equal $v_+ = v_-$.
 
-The first rule is merely a restatment that opamps have very large input impedance. The second rule is a property of negative feedback, but is less obvious than the first. To understand why it must be so, lets reanalyze the previous example in a more empirical manner. Consider again the circuit in figure [xxx]. Suppose we have just switched the circuit on and the output is some randome value (I don't know ... $-1.234$~V say) and the input is at 3~V. The input sees a voltage diference of 4.234~V and immediately starts trying to put out an enormous, positive voltage (although it can't switch instantaneously, since there's always some capacitance inductance and resistance in the circuit.) Thus a split secon later, the output difference has been reduced, say to +2V. Now the output difference is 1~V and again the output tries to become more positive (but less than before.) After a short time the output reaches +3~V and the output no longer tries to swing to a more positive value. Suppose that it overshoots 3~V (due to its small parasitic inductance) so that the voltage is now at 3.1~V. The difference voltage is now -0.1~V and the output now starts becoming negative. We see the action of negative feedback on the system -- when the output is lower than the input it quickly becomes larger and when it is higher, it quickly becomes lower. The only stable configuration is where the output equals the input. This is why \textbf{GR II} works. 
+The first rule is merely a restatment that opamps have very large input impedance. The second rule is a property of negative feedback, but is less obvious than the first. To understand why it must be so, lets reanalyze the previous example in a more empirical manner. Consider again the circuit in figure \ref{fig:simple_feedback}b. Suppose we have just switched the circuit on and the output is some random value (I don't know ... $-1.234$~V say) and the input is at 3~V. The input sees a voltage diference of 4.234~V and immediately starts trying to put out an enormous, positive voltage (although it can't sitch instantaneously, since there's always some capacitance inductance and resistance in the circuit.) Thus a split secon later, the output difference has been reduced, say to +2V. Now the output difference is 1~V and again the output tries to become more positive (but less than before.) After a short time the output reaches +3~V and the output no longer tries to swing to a more positive value. Suppose that it overshoots 3~V (due to its small parasitic inductance) so that the voltage is now at 3.1~V. The difference voltage is now -0.1~V and the output now starts becoming negative. We see the action of negative feedback on the system -- when the output is lower than the input it quickly becomes larger and when it is higher, it quickly becomes lower. The only stable configuration is where the output equals the input. This is why \textbf{GR II} works. 
+
+\begin{figure}[ht]
+\caption{Feedback quickly settles the output value to whatever the input happens to be.}
+\label{fig:feedback_time_dep}
+\begin{center}
+\includegraphics[width = 0.8\textwidth]{Images/feedback_time_dep.png}
+\end{center}
+\end{figure}
 
 Of course, we can do much more with opamps than to create a voltage buffer. There are, quite literally, shelves in libraries filled with entire books on opamps. We'll go through the more common opamp applications in the following sections. We can use the golden rules of opamps throughout to analyze the functionality of these circuits.
 
@@ -324,14 +341,33 @@ v_\text{out}(t) = -\frac{1}{RC}\int_{t_0}^{t}v_\text{in}(t)dt =  -\frac{1}{RC}\i
 \noindent so that we have an output that is the integral of the input. The constant of integration is given by the value of the input at $t_0$, ie. $k_0 = -\frac{v_\text{in}(t_0)}{RC}$.
 
 \begin{figure}[ht]
-\caption{a) Integrator opamp: $v_\text{out} = -\frac{1}{RC}\int v_\text{in}(t)dt$. b) The addition of an ``anti-windup'' resistor prevents a DC bias from overwhelming the signal.}
+\caption{a) Integrator opamp: $v_\text{out} = -\frac{1}{RC}\int v_\text{in}(t)dt$. b) The addition of an ``anti-windup'' resistor prevents a DC bias from overwhelming the signal. c) Alternatively, a ``reset switch'' can reset the initial condition to 0~V.}
 \label{fig:integrator_opamp}
 	\begin{center}
-		\includegraphics[]{Images/integrator_opamp.pdf}
+		\includegraphics[width = \textwidth]{Images/integrator_opamp.pdf}
 	\end{center}
 \end{figure}
 
 \subsubsection{A Better Integrator Circuit}
-Much like the differentiator, the intrgator circuit experiences its own drawbacks. The primary is that of ``wind-up''. Wind-up is merely a statement that the integral of a constant is a constantly increasing (or decreasing) signal. Figure \ref{fig:integrator_opamp}b.
+Much like the differentiator, the intrgator circuit experiences its own drawbacks. The primary is that of ``wind-up''. Wind-up is merely a statement that the integral of a constant is a constantly increasing (or decreasing) signal. Suppose that your signal is 0~V to 1~V sine wave at frequency $\omega = 2\pi\times5$~Hz and is input to an $R =  5~\text{k}\Omega$, $C = 10~\mu F$ integrator. You might expect that the output will be:
+
+$$
+v_\text{out} = -\frac{1}{RC}\int\sin(\omega t)dt = \frac{1000~\text{s}^{-1}}{\omega}\cos(\omega t) \approx 0.637~V\cos(2\pi\times5~\text{Hz})
+$$
+
+\noindent but instead, will find strange behaviour. Figure \ref{fig:windup_error} displays the resulant output when an opamp with $\pm3.3$~V supply rails are used. The output gradually drifts downward until eventually becoming a constant -3.3~V. What went wrong? Well our 0-1~V sine wave is really not a pure sine wave but a 0.5~V amplitude sine wave plus a 0.5~V constant offset. The output is then:
+
+$$
+v_\text{out} = -\frac{1}{RC}\int0.5\left(\sin(\omega t) + 1\right)dt \approx 0.637~V\left(\cos(\omega t) - t\right)
+$$
+
+\noindent ... ie. a cosine wave with a constantly decreasing offset which eventually exceeds the supply rails. This is an example of windup. There are two basic ways of resolving the issue. One way is to use a feedback resistor in parallel with the capacitor (figure \ref{fig:integrator_opamp}b), so that at very low frequencies (and at DC) the near-infinite impedance of the capacitance is bypassed by the ``anti-windup'' resistor, capping the gain at $-R_\text{aw}/R$. A second way is to place a manual or automatically activated switch in place of $R_\text{aw}$ (figure \ref{fig:integrator_opamp}c) which shorts the gain to zero. THis can be seen as setting the initial condition to zero.
+\begin{figure}[ht]
+\caption{Windup error.}
+\label{fig:windup_error}
+	\begin{center}
+		\includegraphics[width = 0.8\textwidth]{Images/windup_error.png}
+	\end{center}
+\end{figure}
 
 \end{document}
