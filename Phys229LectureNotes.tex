@@ -74,7 +74,45 @@
   \end{fullwidth}
 }
 
+% CUstom Colors
+\definecolor{greenExample}{RGB}{61,170,61}
+\definecolor{greenExampleBack}{RGB}{216,233,213}
 
+
+\usepackage[many]{tcolorbox}
+% Define example environment
+\newtcolorbox[auto counter, number within=chapter]{myexample}[2][]
+{%
+  breakable,
+  enhanced,
+  colback=white,
+  colbacktitle=white,
+  arc=0pt,
+  leftrule=1pt,
+  left skip = 6pt,
+  rightrule=0pt,
+  toprule=0pt,
+  bottomrule=0pt,
+  titlerule=0pt,
+  colframe=greenExampleBack,
+  fonttitle=\normalcolor,
+  overlay = 
+  {
+    \node
+    [
+      outer sep=0pt,
+      anchor=east,
+      text width=2.5cm,
+      minimum height=4ex,
+      fill=greenExampleBack,
+      font=\color{greenExample}\sffamily\scshape
+    ] 
+    at (title.west) {example~\thetcbcounter};
+  },
+  title=#2,
+  #1
+}
+\newcommand\Solution{\par\textbf{\textsf{Solution}}\par\medskip}
 
 % Generates the index
 \usepackage{makeidx}
@@ -82,6 +120,7 @@
 
 \begin{document}
 % Front matter
+\setcounter{chapter}{1}
 \frontmatter
 
 % r.1 blank page
@@ -103,53 +142,6 @@ but when there is nothing left to take away.
 
 % r.3 full title page
 \maketitle
-
-
-% v.4 copyright page
-% \newpage
-% \begin{fullwidth}
-% ~\vfill
-% \thispagestyle{empty}
-% \setlength{\parindent}{0pt}
-% \setlength{\parskip}{\baselineskip}
-% Copyright \copyright\ \the\year\ \thanklessauthor
-
-% \par\smallcaps{Published by \thanklesspublisher}
-
-% \par\smallcaps{tufte-latex.github.io/tufte-latex/}
-
-% \par Licensed under the Apache License, Version 2.0 (the ``License''); you may not
-% use this file except in compliance with the License. You may obtain a copy
-% of the License at \url{http://www.apache.org/licenses/LICENSE-2.0}. Unless
-% required by applicable law or agreed to in writing, software distributed
-% under the License is distributed on an \smallcaps{``AS IS'' BASIS, WITHOUT
-% WARRANTIES OR CONDITIONS OF ANY KIND}, either express or implied. See the
-% License for the specific language governing permissions and limitations
-% under the License.\index{license}
-%
-% \par\textit{First printing, \monthyear}
-% \end{fullwidth}
-
-% r.5 contents
-% \tableofcontents
-
-% \listoffigures
-
-% \listoftables
-
-% r.7 dedication
-% \cleardoublepage
-% ~\vfill
-% \begin{doublespace}
-% \noindent\fontsize{18}{22}\selectfont\itshape
-% \nohyphenation
-% Dedicated to those who appreciate \LaTeX{} 
-% and the work of \mbox{Edward R.~Tufte} 
-% and \mbox{Donald E.~Knuth}.
-% \end{doublespace}
-% \vfill
-% \vfill
-
 
 % r.9 introduction
 \cleardoublepage
@@ -198,15 +190,20 @@ and the use of the \doccls{tufte-book} and \doccls{tufte-handout} document class
   \label{fig:curr}
 \end{marginfigure}
 
-In electronics we deal with current sufficiently large that we can safely ignore the discrete nature of electrons and treat charge as continuous ``electric fluid'' that can flow. This allows us to define the current more rigorously as:
+In electronics we deal with current sufficiently large that we can safely ignore the discrete nature of electrons and treat charge as continuous ``electric fluid'' that can flow (see example \ref{ex:current_is_cts}). This allows us to define the current more rigorously as:
 \begin{equation}\label{eq:defn_current}
 I \equiv \frac{dq}{dt}
 \end{equation}
 
-% TODO - define example calculation environment
-% Begin example
-\textbf{EXAMPLE:} The smallest values of current in practice are on the nA ($10^{-9}$A) level. Even then, this corresponds to a flow of about 10000000000 electrons per second.
-% End example
+
+\begin{myexample}[label = ex:current_is_cts]{The smallest values of current in practice are on the nA ($10^{-9}$A) level. How many electrons pass through a wire per second for 1~nA of Current?}
+\Solution
+1 nA corresponds to $1\times10^{-9}~\frac{C}{s}$. An electron on the other hand carries approximately $\vert q_e\vert = 1.6\times10^{-19}$~C of charge. A wire conducting 1~nA of current thus sees:
+$$
+\left(1\times10^{-9}~\frac{C}{s}\right)\times\left(\frac{1~e}{1.6\times10^{-19}C}\right) = 6.25\times10^9\frac{e}{s} 
+$$
+pass through. Thus, even then, this corresponds to a flow of about 6 billion electrons per second.
+\end{myexample}
 
 Note that current is defined to be in the direction of positive charge - the in a typical situation where negatively charged electrons carry the charge, the current is opposite the direction of the charges! 
 
@@ -224,12 +221,15 @@ Being an energy, the unit of electrical potential energy is the Joule, but a con
 1 \text{ eV} = 1.602\times10^{-19}\text{ J}
 \end{equation}
 
+\begin{myexample}[label = ex:energy_lhc]{The Energy Scale of the LHC}
+Upon re-opening in 2015, the Large Hadron Collider (LHC) accelerated a beam of protons, each having an energy of nearly 6 TeV ($6\times10^{12}$ eV).
 
-\textbf{The energy scale of an eV}: Upon re-opening in 2015, the Large Hadron Collider (LHC) accelerated a beam of protons, each having an energy of nearly 6 TeV ($6\times10^{12}$ eV).
-
-\noindent Let's Compare this to the energy of a grain of sand at a height of 1m. The gravitational potential energy os given by $E = mgh$ Plugging in numbers, this is about 0.01J or about $6\times10^{16}$ eV  or roughly 10000 times that of the LHC!
+Let's Compare this to the energy of a grain of sand at a height of 1~m. The gravitational potential energy is given by $E = mgh$ Plugging in numbers, this is about 0.01~J or about $6\times10^{16}$ eV or roughly 10000 times that of the LHC!
 
 While this may not seem terribly efficient, recall that there are roughly $10^{24}$ protons in a grain of sand, so the energy \textit{per particle} in the LHC is higher by a factor of roughly $10^{20}$.
+
+\end{myexample}
+
 
 Like gravitational potential, there is no absolute scale -- only differences in potential are physically meaningful. This leads us to the definition of \textit{voltage} or, as you may now see why, \textit{potential difference}. Referring to figure \ref{fig:volt_ref}a, the voltage between two points $A$ and $B$ is:
 
@@ -381,20 +381,23 @@ P = I^2R = \frac{V^2}{R}
 This is actually how incandescent light bulbs work. They they are formed by a thin wire having a non-ohmic resistance\footnote{The reason that the wire here is non-ohmic is that it heats up considerably which leads to more collisions and thus higher resistance} and the Joule effect causes them to heat up until they glow white-hot. Older lightbulbs are thus simply heaters that get so hot they happen to glow. They are also remarkably inefficient -- only about 2\% of their power is converted into visible light. A modern white-light LED on the other hand can reach nearly 50\%.
 
 
-\textbf{The resistance of a 60W light bulb}
+
+\begin{myexample}[label = ex:res_lightbulb]{The resistance of a 60W light bulb}
 A 60W light bulb means that at wall-voltage (120V) the filament can safely absorb 60W of heat. What is the current of the light when operating at 60W? What is the static resistance?
-
-\noindent From equation \ref{eq:joule_gen}, we see that $I = P/V = 60W/120V = 0.5A$. Thus we see that a current of 500 mA is drawn. The (static) resistance is then 
-
+\Solution % uncomment for solution style
+From equation \ref{eq:joule_gen}, we see that $I = P/V = 60W/120V = 0.5A$. Thus we see that a current of 500 mA is drawn. The (static) resistance is then 
 $$
 R_s = V/I = 120V/0.5A = 240 \Omega
 $$
+\end{myexample}
 
-\noindent\textbf{Pop Quiz}: We now replace the light with a 120W bulb.
 
-\noindent(a) Does the current increase/remain equal/decrease? 
 
-\noindent(b) Is the resistance higher/equal/lower? 
+% \noindent\textbf{Pop Quiz}:
+
+% \noindent(a) Does the current increase/remain equal/decrease? 
+
+% \noindent(b) Is the resistance higher/equal/lower? 
 
 
 \section{Connecting resistors}
@@ -417,7 +420,7 @@ A real circuit does not typically contain a single battery pushing current throu
 
 \subsection{Parallel connection} In a parallel connection, the current is split between two resistors but the voltage drop is the same across both since they are connected to a common node. From the figure we see that two resistors in parallel are equivalent to a single resistor with greater area. The resistance of a series connection is thus less than that of its constituent resistors. To get more quantitative again, consider two resistors with equal length $L$ and resistivity $\rho$, but different areas $A_1$ and $A_2$, yielding resistances $R_1$ and $R_2$. The resistance of the parallel connection is given by $R = \rho\frac{L}{A} = \rho\frac{L}{A_1+A_2}$. Therefore we have: $R^{-1} = \frac{A_1+A_2}{\rho L} = \frac{A_1}{\rho L} + \frac{A_2}{\rho L} = R_1^{-1} + R_2^{-1}$. We thus arrive at the equivalent resistance of a parallel resistance:
 
-\begin{equation}\label{eq:series_res}
+\begin{equation}\label{eq:series_par}
 \boxed{R_{\text{parallel}} = \left(R_1^{-1}+R_2^{-1}\right)^{-1} = \frac{R_1R_2}{R_1+R_2}}
 \end{equation}
 
