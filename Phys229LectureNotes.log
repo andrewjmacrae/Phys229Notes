@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.12)  15 JUL 2019 13:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.12)  24 JUL 2019 15:11
 entering extended mode
 **C:/Users/macrae/Documents/Teaching/Phys229/Phys229Notes/Phys229LectureNotes.t
 ex
@@ -1526,7 +1526,7 @@ LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 ] [6
 
 ]
-<Images/abstraction.png, id=101, 385.1991pt x 193.4427pt>
+<Images/abstraction.png, id=105, 385.1991pt x 193.4427pt>
 File: Images/abstraction.png Graphic file (type png)
 <use Images/abstraction.png>
 Package pdftex.def Info: Images/abstraction.png  used on input line 167.
@@ -1591,7 +1591,7 @@ LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <8> not available
 
 LaTeX Warning: Marginpar on page 8 moved.
 
-<Images/currentflow.png, id=111, 383.9946pt x 149.8398pt>
+<Images/currentflow.png, id=115, 383.9946pt x 149.8398pt>
 File: Images/currentflow.png Graphic file (type png)
 <use Images/currentflow.png>
 Package pdftex.def Info: Images/currentflow.png  used on input line 188.
@@ -1671,12 +1671,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--230
  []
 
 [9]
-<Images/volt_ref.png, id=139, 347.1369pt x 90.3375pt>
+<Images/volt_ref.png, id=143, 347.1369pt x 90.3375pt>
 File: Images/volt_ref.png Graphic file (type png)
 <use Images/volt_ref.png>
 Package pdftex.def Info: Images/volt_ref.png  used on input line 244.
 (pdftex.def)             Requested size: 312.00716pt x 81.19547pt.
-<Images/ground_and_pound.png, id=142, 367.3725pt x 121.6545pt>
+<Images/ground_and_pound.png, id=146, 367.3725pt x 121.6545pt>
 File: Images/ground_and_pound.png Graphic file (type png)
 <use Images/ground_and_pound.png>
 Package pdftex.def Info: Images/ground_and_pound.png  used on input line 256.
@@ -1692,18 +1692,18 @@ Overfull \hbox (7.08987pt too wide) in paragraph at lines 273--282
  []
 
 [11]
-<Images/waterpumpanalogy.png, id=157, 467.5869pt x 153.9351pt>
+<Images/waterpumpanalogy.png, id=161, 467.5869pt x 153.9351pt>
 File: Images/waterpumpanalogy.png Graphic file (type png)
 <use Images/waterpumpanalogy.png>
 Package pdftex.def Info: Images/waterpumpanalogy.png  used on input line 295.
 (pdftex.def)             Requested size: 312.0116pt x 102.71786pt.
  [12 <./Images/waterpumpanalogy.png>]
-<Images/ohmicnonohmic.png, id=166, 569.4876pt x 216.81pt>
+<Images/ohmicnonohmic.png, id=170, 569.4876pt x 216.81pt>
 File: Images/ohmicnonohmic.png Graphic file (type png)
 <use Images/ohmicnonohmic.png>
 Package pdftex.def Info: Images/ohmicnonohmic.png  used on input line 328.
 (pdftex.def)             Requested size: 143.9965pt x 54.821pt.
-<Images/someresistors.png, id=169, 363.759pt x 103.3461pt>
+<Images/someresistors.png, id=173, 363.759pt x 103.3461pt>
 File: Images/someresistors.png Graphic file (type png)
 <use Images/someresistors.png>
 Package pdftex.def Info: Images/someresistors.png  used on input line 337.
@@ -1746,7 +1746,7 @@ r-rent of 500 mA is drawn. The
  []
 
 [15]
-<Images/res_series_parallel.png, id=201, 326.6604pt x 125.5089pt>
+<Images/res_series_parallel.png, id=205, 326.6604pt x 125.5089pt>
 File: Images/res_series_parallel.png Graphic file (type png)
 <use Images/res_series_parallel.png>
 Package pdftex.def Info: Images/res_series_parallel.png  used on input line 410
@@ -1756,7 +1756,7 @@ Package pdftex.def Info: Images/res_series_parallel.png  used on input line 410
 
 LaTeX Warning: Marginpar on page 17 moved.
 
-<Images/ex_resnet.png, id=213, 368.8179pt x 145.7445pt>
+<Images/ex_resnet.png, id=217, 368.8179pt x 145.7445pt>
 File: Images/ex_resnet.png Graphic file (type png)
 <use Images/ex_resnet.png>
 Package pdftex.def Info: Images/ex_resnet.png  used on input line 437.
@@ -1764,111 +1764,221 @@ Package pdftex.def Info: Images/ex_resnet.png  used on input line 437.
 [17 <./Images/ex_resnet.png>] [18
 
 ]
-
-LaTeX Warning: Reference `sec:kirchhoff' on page 19 undefined on input line 450
-.
-
-<Images/elemcirc.png, id=224, 280.4076pt x 278.7213pt>
+<Images/elemcirc.png, id=229, 280.4076pt x 278.7213pt>
 File: Images/elemcirc.png Graphic file (type png)
 <use Images/elemcirc.png>
 Package pdftex.def Info: Images/elemcirc.png  used on input line 456.
 (pdftex.def)             Requested size: 312.0006pt x 310.1243pt.
-[19 <./Images/elemcirc.png>] [20]
 
-LaTeX Warning: Marginpar on page 21 moved.
 
-<Images/SimpleAmplifier.pdf, id=238, 113.25677pt x 41.17891pt>
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
+[]\T1/pplj/m/n/10 We can take a forward--backward sweep ap-proach. What I
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
+\T1/pplj/m/n/10 mean is that we first re-duce the re-sis-tors in the cir-cuit s
+o that
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
+\T1/pplj/m/n/10 we are left with the ul-tra sim-ple cir-cuit in fig-ure [][]1.1
+0[][]c. This
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
+\T1/pplj/m/n/10 gives us the cur-rent sup-plied by the bat-tery. Know-ing the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
+\T1/pplj/m/n/10 cur-rent we can use Ohms law to find volt-age drops across
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
+\T1/pplj/m/n/10 the se-ries re-sis-tances, which let's us de-ter-mine the cur-r
+ent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
+\T1/pplj/m/n/10 through in-di-vid-ual par-al-lel com-bi-na-tions. Don't worry -
+- it's
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
+[]\T1/pplj/b/n/10 Step I \T1/pplj/m/n/10 Re-duce the par-al-lel com-bi-na-tion 
+($\OML/zplm/m/it/10 a \OMS/zplm/m/n/10 ! \OML/zplm/m/it/10 b$\T1/pplj/m/n/10 ).
+ From
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
+\T1/pplj/m/n/10 the rules for par-al-lel re-sis-tors, we see that these two
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
+\T1/pplj/m/n/10 2 k$\OT1/zplm/m/n/10 
+$ \T1/pplj/m/n/10 re-sis-tors are equiv-a-lent to a sin-gle re-sis-tor with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
+[]\T1/pplj/b/n/10 Step II \T1/pplj/m/n/10 Re-duce the re-main-ing par-al-lel re
+-sis-tors into a sin-gle
+ []
+
+
+Underfull \hbox (badness 6173) in paragraph at lines 466--467
+\T1/pplj/m/n/10 bat-tery, sin-gle re-sis-tor cir-cuit ($\OML/zplm/m/it/10 b \OM
+S/zplm/m/n/10 ! \OML/zplm/m/it/10 c$\T1/pplj/m/n/10 ). We have 3 1 k$\OT1/zplm/
+m/n/10 
+$ \T1/pplj/m/n/10 re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
+\T1/pplj/m/n/10 sis-tors in se-ries, equiv-a-lent to a sin-gle 3 k$\OT1/zplm/m/
+n/10 
+$ \T1/pplj/m/n/10 re-sis-tor. When
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--468
+[]\T1/pplj/b/n/10 Step III \T1/pplj/m/n/10 Work back-wards and de-ter-mine ev-e
+ry-thing about
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--468
+\T1/pplj/m/n/10 the cir-cuit ($\OML/zplm/m/it/10 c \OMS/zplm/m/n/10 ! \OML/zplm
+/m/it/10 d$\T1/pplj/m/n/10 ). We see the volt-age drop across the
+ []
+
+
+Underfull \hbox (badness 2608) in paragraph at lines 467--468
+\T1/pplj/m/n/10 par-al-lel re-sis-tors and the two 1 k$\OT1/zplm/m/n/10 
+$ \T1/pplj/m/n/10 re-sis-tors is $\OML/zplm/m/it/10 V \OT1/zplm/m/n/10 = \OML/z
+plm/m/it/10 IR \OT1/zplm/m/n/10 =
+ []
+
+[19]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20 <./Images/elemcirc.png>]
+<Images/DMM_voltage_meas.pdf, id=244, 376.94225pt x 125.73875pt>
+File: Images/DMM_voltage_meas.pdf Graphic file (type pdf)
+<use Images/DMM_voltage_meas.pdf>
+Package pdftex.def Info: Images/DMM_voltage_meas.pdf  used on input line 487.
+(pdftex.def)             Requested size: 311.99924pt x 104.07535pt.
+ [21 <./Images/DMM_voltage_meas.pdf>]
+<Images/DMM_current_meas.pdf, id=278, 375.81203pt x 146.47824pt>
+File: Images/DMM_current_meas.pdf Graphic file (type pdf)
+<use Images/DMM_current_meas.pdf>
+Package pdftex.def Info: Images/DMM_current_meas.pdf  used on input line 509.
+(pdftex.def)             Requested size: 312.0214pt x 121.61488pt.
+<Images/DMM_resistance_meas.pdf, id=280, 261.86835pt x 147.31235pt>
+File: Images/DMM_resistance_meas.pdf Graphic file (type pdf)
+<use Images/DMM_resistance_meas.pdf>
+Package pdftex.def Info: Images/DMM_resistance_meas.pdf  used on input line 523
+.
+(pdftex.def)             Requested size: 312.02678pt x 175.52864pt.
+ [22 <./Images/DMM_current_meas.pdf> <./Images/DMM_resistance_meas.pdf>]
+
+LaTeX Warning: Marginpar on page 23 moved.
+
+<Images/SimpleAmplifier.pdf, id=390, 113.25677pt x 41.17891pt>
 File: Images/SimpleAmplifier.pdf Graphic file (type pdf)
 <use Images/SimpleAmplifier.pdf>
-Package pdftex.def Info: Images/SimpleAmplifier.pdf  used on input line 495.
+Package pdftex.def Info: Images/SimpleAmplifier.pdf  used on input line 562.
 (pdftex.def)             Requested size: 144.0073pt x 52.35945pt.
 
-LaTeX Warning: Marginpar on page 21 moved.
+LaTeX Warning: Marginpar on page 23 moved.
 
-[21
+[23
 
  <./Images/SimpleAmplifier.pdf>]
-<Images/RealAmplifier_int.pdf, id=254, 186.64037pt x 119.18077pt>
+<Images/RealAmplifier_int.pdf, id=406, 186.64037pt x 119.18077pt>
 File: Images/RealAmplifier_int.pdf Graphic file (type pdf)
 <use Images/RealAmplifier_int.pdf>
-Package pdftex.def Info: Images/RealAmplifier_int.pdf  used on input line 508.
+Package pdftex.def Info: Images/RealAmplifier_int.pdf  used on input line 575.
 (pdftex.def)             Requested size: 144.0097pt x 91.95859pt.
-<Images/RealAmplifier_int_out.pdf, id=256, 207.81477pt x 119.2374pt>
+<Images/RealAmplifier_int_out.pdf, id=408, 207.81477pt x 119.2374pt>
 File: Images/RealAmplifier_int_out.pdf Graphic file (type pdf)
 <use Images/RealAmplifier_int_out.pdf>
 Package pdftex.def Info: Images/RealAmplifier_int_out.pdf  used on input line 5
-20.
+87.
 (pdftex.def)             Requested size: 144.00116pt x 82.6232pt.
- [22 <./Images/RealAmplifier_int.pdf> <./Images/RealAmplifier_int_out.pdf
+ [24 <./Images/RealAmplifier_int.pdf> <./Images/RealAmplifier_int_out.pdf
 
 pdfTeX warning: pdflatex (file ./Images/RealAmplifier_int_out.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
 >]
-<Images/amp_example.pdf, id=281, 512.66295pt x 125.31184pt>
+<Images/amp_example.pdf, id=433, 512.66295pt x 125.31184pt>
 File: Images/amp_example.pdf Graphic file (type pdf)
 <use Images/amp_example.pdf>
-Package pdftex.def Info: Images/amp_example.pdf  used on input line 544.
+Package pdftex.def Info: Images/amp_example.pdf  used on input line 611.
 (pdftex.def)             Requested size: 311.99644pt x 76.26227pt.
- [23 <./Images/amp_example.pdf>]
+ [25 <./Images/amp_example.pdf>]
 
-LaTeX Warning: Marginpar on page 24 moved.
+LaTeX Warning: Marginpar on page 26 moved.
 
 
-LaTeX Warning: Marginpar on page 24 moved.
+LaTeX Warning: Marginpar on page 26 moved.
 
-[24]
-<Images/differential_amplifier.pdf, id=349, 201.94751pt x 65.1425pt>
+[26]
+<Images/differential_amplifier.pdf, id=502, 201.94751pt x 65.1425pt>
 File: Images/differential_amplifier.pdf Graphic file (type pdf)
 <use Images/differential_amplifier.pdf>
 Package pdftex.def Info: Images/differential_amplifier.pdf  used on input line 
-586.
+653.
 (pdftex.def)             Requested size: 144.00618pt x 46.45227pt.
-
-
-Package hyperref Warning: Suppressing empty link on input line 596.
-
-[25 <./Images/differential_amplifier.pdf>] [26]
-<Images/simple_feedback.pdf, id=376, 308.18745pt x 77.17336pt>
+ [27 <./Images/differential_amplifier.pdf>] [28]
+<Images/simple_feedback.pdf, id=528, 308.18745pt x 77.17336pt>
 File: Images/simple_feedback.pdf Graphic file (type pdf)
 <use Images/simple_feedback.pdf>
-Package pdftex.def Info: Images/simple_feedback.pdf  used on input line 635.
+Package pdftex.def Info: Images/simple_feedback.pdf  used on input line 702.
 (pdftex.def)             Requested size: 312.02869pt x 78.13522pt.
- [27
+ [29
 
- <./Images/simple_feedback.pdf>] [28]
-<Images/feedback_time_dep.png, id=397, 501.875pt x 211.79124pt>
+ <./Images/simple_feedback.pdf>] [30]
+<Images/feedback_time_dep.png, id=549, 501.875pt x 211.79124pt>
 File: Images/feedback_time_dep.png Graphic file (type png)
 <use Images/feedback_time_dep.png>
-Package pdftex.def Info: Images/feedback_time_dep.png  used on input line 662.
+Package pdftex.def Info: Images/feedback_time_dep.png  used on input line 729.
 (pdftex.def)             Requested size: 144.00076pt x 60.76831pt.
 
 Underfull \vbox (badness 1348) has occurred while \output is active []
 
- [29 <./Images/feedback_time_dep.png>]
-<Images/inv_noninv_opamps.pdf, id=407, 296.90186pt x 109.42271pt>
+ [31 <./Images/feedback_time_dep.png>]
+<Images/inv_noninv_opamps.pdf, id=560, 296.90186pt x 109.42271pt>
 File: Images/inv_noninv_opamps.pdf Graphic file (type pdf)
 <use Images/inv_noninv_opamps.pdf>
-Package pdftex.def Info: Images/inv_noninv_opamps.pdf  used on input line 698.
+Package pdftex.def Info: Images/inv_noninv_opamps.pdf  used on input line 765.
 (pdftex.def)             Requested size: 312.02342pt x 114.99574pt.
-
-
-Package hyperref Warning: Suppressing empty link on input line 720.
-
-[30 <./Images/inv_noninv_opamps.pdf>] [31]
-<Images/differentiator_opamp.pdf, id=438, 275.06148pt x 85.46504pt>
+ [32 <./Images/inv_noninv_opamps.pdf>] [33]
+<Images/differentiator_opamp.pdf, id=590, 275.06148pt x 85.46504pt>
 File: Images/differentiator_opamp.pdf Graphic file (type pdf)
 <use Images/differentiator_opamp.pdf>
-Package pdftex.def Info: Images/differentiator_opamp.pdf  used on input line 77
-0.
+Package pdftex.def Info: Images/differentiator_opamp.pdf  used on input line 83
+7.
 (pdftex.def)             Requested size: 312.03299pt x 96.95255pt.
- [32 <./Images/differentiator_opamp.pdf>]
-<Images/integrator_opamp.pdf, id=457, 439.96214pt x 81.43077pt>
+ [34 <./Images/differentiator_opamp.pdf>]
+<Images/integrator_opamp.pdf, id=609, 439.96214pt x 81.43077pt>
 File: Images/integrator_opamp.pdf Graphic file (type pdf)
 <use Images/integrator_opamp.pdf>
-Package pdftex.def Info: Images/integrator_opamp.pdf  used on input line 800.
+Package pdftex.def Info: Images/integrator_opamp.pdf  used on input line 867.
 (pdftex.def)             Requested size: 312.01279pt x 57.74915pt.
 
-Overfull \hbox (4.23482pt too wide) detected at line 809
+Overfull \hbox (4.23482pt too wide) detected at line 876
 \OML/zplm/m/it/10 v[] \OT1/zplm/m/n/10 = \OMS/zplm/m/n/10  [] [] []\OT1/zplm/m/
 n/10 (\OML/zplm/m/it/10 !t\OT1/zplm/m/n/10 )\OML/zplm/m/it/10 dt \OT1/zplm/m/n/
 10 = [] [](\OML/zplm/m/it/10 !t\OT1/zplm/m/n/10 ) \OMS/zplm/m/n/10  \OT1/pplx/
@@ -1876,40 +1986,36 @@ m/n/10 0.637 []\OML/zplm/m/it/10 V []\OT1/zplm/m/n/10 (\OT1/pplx/m/n/10 2\OML/z
 plm/m/it/10  \OMS/zplm/m/n/10  \OT1/pplx/m/n/10 5 [][]\OT1/zplm/m/n/10 )
  []
 
-[33 <./Images/integrator_opamp.pdf>]
-<Images/windup_error.png, id=474, 501.875pt x 211.79124pt>
+[35 <./Images/integrator_opamp.pdf>]
+<Images/windup_error.png, id=626, 501.875pt x 211.79124pt>
 File: Images/windup_error.png Graphic file (type png)
 <use Images/windup_error.png>
-Package pdftex.def Info: Images/windup_error.png  used on input line 820.
+Package pdftex.def Info: Images/windup_error.png  used on input line 887.
 (pdftex.def)             Requested size: 144.00076pt x 60.76831pt.
- [34 <./Images/windup_error.png>]
+ [36 <./Images/windup_error.png>]
 No file Phys229LectureNotes.ind.
 
 Package bibentry Warning: You have used \nobibliography* 
 (bibentry)                without a following \bibliography.
 (bibentry)                You may not be able to run BibTeX.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 834.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 834.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 901.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 901.
 (Phys229LectureNotes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 834.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 834.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 901.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 901.
 Package rerunfilecheck Info: File `Phys229LectureNotes.out' has not changed.
-(rerunfilecheck)             Checksum: 466CFC4AC11EB8BF18C1F9914E808C83;3373.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 834.
+(rerunfilecheck)             Checksum: 20107FAA156072F2778E080CC3200EB8;3681.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 901.
  ) 
 Here is how much of TeX's memory you used:
- 37761 strings out of 492895
- 729075 string characters out of 3123268
- 891284 words of memory out of 3000000
- 40949 multiletter control sequences out of 15000+200000
+ 37802 strings out of 492895
+ 730160 string characters out of 3123268
+ 891460 words of memory out of 3000000
+ 40983 multiletter control sequences out of 15000+200000
  634061 words of font info for 150 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,12n,93p,1574b,956s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 58i,12n,93p,1578b,1064s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/base/8r.en
 c}<C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmex10.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
@@ -1926,9 +2032,9 @@ w/helvetic/uhvr8a.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9/fonts/
 type1/urw/palatino/uplb8a.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.
 9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/macrae/AppData/Local/Programs/M
 iKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Phys229LectureNotes.pdf (34 pages, 1040628 bytes).
+Output written on Phys229LectureNotes.pdf (36 pages, 6559614 bytes).
 PDF statistics:
- 548 PDF objects out of 1000 (max. 8388607)
- 112 named destinations out of 1000 (max. 500000)
- 3318 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 701 PDF objects out of 1000 (max. 8388607)
+ 116 named destinations out of 1000 (max. 500000)
+ 3341 words of extra memory for PDF output out of 10000 (max. 10000000)
 

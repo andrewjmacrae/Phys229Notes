@@ -250,7 +250,7 @@ An ideal voltage source is something (anything) which can maintain a fixed elect
 A key concept is that of electrical ground, often called \textit{ground}, or ``earth''. Since voltages are always defined with respect to a reference voltage, a given point in a circuit is often denoted as the 0V point, against which all other measurements are made. Ground in a circuit is so important that it is given a special symbol (figure \ref{fig:volt_ref}c. 
 
 \begin{figure}
-\caption{(a) A ground connection outside some house in Australia (Wikipedia CC licence) (b) All ground points in a circuit are connected.}
+\caption{(a) A ground connection outside some house in Australia (Wikipedia CC license) (b) All ground points in a circuit are connected.}
 \label{fig:ground_ref}
 \begin{center}
 \includegraphics[width=\textwidth]{ground_and_pound}
@@ -339,7 +339,7 @@ Resistors are constructed by taking a conductor with a given resistivity $\rho$ 
   \label{fig:someresistors}
 \end{marginfigure}
 
-You may also notice coloured rings on the resistors you use in the lab. This is the resistor colour code that allows you to determine the resistance by cross-referencing with a look-up table. Such a table is included in the manual of Lab 1.  Some gurus may take pride in memorizing the resistor colour code and can tell you that you are holding a 12k$\Omega$ resistor just by looking at it.
+You may also notice colored rings on the resistors you use in the lab. This is the resistor color code that allows you to determine the resistance by cross-referencing with a look-up table. Such a table is included in the manual of Lab 1.  Some gurus may take pride in memorizing the resistor color code and can tell you that you are holding a 12~k$\Omega$ resistor just by looking at it.
 
 There are also variable resistors known as potentiometers which you will become familiar with in the lab. These work by having a moving conducting terminal which can slide along the resistor, continuously changing the length and therefore via eq. \ref{eq:def_resistance}, the resistance.
 
@@ -378,7 +378,7 @@ For Ohmic materials, we can use Ohm's law to re-write this solely in terms of vo
 P = I^2R = \frac{V^2}{R}
 \end{equation}
 
-This is actually how incandescent light bulbs work. They they are formed by a thin wire having a non-ohmic resistance\footnote{The reason that the wire here is non-ohmic is that it heats up considerably which leads to more collisions and thus higher resistance} and the Joule effect causes them to heat up until they glow white-hot. Older lightbulbs are thus simply heaters that get so hot they happen to glow. They are also remarkably inefficient -- only about 2\% of their power is converted into visible light. A modern white-light LED on the other hand can reach nearly 50\%.
+This is actually how incandescent light bulbs work. They they are formed by a thin wire having a non-ohmic resistance\footnote{The reason that the wire here is non-ohmic is that it heats up considerably which leads to more collisions and thus higher resistance} and the Joule effect causes them to heat up until they glow white-hot. Older light bulbs are thus simply heaters that get so hot they happen to glow. They are also remarkably inefficient -- only about 2\% of their power is converted into visible light. A modern white-light LED on the other hand can reach nearly 50\%.
 
 
 
@@ -428,7 +428,7 @@ A real circuit does not typically contain a single battery pushing current throu
 
 \noindent Thus if $R_1\gg R_2$, the series combination gives $R = R_1 + \epsilon$ and the parallel combination gives $R = R_2-\epsilon$ where $\epsilon/R\ll1$.
 
-More complicated combinations of resistors can always be reduced to an equivalent resistance. An example is given in figure \ref{fig:ex_resnet}. First, we see that the two 1k\footnote{``In the shop'', you rarely take the time to say ``kilo-ohm'' but say ``kay'' instead. Lazy, I know, but that's how it is.} resistors in the top are just a series combination, equivalent to a single 2k resistor. This gives a parallel combination of two 2k resistors which is equivalent to a single 1k resistor. Finally, we are left with a series connection of 2 1k resistors, so that the entire circuit is equivalent to a single 1k$\Omega$ resistor.
+More complicated combinations of resistors can always be reduced to an equivalent resistance. An example is given in figure \ref{fig:ex_resnet}. First, we see that the two 1k\footnote{``In the shop'', you rarely take the time to say ``kilo-ohm'' but say ``kay'' instead. Lazy, I know, but that's how it is.} resistors in the top are just a series combination, equivalent to a single 2k resistor. This gives a parallel combination of two 2k resistors which is equivalent to a single 1k resistor. Finally, we are left with a series connection of 2 1k resistors, so that the entire circuit is equivalent to a single 1k~$\Omega$ resistor.
 
 \begin{figure}[h]
 \caption{Example resistor network reduction.}
@@ -443,11 +443,11 @@ More complicated combinations of resistors can always be reduced to an equivalen
 %%% ========================================================================
 
 \chapter{Circuit Analysis Fundamentals}
-We will meow go on to...
+Now that we have an understanding of the fundamental components that make up a circuit, we can start designing and analyzing electronic circuits. The simplest circuits we'll look at are formed by connecting voltage sources and resistors with wires to form closed loops. This results in current flowing through resistors, and thus, according to equation \ref{eq:joule_ohm}, power is delivered to various elements in the circuits. So what do we mean when we say ``analyze a circuit''? We ``solve'' a circuit by determining the voltage dropped across, current running through, and power dissipated within, any to points in the circuit. The following sections go through the basic techniques.
 
 \section{Elementary Circuit Analysis: An example}
 \label{sec:circuitanalysis}
-We can now use Ohm's law, along with the equations for parallel and series resistors to completely analyze a circuit. Not all circuits can be analyzed this way and for those, we will need a new method known as Kirchhoff's rules (section \ref{sec:kirchhoff}). 
+We can now use Ohm's law, along with the equations for parallel and series resistors to completely analyze a circuit. Not all circuits can be analyzed this way and for those, we will need a new method known as Kirchhoff's rules. 
 
 \begin{figure}[h]
 \caption{Elementary circuit analysis}
@@ -458,10 +458,77 @@ We can now use Ohm's law, along with the equations for parallel and series resis
 \end{figure}
 
 
-Consider the circuit in figure \ref{fig:elemcirc}. Our goal will be to slowly fill in all the voltage drops and currents in this circuit and know all that there is to know about the circuit. First, we can reduce the parallel 2~k$\Omega$ resistors to a single 1~k$\Omega$. Next, we have 3 1~k$\Omega$ resistors in series, equivalent to a single 3~k$\Omega$ resistor. When connected to a 9~V battery, this gives a current of 3~mA. 
+Consider the circuit in figure \ref{fig:elemcirc}. Our goal will be to slowly fill in all the voltage drops and currents in this circuit and know all that there is to know about the circuit. 
 
-\noindent Now working backwards, we see the voltage drop across the parallel resistors and the two 1~k$\Omega$ resistors is $V = IR = 3~\text{mA}\times1~k\Omega = 3~\text{V}$. The current through the 2~k$\Omega$ resistors is $I=V/R = 1.5~\text{mA}$ and we know all there is to know about this circuit.
+\begin{myexample}[label = ex:elem_circuit_anal]{Analysis of circuit in figure \ref{fig:elemcirc}}
+We can take a forward--backward sweep approach. What I mean is that we first reduce the resistors in the circuit so that we are left with the ultra simple circuit in figure \ref{fig:elemcirc}c. This gives us the current supplied by the battery. Knowing the current we can use Ohms law to find voltage drops across the series resistances, which let's us determine the current through individual parallel combinations. Don't worry -- it's easier done that said:\\
+\textbf{Step I} Reduce the parallel combination ($a\rightarrow b$). From the rules for parallel resistors, we see that these two 2~k$\Omega$ resistors are equivalent to a single resistor with $R = \left((2~\text{k}\Omega)^{-1} + (2~\text{k}\Omega)^{-1} \right)^{-1} = 1~\text{k}\Omega$.\\
+\textbf{Step II} Reduce the remaining parallel resistors into a single battery, single resistor circuit ($b\rightarrow c$). We have 3 1~k$\Omega$ resistors in series, equivalent to a single 3~k$\Omega$ resistor. When connected to a 9~V battery, this gives a current of 3~mA.\\
+\textbf{Step III} Work backwards and determine everything about the circuit ($c\rightarrow d$). We see the voltage drop across the parallel resistors and the two 1~k$\Omega$ resistors is $V = IR = 3~\text{mA}\times1~k\Omega = 3~\text{V}$. The current through the 2~k$\Omega$ resistors is $I=V/R = 1.5~\text{mA}$ and we know all there is to know about this circuit.
+\end{myexample}
+
+\section{Measuring DC quantities: The Digital Multimeter}
+\subsection*{The Digital Multimeter (DMM)}
+A voltmeter is a device that measures the potential difference across two points on a circuit when placed in parallel across the two points. Similarly, an ammeter measures current through a wire by inserting itself in series with the wire. An ohmmeter measures the value of a resistor. 
+
+Thankfully there is a very common device known as a digital multimeter (DMM) which does all three - and more. The ``digital'' part of it means that the continuous (or analog) quantities measured are converted into digital format via an aptly named \textit{analog to digital converter} or ADC which we will study later in the course. You will use make heavy use of a DMM in every one of your labs. The procedure for the 3 basic measurement are described as follows:
+
+\subsection*{Voltage}
+
+
+
+
+
+
+\begin{figure}[h]
+\caption{Measuring Voltage}
+\label{fig:measvolt}
+\begin{center}
+\includegraphics{DMM_voltage_meas.pdf}
+\end{center}
+\end{figure}
+
+When measuring \textbf{voltage} between two points on a circuit, first ensure your probe ends are connected to the correct inputs of the Digital Multimeter (DMM) for measuring a DC voltage, and that the voltage setting is selected.
+Probe tips can then be placed in parallel across the circuit (Fig.~\ref{fig:measvolt}). 
+The circuit does not need to be modified for this measurement, making voltage measurements relatively straightforward.
+From voltage measurements and known resistances, the current through the circuit can be inferred from Ohm's law, however the DMM can be configured to measure resistance and current directly.
+
+\subsection*{Current}
+
+In contrast to voltage measurements, \textbf{current} measurements are performed in series along the circuit.
+First ensure your probe ends are connected to the correct DMM inputs for measuring current.  
+When you connect your probe tips, it is essential that the DMM is wired in series with the current being measured.  
+If it is properly wired in series, the current will be forced to flow through the DMM (Fig.~\ref{fig:meascurr}) and a measurement can be made.
+
+\textbf{Warning:} The DMM measures current by measuring the voltage dropped across a calibrated resistor of very small resistance. Measuring current in parallel will draw high current through the DMM and blow a fuse. \textbf{Do not measure current in parallel!}
+
+\begin{figure}[h]
+\caption{Measuring Current}
+\label{fig:meascurr}
+\begin{center}
+\includegraphics{DMM_current_meas.pdf}
+\end{center}
+\end{figure}
+
+\subsection*{Resistance}
+
+When measuring \textbf{resistance}, it is important to isolate the resistor in question (i.e. remove it from the circuit) as shown in Fig.~\ref{fig:measres}. 
+If left connected, the DMM measures the series connection of the resistor and the rest of the circuit. 
+Ensure your probe ends are connected to the correct DMM inputs for measuring resistance. 
+
+\begin{figure}[h]
+\caption{Measuring Resistance}
+\label{fig:measres}
+\begin{center}
+\includegraphics{DMM_resistance_meas.pdf}
+\end{center}
+\end{figure}
+
+
+
+
 %%% ========================================================================
+
 
 \chapter{Amplifiers}
 \section{Active vs. Passive Circuits}
@@ -482,14 +549,14 @@ There is the question of what input $x_\text{in}$ is being amplified. In our cou
 G_\text{dB} = 20\log\frac{v_\text{out}}{v_\text{in}} 
 \end{equation}
 
-We will occasionally deal with power amplifiers whose input and output is a power. For these amplifiers, the gain is also in dB but with a 10 instead of a 20 multiplier\footnote{Recall that for a fixed load resistance, $P = v^2/R \propto v^2$. Thus $10\log\left[P_\text{out}/P\text{in}\right] = 10\log\left[\left(v_\text{out}/v\text{in}\right)^2\right] = 20\log\left[v_\text{out}/v_\text{in}\right]$, thus yielding consistant definitions of gain}:
+We will occasionally deal with power amplifiers whose input and output is a power. For these amplifiers, the gain is also in dB but with a 10 instead of a 20 multiplier\footnote{Recall that for a fixed load resistance, $P = v^2/R \propto v^2$. Thus $10\log\left[P_\text{out}/P\text{in}\right] = 10\log\left[\left(v_\text{out}/v\text{in}\right)^2\right] = 20\log\left[v_\text{out}/v_\text{in}\right]$, thus yielding consistent definitions of gain}:
 
 \begin{equation}
 \label{eq:power_amp_dB}
 G_\text{dB} = 10\log\frac{P_\text{out}}{P_\text{in}} 
 \end{equation}
 
-\noindent For now though, we will restrict outselves to voltage amplifiers. Diagrammed in figure \ref{fig:simple_amp}. The output is descibed by equation \ref{eq:simple_amp}.
+\noindent For now though, we will restrict ourselves to voltage amplifiers. Diagrammed in figure \ref{fig:simple_amp}. The output is described by equation \ref{eq:simple_amp}.
 
 \begin{marginfigure}%
   \includegraphics[width=\linewidth]{SimpleAmplifier}
@@ -498,7 +565,7 @@ G_\text{dB} = 10\log\frac{P_\text{out}}{P_\text{in}}
 \end{marginfigure}
 
 \section{Reality Check: Amplifiers in Real Life}
-There are several limitations to the ideal amplifier that come into effect in practice. For example the amplifier will have to draw at least a small current from the source in order to operate. As we've learned, this is equivalent to a finite \textit{input impedance} $R_\text{in}$. The amplifier will also have a limit to how much current it can output due to its internal resistances. This leads to a finite \textit{output impedance} $R_{out}$. There are also limits to how fast the amplifier can respond to a changing input signal. This leads to a finite \textit{gain bandwidth}, or in general, a frequency dependant gain $G(\omega)$. We will examine each of these effects presently.
+There are several limitations to the ideal amplifier that come into effect in practice. For example the amplifier will have to draw at least a small current from the source in order to operate. As we've learned, this is equivalent to a finite \textit{input impedance} $R_\text{in}$. The amplifier will also have a limit to how much current it can output due to its internal resistances. This leads to a finite \textit{output impedance} $R_{out}$. There are also limits to how fast the amplifier can respond to a changing input signal. This leads to a finite \textit{gain bandwidth}, or in general, a frequency dependent gain $G(\omega)$. We will examine each of these effects presently.
 
 \subsection{Effects of Finite Input Impedance}
 \label{sec:AMP_effect_input}
@@ -518,11 +585,11 @@ The operation of our ideal amplifier can be seen as a two part process: first it
 
 \begin{marginfigure}%
   \includegraphics[width=\linewidth]{RealAmplifier_int_out}
-  \caption{A better model of a real amplifier has an input resistance to ground in parallel with the inpput and an output resistance in series with its output.}
+  \caption{A better model of a real amplifier has an input resistance to ground in parallel with the input and an output resistance in series with its output.}
   \label{fig:real_amp_int_out}
 \end{marginfigure}
 
-\noindent\textbf{Design Example:} Consider a real amplifier with $R_\text{in} = 10$~k$\Omega$, $R_\text{F} = 100~\Omega$, and G = 25. We use it to amplify a 10~mV signal from a photodetector having $R_\text{out,PD} = 1250~\Omega$ and send it to a (lousy) voltmeter with $R_\text{in,LVM}$ = 500~$\Omega$ (see figure \ref{fig:prob_amp}). What is the voltage measured (a) assuming an ideal $G = 25$ amplifier, and (b) with our real amplifier?
+\noindent\textbf{Design Example:} Consider a real amplifier with $R_\text{in} = 10$~k$\Omega$, $R_\text{F} = 100~\Omega$, and G = 25. We use it to amplify a 10~mV signal from a photo-detector having $R_\text{out,PD} = 1250~\Omega$ and send it to a (lousy) voltmeter with $R_\text{in,LVM}$ = 500~$\Omega$ (see figure \ref{fig:prob_amp}). What is the voltage measured (a) assuming an ideal $G = 25$ amplifier, and (b) with our real amplifier?
 
 \noindent Answer: For part (a) the answer is simply $v_\text{meas} = 25\times10~$mV = 250~mV. For our real amplifier, we must consider the input and output stage. The input now forms a voltage divider with $R_\text{in}$ (figure \ref{fig:prob_amp}b so that the inner ideal amplifier sees:
 $$
@@ -532,7 +599,7 @@ In our model, this is then amplified by the ideal internal amplifier producing
 $$
 v_\text{out}^\prime = 8.9~\text{mV}\times 25 \approx 222~\text{mV}
 $$
-Finally, this is then sent to our lousy voltmeter, through its internal output resistance, forming another voltage divider (figure \ref{fig:prob_amp}c) to yeild the final voltage:
+Finally, this is then sent to our lousy voltmeter, through its internal output resistance, forming another voltage divider (figure \ref{fig:prob_amp}c) to yield the final voltage:
 $$
 v_\text{out} = \frac{R_\text{in,LVM}}{R_\text{out} + R_\text{in,LVM}}v_\text{out}^\prime = \frac{500~\Omega}{600~\Omega}\times 222~\text{mV}\approx 185~\text{mV}
 $$
@@ -547,12 +614,12 @@ $$
 
 We thus see that the effect of finite input and output impedance is to lessen the effective gain of the real amplifier. Even if we used an ideal voltmeter with infinite input impedance, we'd still see 222~mV $<$ 250~mV. Equivalently, we could try to build an amplifier with $R_\text{out} \rightarrow 0~\Omega$ and again we'd see 222~mV, regardless of the impedance of the voltmeter. To get the full 250~mV however, we'd need to also have $R_\text{in} \rightarrow \infty$, so that $v_\text{in}^\prime = v_\text{in} = 25$~mV. 
 
-From this we can infer the ideal characteristrics of a real amplifier: we want the input impedance as high as possible while having output impedance as low as possible. This can be accomplished using solid state transistors, discussed later in the course. 
+From this we can infer the ideal characteristics of a real amplifier: we want the input impedance as high as possible while having output impedance as low as possible. This can be accomplished using solid state transistors, discussed later in the course. 
 
 \subsection{Effects of Noise: Noise Factor and SNR}
 The ideal amplifier will amplify the voltage present at it's input, regardless of whether we consider that voltage to be useful signal or to be noise. This can lead to fundamental issues in isolating very weak signals since eventually, we will just be scaling up Johnson, Shot, or technical noise. 
 
-For example, if you have a 10~nV signal atop 25~nV of Johnson noise, you can send your signal to a 120~dB amplifier to get 100~mV of signal, but it will still be lost in the Johnson noise, which is now at 250~mV.  We amplified the signal level, but have not improved the signal level as compared to the signal. This ratio of signal vs noise has, in a spark of linguistic creativity, been dubbed the ``signal to noise ratio'' or SNR. since the voltage of the noise is usually stochastic \footnote{ A high-brow term, effectively meaning ``random''}, usually the signal to noise ratio is usually specified in terms of power, rather than voltage\footnote{ ...wait, what $R$ should we use here? Well power is energy per unit time and that energy has to be delivered to something. That something is the load resistance, so that a given voltage noise will deliver more power to a 1$00~\Omega$ than a $100~\text{k}\Omega$ resistor} (ie. $v_{RMS}^2/R)$
+For example, if you have a 10~nV signal atop 25~nV of Johnson noise, you can send your signal to a 120~dB amplifier to get 100~mV of signal, but it will still be lost in the Johnson noise, which is now at 250~mV.  We amplified the signal level, but have not improved the signal level as compared to the signal. This ratio of signal vs noise has, in a spark of linguistic creativity, been dubbed the ``signal to noise ratio'' or SNR. since the voltage of the noise is usually stochastic \footnote{ A high-brow term, effectively meaning ``random''}, usually the signal to noise ratio is usually specified in terms of power, rather than voltage\footnote{ ...wait, what $R$ should we use here? Well power is energy per unit time and that energy has to be delivered to something. That something is the load resistance, so that a given voltage noise will deliver more power to a 1$00~\Omega$ than a $100~\text{k}\Omega$ resistor} (i.e. $v_{RMS}^2/R)$
 
 \begin{equation}
 \label{eq:def_snr}
@@ -571,11 +638,11 @@ To make matters worse, the amplifier often adds its own noise to the system - th
 \noindent Good amplifiers will have NF $2$~dB or less.
 
 \subsection{Effects of Finite Frequency Response}
-Since every circuit element has some finite capacitance and inductance, we can replace the internal input and output resistances with an input impedance $Z_\text{in}$ and output impedance $Z_\text{out}$. The net effect of this is to produce a frequency dependant gain $G(\omega)$. This can be modelled as internal frequency filter that is applied to the input or output. This bug can be rebranded as a feature as an amplifier may actually filter out high frequency noise present in the signal, as discussed in the previous section.
+Since every circuit element has some finite capacitance and inductance, we can replace the internal input and output resistances with an input impedance $Z_\text{in}$ and output impedance $Z_\text{out}$. The net effect of this is to produce a frequency dependent gain $G(\omega)$. This can be modeled as internal frequency filter that is applied to the input or output. This bug can be re-branded as a feature as an amplifier may actually filter out high frequency noise present in the signal, as discussed in the previous section.
 
 \section{Differential Amplifiers}
 \label{sec:diff_amps}
-Often in physics, it is a small deviation from a fixed value that is of interest rather than the absolute value itself. For example, a beam of light may pick up a small oscillation in intensity as compared to a reference beam when passed through a sample. In this case, a \textit{differential amplifier} may be used. As diagrammed in figure \ref{fig:differential_amplifier}, a differential amplier has two inputs and a single output corresponding to the difference between the signals. This is operation can be seen as first inverting one input and then adding it to the other. The input which is inverted $V_-$ is fitting called the ``inverting input'', while the normal input is verbosely titled the ``non-inverting input'', $V_+$. The multiplication factor is known as the ``differential gain'' $G_\text{diff}$ and is defined through the relation
+Often in physics, it is a small deviation from a fixed value that is of interest rather than the absolute value itself. For example, a beam of light may pick up a small oscillation in intensity as compared to a reference beam when passed through a sample. In this case, a \textit{differential amplifier} may be used. As diagrammed in figure \ref{fig:differential_amplifier}, a differential amplifier has two inputs and a single output corresponding to the difference between the signals. This is operation can be seen as first inverting one input and then adding it to the other. The input which is inverted $V_-$ is fitting called the ``inverting input'', while the normal input is verbosely titled the ``non-inverting input'', $V_+$. The multiplication factor is known as the ``differential gain'' $G_\text{diff}$ and is defined through the relation
 \begin{equation}
 \label{eq:def_diff_amp}
 v_\text{out} = G_\text{diff}\left(v_+-v_-\right).
@@ -593,7 +660,7 @@ v_\text{out} = G_\text{diff}\left(v_+-v_-\right).
 
 \textit{Solution:} The gain of 40~dB implies that $20\log_{10}\frac{v_\text{out}}{v_+-v_-} = 40$, so that $v_\text{out} = 100\left(v_+-v_-\right)$. Since, $\left(v_+-v_-\right) = \left(3.7-4.2\right)~\text{mV} = -0.5~\text{mV}$, we will find $v_\text{out} = -500~$mV.
 \subsection{Common Mode Gain}
-From equation \ref{eq:def_diff_amp}, we expect that if $v_+ = v_-$, we will have $v_\text{out} = 0$ regardless of the value of $v_+$ and $v_-$. In practice however, this is not the case. This can be due, for example, to differences in the input impedances of the individual inputs so that internally, $v_-^\prime \neq v_+^\prime$ even though $v_- = v_+$ (see the previous section \ref{sec:AMP_effect_input}). To quantify this, we define the \textit{common-mode voltage} as the average of the inverting vs. non-inverting input voltages:
+From equation \ref{eq:def_diff_amp}, we expect that if $v_+ = v_-$, we will have $v_\text{out} = 0$ regardless of the value of $v_+$ and $v_-$. In practice however, this is not the case. This can be due, for example, to differences in the input impedances of the individual inputs so that internally, $v_-^\prime \neq v_+^\prime$ even though $v_- = v_+$ (see the previous section). To quantify this, we define the \textit{common-mode voltage} as the average of the inverting vs. non-inverting input voltages:
 \begin{equation}
 \label{eq:common_mode_voltage}
 v_\text{com} \equiv \frac{v_+-v_-}{2}
@@ -604,7 +671,7 @@ The amount of signal that gets through defines the \textit{common-mode gain}
 \label{eq:common_mode_gain}
 v_\text{out} = G_\text{com}\frac{v_++v_-}{2}
 \end{equation}
-An ideal differntial amplifier would have $G_\text{com} = 0$ or $-\infty$~dB. The true output of the \textit{real} differential amplifier is thus:
+An ideal differential amplifier would have $G_\text{com} = 0$ or $-\infty$~dB. The true output of the \textit{real} differential amplifier is thus:
 \begin{equation}
 \label{eq:real_diff_amp}
 v_\text{out} = G_\text{diff}\left(v_+-v_-\right) + G_\text{com}\frac{v_++v_-}{2}.
@@ -621,10 +688,10 @@ Decent differential amplifiers have CMRR$^\text{s}$ of at least 70~dB but some a
 %\subsection{Special Purpose Amplifiers}Power amplifiers, Audio Amplifiers, Instrumentation Amplifiers, oh my! Also Lock-In Amplifiers!
 
 \chapter{Feedback and Op Amps}
-By far and wide, the amplifier that you will see the most of in the labs is a very high gain, differential amplifier known as an ``operational amplifier'', or \textit{Op Amp}. Op-amps form the basis of a very wide range of applications: adding and subtracting voltages, frequency filters, low-noise single-input amplifiers, circuit protection, oscillators/fucntion generators, and analog to digital converters, (to name a few). The typical differential gain of an op-ampo is insanely high - 1,000,000 or higher. The gain is so high infact that it renders opamps useless when used as standard differential op-amps. The utility of an op-amp comes in by employing the crucial concept of negative feedback, which we will explore presently.
+By far and wide, the amplifier that you will see the most of in the labs is a very high gain, differential amplifier known as an ``operational amplifier'', or \textit{Op Amp}. Op-amps form the basis of a very wide range of applications: adding and subtracting voltages, frequency filters, low-noise single-input amplifiers, circuit protection, oscillators/function generators, and analog to digital converters, (to name a few). The typical differential gain of an op-amp is insanely high - 1,000,000 or higher. The gain is so high in fact that it renders opamps useless when used as standard differential op-amps. The utility of an op-amp comes in by employing the crucial concept of negative feedback, which we will explore presently.
 
 \section{Negative Feedback}
-Feedback refers to a configuration in which the output of a system is connected back into its input (ie. ``fed back''). Feedback systems are everywhere in nature: in the human body the amount of insulin in the bloodstream is sensed and fed back into beta cells in the pancreas which determine the amount of insulin to be secreted. In climatology, a mechanism for ice ages is thought to be that colder weather creates more snow and thus more light is reflected back into space, creating more snow, etc. Of course, feedback systems can be engineered by us humans as well. The formal theory of feedback is a part of the field known as control theory.
+Feedback refers to a configuration in which the output of a system is connected back into its input (i.e. ``fed back''). Feedback systems are everywhere in nature: in the human body the amount of insulin in the bloodstream is sensed and fed back into beta cells in the pancreas which determine the amount of insulin to be secreted. In climatology, a mechanism for ice ages is thought to be that colder weather creates more snow and thus more light is reflected back into space, creating more snow, etc. Of course, feedback systems can be engineered by us humans as well. The formal theory of feedback is a part of the field known as control theory.
 
 A simple feedback system is shown in figure \ref{fig:simple_feedback}a.
 
@@ -648,7 +715,7 @@ v_\text{out} \equiv G\left(v_+ - v_-\right)  = Gv_\text{in} - Gv_\text{out}
 \label{eq:opamp_analysis_feedback}
 v_\text{out} = \left(\frac{G}{G-1}\right)v_\text{in}
 \end{equation}
-In the limit of an ideal opamp, $G\rightarrow\infty$ so that this becomes $v_\text{out} = v_\text{in}$. Congratulations, we've just made the worlds most useless circuit. Or have we? In fact, although I chose this as a simple way to understand opamps, this circuit, known as a ``buffer op-amp'' is indeed very usefull and is found everywhere. Why? Because of the other property of the opamp - the insanely high input impedance. This means that the non-inverting opamp ``sniffs-out'' the input voltage while drawing negligable current, reproducing the voltage at the output and providing whatever current is called for. But where does this current come from if not the input? It turns out that we forgot to draw all of the opamp's terminals on our sketch - op-amps are active components and thus need power. Whatever power is needed for the output essentially comes from the power terminals and our buffer opamp thus separates whatever is on the input side of the circuit from the components on the output. We can drive large amounts of current without disturbing the sensor, voltage divider, or whatever is going into the circuit. No loading error, near zero output impedance. The buffer opamp creates a signal and converts it into a near-ideal source.
+In the limit of an ideal opamp, $G\rightarrow\infty$ so that this becomes $v_\text{out} = v_\text{in}$. Congratulations, we've just made the worlds most useless circuit. Or have we? In fact, although I chose this as a simple way to understand opamps, this circuit, known as a ``buffer op-amp'' is indeed very useful and is found everywhere. Why? Because of the other property of the opamp - the insanely high input impedance. This means that the non-inverting opamp ``sniffs-out'' the input voltage while drawing negligible current, reproducing the voltage at the output and providing whatever current is called for. But where does this current come from if not the input? It turns out that we forgot to draw all of the opamp's terminals on our sketch - op-amps are active components and thus need power. Whatever power is needed for the output essentially comes from the power terminals and our buffer opamp thus separates whatever is on the input side of the circuit from the components on the output. We can drive large amounts of current without disturbing the sensor, voltage divider, or whatever is going into the circuit. No loading error, near zero output impedance. The buffer opamp creates a signal and converts it into a near-ideal source.
 
 The above example illustrates the most important features of opamps in negative feedback. They are so useful in understanding how opamps behave, that they have been dubbed ``The Golden Rules of OpAmps'':
 
@@ -656,7 +723,7 @@ The above example illustrates the most important features of opamps in negative 
 
 \textbf{Golden Rule II}: In negative feedback, the opamp's output adjusts itself so that it' inputs are equal $v_+ = v_-$.
 
-The first rule is merely a restatment that opamps have very large input impedance. The second rule is a property of negative feedback, but is less obvious than the first. To understand why it must be so, lets reanalyze the previous example in a more empirical manner. Consider again the circuit in figure \ref{fig:simple_feedback}b. Suppose we have just switched the circuit on and the output is some random value (I don't know ... $-1.234$~V say) and the input is at 3~V. The input sees a voltage diference of 4.234~V and immediately starts trying to put out an enormous, positive voltage (although it can't sitch instantaneously, since there's always some capacitance inductance and resistance in the circuit.) Thus a split secon later, the output difference has been reduced, say to +2V. Now the output difference is 1~V and again the output tries to become more positive (but less than before.) After a short time the output reaches +3~V and the output no longer tries to swing to a more positive value. Suppose that it overshoots 3~V (due to its small parasitic inductance) so that the voltage is now at 3.1~V. The difference voltage is now -0.1~V and the output now starts becoming negative. We see the action of negative feedback on the system -- when the output is lower than the input it quickly becomes larger and when it is higher, it quickly becomes lower. The only stable configuration is where the output equals the input. This is why \textbf{GR II} works. 
+The first rule is merely a restatement that opamps have very large input impedance. The second rule is a property of negative feedback, but is less obvious than the first. To understand why it must be so, lets reanalyze the previous example in a more empirical manner. Consider again the circuit in figure \ref{fig:simple_feedback}b. Suppose we have just switched the circuit on and the output is some random value (I don't know ... $-1.234$~V say) and the input is at 3~V. The input sees a voltage difference of 4.234~V and immediately starts trying to put out an enormous, positive voltage (although it can't switch instantaneously, since there's always some capacitance inductance and resistance in the circuit.) Thus a split second later, the output difference has been reduced, say to +2V. Now the output difference is 1~V and again the output tries to become more positive (but less than before.) After a short time the output reaches +3~V and the output no longer tries to swing to a more positive value. Suppose that it overshoots 3~V (due to its small parasitic inductance) so that the voltage is now at 3.1~V. The difference voltage is now -0.1~V and the output now starts becoming negative. We see the action of negative feedback on the system -- when the output is lower than the input it quickly becomes larger and when it is higher, it quickly becomes lower. The only stable configuration is where the output equals the input. This is why \textbf{GR II} works. 
 
 \begin{marginfigure}%
   \includegraphics[width=\linewidth]{feedback_time_dep}
@@ -676,7 +743,7 @@ To understand the functionality of this opamp, we apply the golden rules. First,
 i_{R_1} = \frac{v_+}{R_1}
 \end{equation}
 
-Next, \textbf{GR I} tells us that no current runs into the $v_+$ terminal so that by Kirchhoff's rules, $i_{R_2} = i_{R_1} = v_+/R_1$. This allows us to determin the voltage drop across the second resistor $R_2$ (note now that the voltage goes from 0 to something lower):
+Next, \textbf{GR I} tells us that no current runs into the $v_+$ terminal so that by Kirchhoff's rules, $i_{R_2} = i_{R_1} = v_+/R_1$. This allows us to determine the voltage drop across the second resistor $R_2$ (note now that the voltage goes from 0 to something lower):
 \begin{equation}
 \label{eq:inverting_opamp_deriv_2}
 0-v_\text{out} = i_{R_2}R_2 = \frac{R_2}{R_1}v_+
@@ -717,7 +784,7 @@ v_\text{out} = \left(1+\frac{R_2}{R_1}\right)v_\text{in}
 Although the noninverting output has the benefit of a positive gain, a limitation is that unlike its inverting counterpart, it can not have $\vert G\vert < 1$.
 
 \subsection{Differential Amplifiers}
-Although the ultra-high gain of an opamp makes it fairly useless as a direct differential amplifier, we can make a differential amplifier circuit using an opamp. The use of feedback can ensure low output impedance, tuneable differential gain, and high CMRR (see section \ref{sec:diff_amps}).
+Although the ultra-high gain of an opamp makes it fairly useless as a direct differential amplifier, we can make a differential amplifier circuit using an opamp. The use of feedback can ensure low output impedance, tunable differential gain, and high CMRR.
 
 The opamp-based differential amplifier is shown in figure [zzz]. Pairs of matched resistors $\left(R_1,R_2\right)$ are used for the feedback path. As usual, we can derive the output in terms of the golden rules: \textbf{GR I} tells us that the top and bottom paths form voltage dividers between $v_1\rightarrow v_\text{out}$ and $v_2\rightarrow \text{GND}$ respectively, ie.
 
@@ -761,7 +828,7 @@ we have, noting $v_C = v_\text{in}$:
 \label{eq:opamp_differentiator}
 v_\text{out} = -RC\frac{dv_\text{in}}{dt}
 \end{equation}
-\noindent ... ie. the output is the derivative of the input voltage, scaled by a factor of $-RC$.
+\noindent ... i.e. the output is the derivative of the input voltage, scaled by a factor of $-RC$.
 
 \begin{figure}[ht]
 \caption{a) Differentiator opamp: $v_\text{out} = -RCv_\text{in}^\prime(t)$. b) The addition of a ``roll-off'' capacitor fixes the differentiator's susceptibility to high frequency noise.}
@@ -771,13 +838,13 @@ v_\text{out} = -RC\frac{dv_\text{in}}{dt}
 	\end{center}
 \end{figure}
 \subsection{A better Differentiator Circuit}
-A problem with derivatives is that very fast signals will produce enourmous outputs. Even small amounts of noise can be greatly amplified, for a Fourier component at frequency $\omega$, given by $v_\omega(t) = v_0e^{j\omega t}$ has a derivative with magnitude:
+A problem with derivatives is that very fast signals will produce enormous outputs. Even small amounts of noise can be greatly amplified, for a Fourier component at frequency $\omega$, given by $v_\omega(t) = v_0e^{j\omega t}$ has a derivative with magnitude:
 
 $$
 \left\vert\frac{dv_\omega(t)}{dt}\right\vert = \omega \vert v_\omega(t)\vert
 $$
 
-Thus a $1~\mu$V signal at 10~MHz will have an amplitude of over 30~V! A stadard trick to overcome this is to put a small, roll-off capacitor $C_\text{ro}$ in parallel with the feedback resistor (figure \ref{fig:differentiator_opamp}b). At lower frequecies ($\omega \ll 1/RC_\text{ro}$) the extra capacitor has very high resistance and the feedback current is completely dominated by the resistor ($Z_2 \approx R$). The situation is identical to the previous analysis. For very high frequencies however, the capacitance now has vanishing impedance and the current would rather ignore the resistor and take this path ($Z_2\approx -j/\omega C_\text{ro}$) and the gain rolls off to zero at high frequencies.
+Thus a $1~\mu$V signal at 10~MHz will have an amplitude of over 30~V! A standard trick to overcome this is to put a small, roll-off capacitor $C_\text{ro}$ in parallel with the feedback resistor (figure \ref{fig:differentiator_opamp}b). At lower frequencies ($\omega \ll 1/RC_\text{ro}$) the extra capacitor has very high resistance and the feedback current is completely dominated by the resistor ($Z_2 \approx R$). The situation is identical to the previous analysis. For very high frequencies however, the capacitance now has vanishing impedance and the current would rather ignore the resistor and take this path ($Z_2\approx -j/\omega C_\text{ro}$) and the gain rolls off to zero at high frequencies.
 
 \subsection{Integrator Circuit}
 A slight modification to the differentiator circuit is shown in figure \ref{fig:integrator_opamp}a. Here the non-inverting input is still held at a virtual ground but the positions of the resistor and capacitor are swapped. Now, we have
@@ -791,7 +858,7 @@ Integrating this equation gives
 v_\text{out}(t) = -\frac{1}{RC}\int_{t_0}^{t}v_\text{in}(t)dt =  -\frac{1}{RC}\int v_\text{in}dt + k_0
 \end{equation}
 
-\noindent so that we have an output that is the integral of the input. The constant of integration is given by the value of the input at $t_0$, ie. $k_0 = -\frac{v_\text{in}(t_0)}{RC}$.
+\noindent so that we have an output that is the integral of the input. The constant of integration is given by the value of the input at $t_0$, i.e. $k_0 = -\frac{v_\text{in}(t_0)}{RC}$.
 
 \begin{figure}[ht]
 \caption{a) Integrator opamp: $v_\text{out} = -\frac{1}{RC}\int v_\text{in}(t)dt$. b) The addition of an ``anti-windup'' resistor prevents a DC bias from overwhelming the signal. c) Alternatively, a ``reset switch'' can reset the initial condition to 0~V.}
@@ -802,19 +869,19 @@ v_\text{out}(t) = -\frac{1}{RC}\int_{t_0}^{t}v_\text{in}(t)dt =  -\frac{1}{RC}\i
 \end{figure}
 
 \subsection{A Better Integrator Circuit}
-Much like the differentiator, the intrgator circuit experiences its own drawbacks. The primary is that of ``wind-up''. Wind-up is merely a statement that the integral of a constant is a constantly increasing (or decreasing) signal. Suppose that your signal is 0~V to 1~V sine wave at frequency $\omega = 2\pi\times5$~Hz and is input to an $R =  5~\text{k}\Omega$, $C = 10~\mu F$ integrator. You might expect that the output will be:
+Much like the differentiator, the integrator circuit experiences its own drawbacks. The primary is that of ``wind-up''. Wind-up is merely a statement that the integral of a constant is a constantly increasing (or decreasing) signal. Suppose that your signal is 0~V to 1~V sine wave at frequency $\omega = 2\pi\times5$~Hz and is input to an $R =  5~\text{k}\Omega$, $C = 10~\mu F$ integrator. You might expect that the output will be:
 
 $$
 v_\text{out} = -\frac{1}{RC}\int\sin(\omega t)dt = \frac{1000~\text{s}^{-1}}{\omega}\cos(\omega t) \approx 0.637~V\cos(2\pi\times5~\text{Hz})
 $$
 
-\noindent but instead, will find strange behaviour. Figure \ref{fig:windup_error} displays the resulant output when an opamp with $\pm3.3$~V supply rails are used. The output gradually drifts downward until eventually becoming a constant -3.3~V. What went wrong? Well our 0-1~V sine wave is really not a pure sine wave but a 0.5~V amplitude sine wave plus a 0.5~V constant offset. The output is then:
+\noindent but instead, will find strange behavior. Figure \ref{fig:windup_error} displays the resultant output when an opamp with $\pm3.3$~V supply rails are used. The output gradually drifts downward until eventually becoming a constant -3.3~V. What went wrong? Well our 0-1~V sine wave is really not a pure sine wave but a 0.5~V amplitude sine wave plus a 0.5~V constant offset. The output is then:
 
 $$
 v_\text{out} = -\frac{1}{RC}\int0.5\left(\sin(\omega t) + 1\right)dt \approx 0.637~V\left(\cos(\omega t) - t\right)
 $$
 
-\noindent ... ie. a cosine wave with a constantly decreasing offset which eventually exceeds the supply rails. This is an example of windup. There are two basic ways of resolving the issue. One way is to use a feedback resistor in parallel with the capacitor (figure \ref{fig:integrator_opamp}b), so that at very low frequencies (and at DC) the near-infinite impedance of the capacitance is bypassed by the ``anti-windup'' resistor, capping the gain at $-R_\text{aw}/R$. A second way is to place a manual or automatically activated switch in place of $R_\text{aw}$ (figure \ref{fig:integrator_opamp}c) which shorts the gain to zero. THis can be seen as setting the initial condition to zero.
+\noindent ... i.e. a cosine wave with a constantly decreasing offset which eventually exceeds the supply rails. This is an example of windup. There are two basic ways of resolving the issue. One way is to use a feedback resistor in parallel with the capacitor (figure \ref{fig:integrator_opamp}b), so that at very low frequencies (and at DC) the near-infinite impedance of the capacitance is bypassed by the ``anti-windup'' resistor, capping the gain at $-R_\text{aw}/R$. A second way is to place a manual or automatically activated switch in place of $R_\text{aw}$ (figure \ref{fig:integrator_opamp}c) which shorts the gain to zero. This can be seen as setting the initial condition to zero.
 
 \begin{marginfigure}%
   \includegraphics[width=\linewidth]{windup_error}
