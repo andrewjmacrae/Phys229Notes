@@ -17,6 +17,7 @@
 
 \usepackage{amsmath}
 
+\usepackage{empheq}
 % Just some sample text
 \usepackage{lipsum}
 
@@ -520,11 +521,184 @@ Ensure your probe ends are connected to the correct DMM inputs for measuring res
 \caption{Measuring Resistance}
 \label{fig:measres}
 \begin{center}
-\includegraphics{DMM_resistance_meas.pdf}
+\includegraphics[width=0.7\linewidth]{DMM_resistance_meas.pdf}
+\end{center}
+\end{figure}
+
+\section{Kirchhoff's Rules}\label{sec:kirchhoff}
+Earlier, we saw that often, a nasty network of resistors such as in figure~\ref{fig:kirchhoff_circuits}a can be analyzed by reducing the constituent resistors via the rules of parallel and series combinations of resistors. Surprisingly, some seemingly simple circuits such as those in figure~\ref{fig:kirchhoff_circuits}b can not. Fortunately, there is an alternative approach to analyzing any circuit, using a very important set of relations known as Kirchhoff's laws.
+
+\begin{figure}[h]
+\caption{a) Some circuits can be reduced using parallel and series combinations of resistors, b) some can't}
+\label{fig:kirchhoff_circuits}
+\begin{center}
+\includegraphics{kirchhoff_circuits.png}
 \end{center}
 \end{figure}
 
 
+Kirchhoff's ``Laws'' are sometimes called Kirchhoff's rules because they are not law really \textit{laws} in the sense that Newton's Laws are laws. Rather, they are rules which are highly accurate when applied under a certain set of approximations which are consistant with the ``Good Circuit" Approximation''. I say this only because they seem to stem from fundamental physics such as the conservation of energy and of charge whereas this is not strictly true. \footnote{Specifically, Kirchhoff's laws hold in the so-called ``lumped element'' approximation. In this model, a resistor is like a point object with an nput and an output. In reality, the voltage and current can vary or even change direction withing the element. The element can also affect and be affected by other circuit elements through electric and magnetic fields even if there are no wires connecting them. This considerations typically become important at high frequencies, where electromagnetic readiation can be significant and where the inputs change faster than the time it takes the change to propagate throught the circuit.}
+
+\subsection{Statement of Kirchhoff's rules}
+Consider the simple circuit containing a battery, and a few resistors in figure \ref{fig:kirchhoff_deriv1}. 
+
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{Kirchoff_I}
+  \caption{Circuit with loops and nodes.}
+  \label{fig:kirchhoff_deriv1}
+\end{marginfigure}
+
+
+
+In this particular circuit, we see that current will flow from the positive terminal of the battery, though resistors and into the negative battery terminal (figure \ref{fig:kirchhoff_deriv2}). What can we say about the current through resistors $R_2$ and $R_3$? Since current is due to a flow of individual charged particles, the total charge is conserved. Thus the current flowing into junction $a$ must equal the current flowing out of junction $a$. Denoting  current flowing into the junction as positive and current flowing out as negative, we have $I_1 = -I_2 + I_3$, or $I_1 + I_2 + I_3 = 0$.
+
+
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{Kirchoff_III}
+  \caption{Kirchhoff's Current Rule.}
+  \label{fig:kirchhoff_deriv2}
+\end{marginfigure}
+
+
+This is a particular case of a general principle of conservation of charge, known as:
+
+\noindent\textbf{Kirchhoff's First Rule:} \textit{The net current flowing into and out of any node in a circuit must be precisely zero}:
+
+\begin{equation}\label{eq:Kirchhoff_I}
+\boxed{\sum_kI_k=0}
+\end{equation}
+
+\noindent Note that since the current out of the battery must equal the current into the battery, analysis of the second node yields an identical result: $I_2 + I_3 = -I_1$.
+
+Next we move on to a second rule. The EMF provided by the battery results in a potential difference $V_0$ which drives charges around the circuit. As the charge moves from the positive to the negative terminal it loses a potential energy $V_k$ at each resistor until it reaches 0~V at the negative terminal of the battery. Notice that we didn't say which path the charge took on its way around the circuit. The fact of the matter is that whether it took the outer or the inner loop (see figure \ref{fig:kirchhoff_deriv3}) the voltage dropped is always equal to the EMF provided by the battery: $V_\text{loop} = -V_0$, or $V_\text{loop}+V_0 = 0$. Moreover, consider a charge moving in a loop from node $a$, through 1 resistor to $b$ and back up through the other resistor to $a$. At each resistor, there is a change in voltage but since it arrives at the same point, the net voltage drop is zero. This is required by conservation of energy, for if the change in voltage is positive we would gain energy in each loop and could build a perpetual motion machine by repeating the loop \textit{ad infinitum}. If the change in voltage were negative, we could just reverse direction of the loop and repeat the same argument. 
+
+Thus again: $V_{R1} + V_{R2} = 0$. These are particular examples of a general rule principle known as:
+
+\noindent\textbf{Kirchhoff's Second Rule:} \textit{The net change of voltage around any closed loop must be precisely zero.}
+
+$$
+\boxed{\sum_kV_k=0}
+$$
+
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{Kirchoff_II}
+  \caption{Kirchhoff's Current Rule.}
+  \label{fig:kirchhoff_deriv3}
+\end{marginfigure}
+
+
+\noindent Kirchhoff's rules will always allow you to reduce a circuit to a system of linear equations. When solving by hand, this often leads to much mathematical tedium and should be avoided if the circuit can be analyzed another way. However, it provides a good algorithmic approach which can be programmed into a computer to systematically solve circuits. Circuit simulation packages such as SPICE do just this. Disclaimer aside, we now provide a worked example. 
+\\
+\begin{figure}[h]
+\caption{(a) The circuit we wish to analyze via Kirchhoff's Rules. (b) Setting up a current convention at node $b$. (c) Applying Kirchhoff's current and voltage rules.}
+\label{fig:kirchhoff_ex}
+\begin{center}
+\includegraphics[width=\textwidth]{kirchoff_ex.png}
+\end{center}
+\end{figure}
+
+
+\begin{myexample}[label = ex:when_kirchhoff_isvalid]{A high--brow view of the validity of Kirchhoff's Laws}
+\textcolor{red}{\textbf{WARNING}}: Advanced material. NSFSY (not safe for second year).
+
+\noindent\textbf{Approximation I: No electromagnetic fields outside the circuit elements (Lumped element approximation)}
+
+In this case, we know from Maxwell's equations that
+
+$$
+\oint_\Gamma\textbf{E}\cdot d\textbf{l} = \frac{d}{dt}\iint_\Sigma\textbf{B}\cdot d\textbf{A} = 0
+$$
+
+Using the lumped circuit model, we can split the split the closed loop $\Gamma$ into the set of wire segments (see figure \ref{fig:when_kirchhoff_isvalid}), so that
+
+$$
+\oint_\Gamma\textbf{E}\cdot d\textbf{l} = \sum_k\int_{\Gamma_k}\textbf{E}\cdot d\textbf{l} \equiv \sum_kV_k = 0
+$$
+
+Hence the sum of voltage drops around any closed loop is zero. This can be seen as a conservation of energy, since there is no energy entering or leaving the circuit through electromagnetic fields.
+
+\noindent\textbf{Approximation II: no charge accumulates at the terminals or nodes (low frequency and zero resistance wires)}
+
+In this case since the number of electrons (not to mention holes) is conserved, zero accumulation implies that the charge in must equal the charge out, of any node (see figure). Really, this is a statement that (a) we have well defined nodes that act as infinitessimal points and (b) that have accounted for every possible current path. In this case,
+
+$$
+\sum_ki_k=0
+$$
+
+\noindent If we don't have ideal nodes with 0 capacitance (see next chapter), charge \textbf{can} of course accumulate for a short amount of time and KCL is not true.
+
+\end{myexample}
+
+\begin{figure}%
+  \includegraphics[width=\linewidth]{kirchoff_highbrow}
+  \caption{a) KVL is valid when $d\textbf{B}/dt = 0$. b) KCL is valid as long as no charge accumulates in a node and all conduction paths are accounted for.}
+  \label{fig:when_kirchhoff_isvalid}
+\end{figure}
+
+Kirchhoff's Laws allow us to solve any circuit we might come across, but it can be much more tedious than the reduction technique of example \ref{ex:elem_circuit_anal}. Typically the strategy is split into two steps:
+
+\begin{myexample}[label = ex:kirchhoff_calculation]{Example Circuit Analysis Using Kirchhoffs Laws}
+
+We will analyze the circuit in \ref{fig:kirchhoff_ex}a by applying Kirchoff's rules. 
+
+\noindent We start by assigning a current convention. The directions of current can be completely arbitrary as long as the circuit is self consistent. Referring it \ref{fig:kirchhoff_ex}b, we focus on node $a$ and define the three currents as $I_1$, $I_2$, and $I_3$. This defines the rest of the currents in the circuit as shown if \ref{fig:kirchhoff_ex}c. A non-self-consistent circuit would, for example have $I_2$ running from $b$ toward $a$. 
+
+Having done this we can write Kirchhoff's current rule at node $a$ as:
+
+\begin{equation}\label{eq:Kirch_ex1}
+I_1+I_2 = I_3
+\end{equation}
+
+\noindent Note that corresponding for node $b$ is redundant and gives no extra information. This is a common feature in Kirchhoff circuit analysis.
+
+We now move on to applying Kirchhoff's voltage law. There are three loops to consider:
+
+\begin{eqnarray}\label{eq:Kirch_ex2}
+6~\text{V} - I_3\times2~\text{k}\Omega - I_1\times2~\text{k}\Omega &=& 0 \nonumber\\
+9~\text{V} - I_3\times2~\text{k}\Omega - I_2\times2~\text{k}\Omega &=& 0 \nonumber\\
+9~\text{V}-6~\text{V} +I_1\times2~\text{k}\Omega - I_1\times2~\text{k}\Omega &=& 0 
+\end{eqnarray}
+
+
+\noindent Note that the sign of the voltage drop is positive for batteries and negative for resistors when going in the direction of the current and vice versa when going against the current. We now have 4 equations in 3 unknowns and again, are stuck with an over constrained system. We use the first and third equations. For brevity, the units are dropped and we work in units of k$\Omega$, so that current is in mA. The dividing the first equation by 2 and inserting equation \ref{eq:Kirch_ex1}, we have:
+
+\begin{eqnarray}\label{eq:Kirch_ex3}
+2I_1 + I_2 &=& 3 \\
+-2I_1 + 2I_2 &=& 3 
+\end{eqnarray}
+
+\noindent Addind these equations yields $I_2 = 2$ mA, and reinserting this value yeilds $I_1 = 0.5$ mA. Finally, Kirchoff's current law gives $I_3 = 2.5$ mA:
+
+
+\begin{empheq}[box=\fbox]{align}
+I_1 &= 0.5~\text{mA}\nonumber\\
+I_2 &= 2.0~\text{mA}\nonumber\\
+I_3 &= 2.5~\text{mA}\nonumber
+\end{empheq}
+
+Note that we can now solve for the any other quantity in the circuit. For example the potential between nodes $a$ and $b$ is seen to be $V_{ab} = I_3R = 2~\text{mA}\times2~\text{k}\Omega = 4~\text{V}$.
+
+\end{myexample}
+\begin{figure}[h]
+\caption{(a) The circuit we wish to analyze via Kirchhoff's Rules. (b) Setting up a current convention at node $b$. (c) Applying Kirchhoff's current and voltage rules.}
+\label{fig:kirchhoff_ex}
+\begin{center}
+\includegraphics[width=\textwidth]{kirchoff_ex}
+\end{center}
+\end{figure}
+
+
+\section{The Superposition Principle in Circuits}
+
+Another way to solve the circtui ion example \ref{ex:kirchhoff_calculation} is to make use of the superposition principle, inherent to linear systems. In terms of electronic circuits, we note that since the electric potential obeys the superposition principle, we can think of the response of the system (i.e. the current resulting from the potentials) as the sum of all of the individual voltage sources acting at once. This is outlined in figure \ref{fig:superposition_circuits}. We look at the circuit when only the 6~V battery is applied and calculated the currents as in \ref{ex:elem_circuit_anal}. We do the same for the circuit when only the 9~V battery is applied. The resultant current is simply the sum of the currents in each case, for which we find a result consistent with example \ref{ex:kirchhoff_calculation}.
+
+\begin{figure}[h]
+\caption{Using the superposition principle in place of Kirchhoff's Rules to solve a circuit.}
+\label{fig:superposition_circuits}
+\begin{center}
+\includegraphics[width=\textwidth]{superposition_circuits}
+\end{center}
+\end{figure}
 
 
 %%% ========================================================================
