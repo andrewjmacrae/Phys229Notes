@@ -681,7 +681,7 @@ Note that we can now solve for the any other quantity in the circuit. For exampl
 \end{myexample}
 \begin{figure}[h]
 \caption{(a) The circuit we wish to analyze via Kirchhoff's Rules. (b) Setting up a current convention at node $b$. (c) Applying Kirchhoff's current and voltage rules.}
-\label{fig:kirchhoff_ex}
+\label{fig:kirchhoff_example}
 \begin{center}
 \includegraphics[width=\textwidth]{kirchoff_ex}
 \end{center}
@@ -701,8 +701,1134 @@ Another way to solve the circtui ion example \ref{ex:kirchhoff_calculation} is t
 \end{figure}
 
 
-%%% ========================================================================
+\section{The Voltage Divider}
+Often, we want a particular voltage at a particular point in a circuit. For example, we may have an LCD screen which requires 3.3V in a circuit that is powered by a 9V battery. How might we accomplish this? The simplest-minded approach may be to just use a resistor to create a voltage drop as in figure~\ref{fig:voltagedivider}a. 
 
+
+\begin{figure}[h]
+\caption{(a) A bad way to make a voltage divider. (b) A good way to make a voltage divider. (c) Drawing too much current will affect performance of voltage divider.}
+\label{fig:voltagedivider}
+\begin{center}
+\includegraphics[width=\textwidth]{voltage_divider}
+\end{center}
+\end{figure}
+
+
+By knowing the current of the circuit, we could work out what resistance required to drop the voltage to the desired value. However, as soon as the current changes based on fluctuations in temperature, other voltages, or whatever, the voltage will change. This voltage change may cause further fluctuations in current which will amplify the problem leading to a very unstable situation. 
+
+So we can't make a good voltage converter with a single resistor, but surprisingly, we make one with two! Consider the circuit in figure~\ref{fig:voltagedivider}b. The total voltage drop across int the circuit is $V_{in}$ and the total resistance in the circuit is $R_{tot} = R_1 + R_2$. We then know the current going through the resistors from Ohm's law, to be: 
+
+\begin{equation}\label{eq:vd_deriv1}
+I = \frac{V_{in}}{R_{tot}} = \frac{V_{in}}{R_1 + R_2}
+\end{equation}
+
+Next, note that the output voltage is precisely equal to the voltage drop across $R_2$. Having already worked out the current we can also use Ohm's law again: $V = IR_2$ specifically to find:
+
+\begin{equation}\label{eq:voltagedivider}
+\boxed{V_{out} = \frac{R_2}{R_1+R_2}V_{in}}
+\end{equation}
+
+\begin{myexample}[label = ex:voltage_divider]{Design a circuit which produces 5V from a 9V battery and draws no more than 10mA of current.}
+\Solution
+To draw less than 0.01A of current we need $R_1$ and $R_2$ such that $I = 9~\text{V}/R_{tot} < 0.01$. Thus we must have:
+
+\begin{equation}
+R_{tot} = R_1 + R_2 > \frac{9\text{ V}}{0.01\text{ A}} = 900~\Omega
+\end{equation}
+
+
+\noindent We also have to have $V_\text{out} = 5\text{ V} = 9\text{ V} \times \frac{R_2}{R_1+R_2}$, or $5R_1 = 4R_2$.
+
+\noindent A possible solution is to have $R_2 = 1$ k$\Omega$ and $R_1 = 800~\Omega$. Then, $V_\text{out} = 5\text{ V}$ and $I = 5$ mA.
+
+\end{myexample}
+
+
+Although it may not look like it, equation \ref{eq:voltagedivider} is one of the more important equations of the course. The reason why is that it is applicable not only to resistors, but also to inductors and capacitors which we will soon learn about. This simple setup will then allow for the creation of not only voltage sources but also filters which will only let fast or slow components of a time dependant signal through.
+
+
+\subsection{Circuit Loading} In the derivation of the voltage divider equation \ref{eq:voltagedivider}, we assumed that all current flows through resistor $R_2$. However, this assumption is violated as soon as we plug our voltage divider into anything!. Observe figure \ref{fig:voltagedivider}c -- with the circuit plugged in, the output voltage is now $I^\prime R_2$:
+
+\begin{myexample}[label = ex:popquiz_loading]{Is the voltage affected by plugging in a load?}
+\noindent If so, how is it affected (Increased or Decreased)?.
+\Solution
+The current through $R_2$ must be decreased, i.e. $I^\prime< I$. Therefore $V_\text{out} = I^\prime R$ is also decreased.
+\end{myexample}
+
+
+This effect is known as ``loading of the source'' and in general, leads to a drop in voltage. This effect becomes worse as you the resistance of the source's input becomes smaller, since more current is then drawn.
+
+\begin{myexample}[label = ex:circ_load2]{Explore the Effect of Loading}
+Assume that the ``rest of the circuit'' in example \ref{ex:voltage_divider} has a resistance of (a) 100 k$\Omega$ and (b) 1 k$\Omega$. What is the output voltage of the source?
+\Solution
+\noindent(a) The effect of the rest of the circuit is to form a parallel resistor $R^\prime_2$ along with $R_1$. For 100k, the effective resistance is:
+
+
+$$
+R_2^\prime = \left(\frac{1}{1\text{ k}\Omega} + \frac{1}{100\text{ k}\Omega}\right)^{-1} = 991~\Omega
+$$
+
+This then gives:
+
+$$
+V_\text{out} = 9V\times\frac{991}{800+991} = 4.98V
+$$
+
+\noindent... so hardly any affect.
+
+\noindent(b) Here, $R^\prime_2 = R_2/2 = 500~\Omega$, giving:
+
+$$
+V_\text{out} = 9V\times\frac{500}{800+500} = 3.46V
+$$
+
+\noindent... which is terrible.
+\end{myexample}
+
+Circuit loading is an important concept which you will explore in the labs.
+
+\section{Real Voltage Sources: EMF and Internal Resistance}
+Recall that we defined a real voltage source as a device which maintains a fixed potential difference between two terminals under all conditions. In reality however this can not hold - consider short circuiting\footnote{Jargon alert: short circuiting is a term which will come up often - it merely means to connect two points on a circuit with a wire. The rest of the circuit is now in parallel with the wire and since the $R_\text{wire}\approx0$, all current flows through it ands the circuit is effectively ``shortened''. } a battery. Then the current $I=V/R_\text{wire} \rightarrow \infty$ and since $P=IV$, infinite power is produced. Clearly a violation of several laws of physics. 
+
+
+\begin{marginfigure}
+\caption{A real voltage source is modelled as an ideal source in series with an internal resistance.}
+\label{fig:real_vs_ideal_voltage}
+\includegraphics{real_vs_ideal_voltage}
+\end{marginfigure}
+
+In reality, the battery itself will have some internal ``source'' resistance $R_s$ which limits the current. We can thus model a real voltage source as a series combination of an ideal voltage source and an internal resistance, held inside a box that we can not open figure \ref{fig:real_vs_ideal_voltage}.
+
+
+
+\begin{myexample}[label = ex:popquiz_intresistance]{Internal resistance of a battery}
+A $9~V$ battery has an internal resistance of $1.5~\Omega$. What is the maximum current which the battery can provide? What is the power dissipated internally by the battery?
+
+\Solution
+From our work with ideal sources, Ohm's law tells us that:
+
+$$
+I_{max} = \frac{V_\text{ideal}}{R_s} = \frac{9~\text{V}}{1.5~\Omega} = 6~\text{A}
+$$
+
+\noindent This is an absurd amount of current. Before something very bad happens to the battery, it is dissipating an internal Joule heating of
+
+$$
+P = I^2_\text{max}R_s = I_\text{max}V\text{ideal} = 6~\text{A}\times9~\text{V} = 54~\text{W}
+$$
+\end{myexample}
+
+\noindent  \textcolor{red}{\textbf{WARNING}}: This is why you never short a battery. The very high resultant current is now being dissipated by the internal resistance $R_s$ resulting in a lot of heat. This can cause a battery to explode or catch fire (see youtube for fun videos of this).
+
+\subsection{Electromotive Force (EMF)}
+There are an number of terms you will come across in the lab when dealing with sources. Among these is electromotive force (EMF) often written as $\mathcal{E}$. EMF is formally defined as maximum work available per charge when moving from position $\textbf{r}_A$ to $\textbf{r}_B$ along a path $\Gamma$:
+
+\begin{equation}\label{eq:def_emf}
+\mathcal{E} \equiv -\int_\Gamma\textbf{E}(\textbf{r})d\textbf{l}
+\end{equation}
+
+This can be a confusing term for many reasons.
+\begin{enumerate}
+\item Despite its name, EMF is not a force! It has units of Volts - its usage as a force is merely historical residue from the development of electricity and magnetism. 
+\item Although often the terms voltage and EMF are used interchangeably, there are not the same fundamentally.\footnote{\textbf{Highbrow note on emf:} The real difference between EMF and voltage comes about in electro\textit{dynamics} and only outside the good-circuit model:
+
+\begin{align*}
+\mathcal{E} &\equiv -\int_a^b\mathbf{E}\cdot d\mathbf{l} \\ &= -\int_a^b\left(\nabla\phi - \frac{d}{dt}\mathbf{A}\right)\cdot d\mathbf{l} \\
+&= -\Delta V + \frac{d}{dt}\int_a^b\mathbf{A}\cdot d\mathbf{l} 
+\end{align*}
+
+\noindent where $\phi$ and $\mathbf{A}$ are the electrodynamic scalar and vector potentials respectively. 
+
+
+\noindent $\mathcal{E}$ and voltage are thus equivalent as long as $\frac{d}{dt}\int_a^b\mathbf{A}\cdot d\mathbf{l}  = 0$.} $\mathcal{E}$ is the work per unit charge and voltage is the difference in electric potential. However, in the regime relevant to electronics, they are practcally the same (see margin note).
+\item EMF is sometimes used as a noun (i.e. the voltage) and sometimes used as a verb (the thing that causes the voltage.)
+\end{enumerate}
+
+We will use the convention that an EMF is a noun. In a battery $\mathcal{E}$ is equal to the amount of voltage that would be measured if precisely 0~amps of current were flowing. As soon as current begins to flow, the measured voltage drops, due to Ohm's law for the current through the internal resistance. A real source can be thus seen as a pure internal EMF with a resistor connected in series.
+
+
+\section{Power Delivered to Load: Impedance Matching}
+Suppose we want to power a device - a heater, light-bulb, or whatever with a real voltage source. Let our source have an ideal voltage $\mathcal{E}$ and output impedance $R_s$ and suppose we want to transfer as much power as possible to the load. The circuit, drawn in figure \label{fig:loadresistor}, introduces an interesting compromise: If we make the load resistance too large, hardly any current will be drawn in the circuit and the power delivered to the load $P = I^2R$ will be vanishingly small. On the other hand if we make $R_\text{load}$ too small, the current will be limited by $R_s$ and the power will again tend to 0 on account of $R_\text{load}\rightarrow 0$.
+
+\begin{marginfigure}
+\caption{Power delivered to a load in an non-ideal circuit.}
+\label{fig:loadresistor}
+\includegraphics{loadresistor}
+\end{marginfigure}
+
+Since the power tends to zero as $R_\text{load}\rightarrow 0$ and $R_\text{load}\rightarrow \infty$, there must be a maximum somewhere. We can obtain this maximum by the standard tools of calculus and by noting that the circuit in figure \label{fig:loadresistor} is just a voltage divider with $V_\text{load} = V_\text{ideal}\times R_\text{load}/(R_s+R_\text{load})$. We then have:
+
+\begin{equation}\label{eq:maxpow1}
+P_\text{load} = \frac{V_\text{load}^2}{R_\text{load}} = \frac{R_\text{load}}{\left(R_\text{load}+R_s\right)^2}V_\text{load}^2
+\end{equation}
+
+\noindent Denoting $R_\text{load} \equiv r$ for brevity, we can take the derivative and set to 0:
+
+$$
+\frac{d P_\text{load}}{dr}  =  \frac{\left(R_s+r\right)^2 - 2r\left(R_s+r\right)}{\left(R_s+r\right)^4}
+$$
+
+\noindent or,
+
+$$
+\left(R_s+r\right)^2 - 2r\left(R_s+r\right) = 0
+$$
+\noindent which is satisfied when
+
+\begin{equation}\label{eq:maxpow}
+r = R_\text{load} = R_s
+\end{equation}
+
+Thus the maximum power is delivered when the input resistance of the load matches the output resistance of the source. This is a case of as important concept known as impedance matching. This is especially relevant for high frequency signals which are patched through various lab instruments for which all devices must be matched or have special impedance matching devices at the input.
+
+% XSSSSSXSXSXSXSXSXSXSXSXXSXS
+
+\section{Th\'evenin's Theorem}
+In the above example, consider the situation from the point of view of the load resistor: all it ``knows'' is that there is some electric field produced by any combination of sources and resistors. It has no idea whether there is a single battery, 5 batteries, or a magician with a wand creating the field, it just ``feels'' a potential difference. This philosophy of looking at the circuit in terms of the loads, not the sources leads to a powerful technique for analyzing circuits known as \textit{Th\'evenin's theorem}:
+
+\noindent\textbf{Th\'evenin's Theorem:} \textit{Any network of voltage sources, resistors, and current sources can be replaced by a single equivalent voltage source $V_\text{th}$, in series with a single equivalent resistance $R_\text{th}$.}
+
+\begin{figure}[h]
+\caption{Any linear circuit can be viewed as a ideal voltage source in series with a resistor.}
+\label{fig:thevenin}
+\begin{center}
+\includegraphics[width=\textwidth]{thevenin.png}
+\end{center}
+\end{figure}
+
+With reference to figure \ref{fig:thevenin}, Th\'evenin's theorem states that the complicated network shown on the left in figure \ref{fig:thevenin} can be replaced with the simple circuit on the right. Notice that the figure on the right is merely a voltage divider which we have already studied. This provides a convenient method for determining the effect of loading on a circuit: we can simply obtain $V_\text{th}$ and $R_\text{th}$ and apply the standard voltage divider equation: $V_\text{load} = V_\text{th}\times R_\text{load}/(R_\text{th}+R_\text{load})$. We begin to see a recurring theme in this course: most of electronics can be reduced to a voltage divider. But how do we get $V_\text{th}$ and $R_\text{th}$? There are two approaches:
+
+\begin{myexample}[label = ex:det_thev_exp]{Determining $V_\text{th}$ and $R_\text{th}$ Experimentally}
+
+{\centering
+     \includegraphics{thvn_ex_1.png}
+      \par
+}
+
+Suppose that we have a complicated circuit that we want to drive a load with and we want to know the internal voltage and output impedance. How might we do this?
+
+\noindent Note that Thevenin's theroem states that we can always reduce the circuit to a voltage divider driving a load. Suppose that when we plug a 25$~\Omega$ load resistor in the circuit, we measure a 2~V drop and when we use a 400$~\Omega$ load, we find a voltage drop of 8~V. This gives us two equations in 2 unknowns and is sufficient to solve the system completely. Using:
+\begin{eqnarray*}
+V_L & = &  \frac{R_L}{R_\text{th} + R_L}V_\text{th}\text{             ... or} \\
+V_\text{th} R_L &=& \left(R_\text{th} + R_L\right)V_\text{th}
+\end{eqnarray*}
+\noindent we have:
+\begin{eqnarray*}
+25V_\text{th} &=& 2R_\text{th} + 50 \\
+400V_\text{th} &=& 8R_\text{th} + 3200
+\end{eqnarray*}
+
+\noindent Subtracting 4 times the first equation by the second gives $300V_\text{th} = 3000R_\text{th}$, or $V_\text{th} = 10V$. Inserting this into either equation yields $R_\text{th}$:
+
+
+\begin{eqnarray*}
+V_\text{th} & = & 10V \\
+R_\text{th} & = & 100\Omega
+\end{eqnarray*}
+
+\noindent Note that this result is independent of the load resistance. Having determined the equivalent circuit, we know how it will behave for all loads.
+\end{myexample}
+
+We can also determine the Thevenin equivalent circuit theoretically. As it turns out there is a cookbook recipe for doing so:
+
+\textbf{Th\'evenin Algorithm}
+
+\noindent To calculate the equivalent network resistance across two nodes:
+
+\noindent\textbf{Step 1} Remove any load element(s) between the two nodes and calculate the resultant ``open circuit'' voltage. This is $V_\text{th}$.
+
+\noindent\textbf{Step 2} Short circuit all voltage sources (i.e. replace them with a wire) and find the equivalent resistance between the output nodes. This is $R_\text{th}$.
+
+
+
+\begin{myexample}[label = ex:thev_theo]{Determining $V_\text{th}$ and $R_\text{th}$}
+We mentioned that we can use a voltage divider to provide a voltage source of desired voltage. How does circuit loading affect the voltage divider circuit?
+
+\noindent We can use the Thevenin approach to determine the output resistance and effective voltage of our voltage divider. Figure~\ref{fig:thvn_ex_2}a shows our circuit with an arbitrary load $R_L$ connencted. We proceed to use the Thevenin algorithm:
+
+\noindent \textbf{Step 1}: Remove the load and determine the equivalent voltage (figure ~\ref{fig:thvn_ex_2}b). We see that the voltage is just that of the original, ideal voltage that we already have studied:
+
+$$
+V_\text{th} = \frac{R_2}{R_1+R_2}V_0
+$$
+
+\noindent \textbf{Step 2}: Short circuit the sources and determine the equivalent resistance (figure ~\ref{fig:thvn_ex_2}c). We see that the equivalent resistance is merely a parallel combination of $R_1$ and $R_2$.
+
+$$
+R_\text{th} = \frac{R_1R_2}{R_1+R_2}
+$$
+
+\noindent The resultant circuit is just a new voltage divider with:
+
+$$
+V_\text{out} = \frac{R_L}{R_\text{th}+R_L}V_\text{th}
+$$
+
+Noting that an ideal source in this case satisfies $V_\text{out} = V_\text{th}$. A ``good'' voltage divider will have $R_\text{th} \ll R_L$. One should not make it arbitrarily low however, since in that case a large amount of current will have to flow through $R_2$ as compared to the load and will be inefficient.
+\end{myexample}
+
+\begin{figure}[h]
+\caption{Using Thevenin's theorem to study a real-world voltage divider.}
+\label{fig:thvn_ex_2}
+\begin{center}
+\includegraphics[width=\textwidth]{thvn_ex_2.png}
+\end{center}
+\end{figure}
+
+
+\chapter{Introduction to AC Circuits}
+\section{AC/DC}
+
+So far, we have dealt with time independent voltages, i.e. when we analyze a circuit with a 9V battery and a 1~k$\Omega$  resistor, we say that the current is 9~mA (forever). Often in experimental settings, this is not the case, for example a particle detector may give a short pulse whenever a photon hits its surface. Even more commonly the voltage coming out of a wall outlet is a periodic (sine) waveform repeating itself 60 times per second\footnote{... in North America.} (figure \ref{fig:ACexamples}).
+
+By convention signals (currents or voltages) which are constant in time are called Direct Current or \textbf{DC}, and signals which vary in time are called Alternating Current \textbf{AC}. AC signals can be divided up into periodic and non-periodic. Periodic signals precisely repeat themselves after some time.
+
+Why is this an issue? As it turns out, voltages and currents have a characteristic settling time leading to time delays which we have neglected in our analysis of DC circuits. The laws of electromagnetism requires an interplay of electric and magnetic fields which arises whenever the constituent fields change over time - a changing voltage or electric field necessitates will create a magnetic field and a change in this magnetic field creates new electric fields. Our goal is to encapsulate the complicated electrodynamics and resultant time delays into a simple formalism where we don't worry about the fundamental fields in the same way we did with DC circuits. Fortunately, a simple formalism exists and is only a small incremental step from what has been developed thus far.
+
+\begin{figure}[h]
+\caption{DC Signals are constant in time, AC signals are not. AC signals can be periodic (right), or not (center).}
+\label{fig:ACexamples}
+\begin{center}
+\includegraphics[width=\textwidth]{ACexamples}
+\end{center}
+\end{figure}
+
+\section{Sinusoidal waveforms}
+The workhorse of AC electronics is the sine-wave. For reasons that will become clear soon, when you understand the way a sinusoidal voltage behaves in a circuit, you understand just about everything in the circuit. Fir this reason we will spend some time becoming familiar with different ways of representing sine waves and its related quantities. This will lead us down a rabbit hole of using complex numbers to represent real things such as voltage which will seem crazy at first but will be made worth while. 
+
+\begin{marginfigure}
+\caption{Sine waves. The left shows the time-based quantities, the right shows the voltage-based quantities}
+\label{fig:sinewaves}
+\includegraphics[width=\textwidth]{sinewavez}
+\end{marginfigure}
+
+
+Figure \ref{fig:sinewaves} shows a sinusoidal voltage given by the equation:
+
+\begin{equation}\label{eq:sinus}
+v(t) = A\sin(2\pi f t + \phi) = A\sin(\omega t +\phi)
+\end{equation}
+
+There are a few fundamental quantities immediately observable from this plot:
+
+\subsection{Period and Frequency}
+The recall that any periodic signal is one that precisely repeats after a fixed time $T$. The \textbf{period} is defined as this time. The \textbf{frequency} $f$ is number of times per second that the pattern repeats and is thus the reciprocal of the period:
+
+\begin{equation}\label{def:frequency}
+f \equiv\frac{1}{T}
+\end{equation}
+
+One often uses the \textbf{angular frequency} $\omega$ in place of $f$ since a sine or cos wave repeats itself at every multiple of $\pi$. Note $\omega$ is merely a scaled $f$ and contains no new information:
+
+\begin{equation}\label{def:angfreq}
+\omega \equiv 2\pi f = \frac{2\pi}{T}
+\end{equation}
+
+\subsection{Phase}
+The quantity $\phi$ is known as the phase shift of the signal. Note that if $\phi=0$ the signal goes through zero at $t=0$. If however $\phi\ne0$ the signal is merely shifted in time. To see this note that:
+
+\begin{equation}\label{eq:phase_shift}
+\sin\left[\omega t + \phi\right] = \sin\left[\omega\left(t  + \frac{\phi}{\omega}\right)\right] = \sin\left[\omega\left(t  + \Delta t\right)\right]
+\end{equation}
+
+\noindent ... with 
+
+\begin{equation}\label{eq:phase_shift2}
+\phi = \omega\Delta t
+\end{equation}
+
+We thus see that a phase shift is equivalent to a time delay. This s important since we will now be able to treat temporal delays in our AC circuits as phase shifts of sinusoidal signals.
+
+\subsection{Amplitude and Peak to Peak}
+The function in figure \ref{eq:sinus} is bounded between $-A$ and $A$. The quantity $A$ is known as the \textbf{Amplitude} of the signal. Recalling that only differences in potential are meaningful, one often uses the \textit{peak-to-peak} voltage:
+
+\begin{equation}\label{def:Vpp}
+V_{pp}\equiv V_\text{max} - V_\text{min}
+\end{equation}
+
+\subsection{RMS and Peak to Peak Voltage}
+Recall that the power delivered to a resistor by a DC voltage is given by $V^2/R$ (eq. \ref{eq:joule_ohm}). Since the voltage in an AC signal is time dependant, so is the power delivered at a given time. However, given the definition of power as the energy delivered per unit time $P\equiv dE/dt$, one would like to know the average power delivered to a resistor over many cycles. For example, a load plugged into the wall voltage goes through 60 cycles per second - so how much energy is deposited over that second? For this we can use the average power per cycle. 
+
+Note that the average voltage over one (or many) cycles is zero, but owing to the square of the voltage in eq. eq. \ref{eq:joule_ohm}, the power delivered is independent of the sign. Clearly then the power is non-zero and positive. In fact it is given by $\bar{V^2}/R$. Comparing this to $V^2/R$, we see that this is equivalent to a DC voltage of a given voltage known as the RMS or \textit{root-mean-square} voltage defined as the squared voltage, averaged over one complete cycle:
+
+\begin{equation}\label{def:Vrms}
+V_\text{RMS}\equiv \sqrt{\langle v^2(t)\rangle_T} = \sqrt{\frac{\int_0^Tv^2(t)dt}{T}}
+\end{equation}
+
+\noindent RMS current is defined in precisely the same way.
+
+\begin{myexample}[label = ex:rms_sine]{RMS of a Sine wave.}
+For a sine wave $v(t) = A\sin(\omega t)$, compute the rms voltage.
+\Solution
+By definition, we have:
+$$
+V_\text{RMS} = \sqrt{\frac{1}{T}\int_0^TA^2\sin^2(\omega t)dt} = A\sqrt{\int_0^T\sin(2\pi\frac{t}{T}) \frac{dt}{T}}
+$$
+
+\noindent Letting $\tau\equiv t/T$, we have:
+\begin{align*}
+V_\text{RMS} &= A\sqrt{\int_{\tau=0}^1\sin^2 (2\pi \tau) d\tau} \\
+&=  A\sqrt{\int_{\tau=0}^1\left[\frac{1}{2}-\frac{1}{2}\cos(4\pi\tau)\right]d\tau} \\
+&= \frac{A}{\sqrt{2}} \\
+&\approx 0.707A
+\end{align*}
+\end{myexample}
+
+\subsection{AC and DC Components of signals}
+So far we have analyzed sine waves with zero-mean but this is generally not the case. Figure \ref{fig:ACcomp} shows a sine wave that has a 1~V offset. We call the mean value the \textit{DC component} of the signal. The \textit{AC component} of the signal is the remaining signal after subtracting the mean. The signal is the sum of its DC and AC components. 
+
+\begin{marginfigure}
+\caption{A signal can be split into AC and DC components.}
+\label{fig:ACcomp}
+\includegraphics[width=\textwidth]{ACcomp}
+\end{marginfigure}
+
+In experimental physics we are interested in a small perturbation of a large net signal. For example we may want to observe a periodic emission of single photons from an atomic vapour or the dip in light due the transient of an exo-planet in front of a star. In these cases we are strictly interested in the AC signal and the DC signal is a nuisance. Later in the course and in the labs, we will construct circuit elements known as ``filters'' which isolate the AC- and DC- components of a given signal.
+
+%%% ========================================================================
+\section{Complex Numbers}
+
+As it turns out, the analysis of AC signals is much, much (much) easier using the machinery of complex numbers. You may or may not have come across complex math before in your studies, but fortunately one does not need to be an expert on complex analysis to benefit from its simplifications. This is one instance where you will have to have a little faith that this strange way of representing signals will pay itself back many-fold in simplicity in in the duration of the course. It is not clear \textit{a priori}, why you would do things this way and if you were starting from scratch with no foresight, you probably wouldn't. It has merely been discovered after the fact that using a complex number representation makes understanding circuits much simpler and avoids pages of tedious mathematics. 
+
+In high school, you all learned how to solve the quadratic equation:
+
+$$
+ax^2 + bx + c = 0
+$$
+
+\noindent having solution:
+
+$$
+x = -\frac{b}{2a} \pm \frac{b^2-4ac}{2a}
+$$
+
+If the so called ``discriminant'' $b^2 - 4ac$ was negative, we were told that there was no solution since the square root of an imaginary number is nonsense. However to a mathematician named Euler who lived a few centuries ago, this cop-out was unacceptable. He found that if we simply denote the square root of $-1$ a symbol\footnote{Commonly in physics, the symbol is $i$ for ``imaginary'' but since in electronics, $i$ is spoken for by current, engineers tend to find the closest shape to an $i$ - a lower case $j$ in stead.} $j$, a whole new world of possibilities opened up. Now the quadratic equation didn't have 0, 1, or 2 roots, but always 2. Further more - every $n^{\text{th}}$ order polynomial had precisely $n$ roots. A result known as the ``fundamental theorem of algebra''. This all works provided that we agree that $j^2 = -1$. 
+
+\begin{equation}\label{def_imagnum}
+j \equiv \sqrt{-1}
+\end{equation}
+
+\noindent For example, the equation $x^2 + 4 = 0$ can now be solved via:
+
+\begin{align*}
+x^2 &= -4 \\
+x &= \pm \sqrt{-4}  \\
+&= \pm \sqrt{4}\sqrt{-1} \\
+&= \pm2j
+\end{align*}
+
+\subsection{Complex arithmetic}
+The number in the above example is known as a pure-imaginary number, that is a real number times $j$. In general however, we can have a mix of real and imaginary number, forming what is known as a \textit{complex number}:
+
+\begin{equation}\label{def:cpxnum}
+z = a + ib
+\end{equation}
+
+\noindent The quantities $a$ and $b$ are called the \textit{real} and \textit{imaginary} parts of $z$.
+
+Complex numbers can be added subtracted, multiplied and divided as you could any other number. The trick, as laid out in the following example, is to treat $j$ as a variable, but replace $j^2$ with $-1$.
+
+\begin{myexample}[label = ex:its_complicated]{Complex Artithmetic.}
+Let $z_1 = 2+3j$ and $z_2 = 1-4j$. Compute (a) $z_3 = z_1 + z_2$ and (b) $z4 = z_1\times z_2$.
+
+(a) \begin{align*}
+z_3  &= z_1+z_2 \\
+& = \left(2+3j\right) + \left(1-4j\right) \\
+&=  \left(2+1\right) + (3-4)j \\
+&= 3 -1j
+\end{align*}
+
+(b)\begin{align*}
+z_4  &= z_1\times z_2 \\
+& = \left(2+3j\right) \left(1-4j\right) \\
+&=  2 - 8j + 3j -12j^2 \\
+&= 2 - 5j -(-12) \\
+&= 14-5j
+\end{align*}
+\end{myexample}
+
+\subsection{Graphical Representation of Complex Numbers}
+A useful way of representing complex numbers is to place them on a two dimensional graph with the horizontal axis representing the real part and the vertical axis representing the imaginary part of the number (see figure \ref{fig:argand}a). Plotting numbers on this plane, formally known as the ``Argand'' plane provides a useful visualization addition and subtraction akin to vector additions, figure \ref{fig:argand}b displays the addition of $z_1+z_2$ from the previous example, graphically. 
+
+\begin{marginfigure}
+\caption{(a) The Argand plane represents the complex number $a+bj$ graphically. (b) The graphical representation provides a useful visual guide for addition. Here $z_3 = z_1 + z_2$ is displayed with $z_1 = 2+3j$ and $z_2 = 1-4j$}
+\label{fig:argand}
+\includegraphics[width=\textwidth]{argand.png}
+\end{marginfigure}
+
+The representation of complex numbers in the Argand plane suggests a new representation of the complex number, akin to polar coordinates you are familiar with from ordinary algebra. Specifically we can write $z$ as:
+
+\begin{equation}\label{eq:polar_cpx}
+z = a+jb = \cos\theta + j\sin\theta
+\end{equation}
+
+
+\subsection{Euler's magical formula}
+Something truly remarkable occurs when you write out the Taylor series expansion of equation \ref{eq:polar_cpx}. We find that the sum of a cosine and $j$ times a cosine s somehow equal to the mathematical constant $e$ raise to an imaginary power:
+
+\begin{equation}\label{eq:eulers}
+e^{j\theta} = \cos\theta + j\sin\theta
+\end{equation}
+
+This remarkable fact will be worth it's weight in gold both in this class and in much of the physics to come during your education. 
+
+
+\textbf{Theorem:} For real numbers $r$ and $\theta$
+
+$$
+e^{j\theta} = \cos\theta + j\sin\theta
+$$
+
+This theorem may be proven by comparing Taylor series\footnote
+{
+\textbf{Proof:} Recall the following Taylor series:
+\begin{align*}
+\cos\theta  &= \sum_{k=0}^\infty\frac{\left(-1\right)^k}{\left(2k\right)!}\theta^{2k} = 1 - \frac{\theta^2}{2} + \frac{\theta^4}{4!} + \cdots \\
+\sin\theta  &= \sum_{k=0}^\infty\frac{\left(-1\right)^k}{\left(2k+1\right)!}\theta^{2k+1} = \theta + \frac{\theta^3}{3!} - \frac{\theta^5}{5!} + \cdots \\
+\exp{\theta} &= \sum_{k=0}^\infty \frac{\theta^k}{k!} = 1 + \theta + \frac{\theta^2}{2} + \frac{\theta^3}{3!} + \cdots
+\end{align*}
+
+Thus:
+\begin{align*}
+\exp^{j\theta} &= 1 + j\theta + \frac{\left(j\theta\right)^2}{2!} +  \frac{\left(j\theta\right)^3}{3!} +  \frac{\left(j\theta\right)^4}{4!} + \cdots \\
+&= 1 + j\theta - \frac{\left(\theta\right)^2}{2!} -  j\frac{\left(\theta\right)^3}{3!} + \frac{\left(\theta\right)^4}{4!} + \cdots \\
+&= \left[1-\frac{\theta^2}{2!}+\frac{\theta^4}{4!} +\cdots\right] + j\left[\theta -\frac{\theta^3}{3!} + \frac{\theta^6}{6!} + \cdots\right] \\
+&= \cos\theta + j\sin\theta 
+\end{align*}
+}
+
+\noindent Eulers Formula allows us to choose between ``Cartesian'' or ``polar'' representations of complex numbers. You can go from one to the other easily:
+
+\noindent\textbf{polar $\rightarrow$ cartesian}: Starting with $z = re^{j\theta}$, we directly write $z = r\cos\theta + rj\sin\theta$ and so $z = a + jb$ with $a = r\cos\theta$ and $b = r\sin\theta$.
+
+\noindent\textbf{cartesian $\rightarrow$ polar}: Starting with $z = a+ib$, we have the magnitude $r = \sqrt{a^2+b^2}$. The angle we get from the Argand diagram: $b/a = \tan\theta$, or $\theta = \arctan\frac{b}{a}$. We then use these values and write $z = re^{j\theta}$.
+
+\noindent While both representations are equivalent, one may be more convenient that the other for a particular operation. For example, division and multiplication requires some algebra in cartesian coordinates but is trivial in polar:
+
+$$
+r_1e^{j\theta_1}\times r_2e^{j\theta_2} = r_1r_2e^{j\left(\theta_1+\theta_2\right)}
+$$
+
+\noindent Addition or subtraction on the other hand is handled more directly in Cartesian form.
+
+\subsection{Complex Conjugation, Magnitude and phase}
+Recall that the magnitude $r$ of a 2 dimensional vector $(a,b)$ is given geometrically by $r^2 = a^2 + b^2$. We can likewise speak of the magnitude of a complex number. Consider an arbitrary complex number $z = a + jb$. The square of this number is $z^2 = a^2 - b^2 +2jab$ which is clearly not what we are after. Consider however the quantity $\bar{z} \equiv a-jb$. Then:
+
+$$
+ z\bar{z} = \left(a+jb\right)\left(a-jb\right) = a^2 -jab +jab -j^2b^2 = a^2 + b^2
+$$
+
+The quantity $\bar{z}$ is known as the \textit{complex conjugate} and is of paramount importance when working with complex numbers. In polar coordinates the conjugate of $z=re^{j\theta}$ is $\bar z = re^{-j\theta}$. In general, the conjugate is arrived at by interchanging $j\leftrightarrow-j$.
+
+\noindent The \textit{magnitude} $r$ of a complex number is given by:
+
+\begin{equation}\label{def:cpx_mag}
+z = a+jb \rightarrow\bar{z} = a -jb
+\end{equation}
+
+\noindent Another common quantity is the phase or \textit{argument} of a complex number. This is simply the angle that the complex number makes in the polar representation:
+\begin{equation}\label{def:cpx_phs}
+\arg z \equiv \arctan{\frac{\Im m [z]}{\Re e [z]}}
+\end{equation}
+
+\subsection{Complex Fractions}
+
+There are a huge assortment of operations one can perform on complex numbers and we will not go over many detailed examples. However, a very common situation relevant to this course material is to take a complex fraction and put it into either Cartesian or polar form:
+
+$$
+z = \frac{z_1}{z_2} = \frac{a_1+jb_1}{a_2+jb_2} \rightarrow a_0 +jb_0 \rightarrow re^{j\theta} 
+$$
+
+The standard method of doing this is to multiply top and bottom by the complex conjugate of the denominator. Then you have a complex number in the numerator divided by a real number which is trivial. An example is worth a thousand words:
+
+\begin{myexample}[label = ex:its_complicateder]{Complex division.}
+Let $z_1 = 1 + 3j$ and $z_2 = 2 + j$. Compute 
+$$
+\frac{z_1}{z_2} = \frac{1 + 3j}{2 + j}
+$$
+\noindent... (a) in cartesian form and (b) in polar form
+
+(a) \begin{align*}
+\frac{z_1}{z_2}  &= \frac{z_1\bar{z_2}}{z_2\bar{z_2}} \\
+& = \frac{\left(1+3j\right)\left(2-j\right)}{\left(2+j\right)\left(2-j\right)} \\
+&=  \frac{2+3 + 6j-j}{5} \\
+&= \frac{5}{5} + \frac{5}{5}j \\
+z &= 1+j
+\end{align*}
+\\
+(b)\begin{align*}
+r &= \sqrt{(1+j)(1-j)} = \sqrt{2} \\
+\theta &= \arctan{1/1} = \pi/4 \\
+z &= \sqrt{2}e^{j\pi/4}
+\end{align*}
+\end{myexample}
+
+\subsection{Representing Voltages with Complex Numbers}
+Now that we have gone through all of the trouble of learning complex numbers it's time et something useful back. Euler's formula suggests that there is a correspondence between a number $re^{j\omega t}$ and $A\sin\omega t$. Indeed there is and there is a trick to do this which is used very often in the physics of oscillating systems:
+
+\begin{enumerate}
+\item We represent the oscillating voltage as a complex exponential: $A\cos\omega t \rightarrow Ae^{j\omega t + \phi}$
+\item We perform all our mathematical operation on the signal $Ae^{j\omega t + \phi}\rightarrow A'e^{j\omega t +\phi'}$
+\item We get the mesaurable signal by \textbf{taking the real part} of the number: $A'e^{j\omega t +\phi'} \rightarrow A'\cos(j\omega t +\phi')$
+\end{enumerate}
+
+Note that a complex number has 2 degrees of freedom - that is, a single complex number contains two independent pieces of information. This is crucial to their utility as it allows is to encapsulate both the magnitude and phase of a signal at once. Also note that we used $\cos$ in place of $\sin$. This was merely for convenience and has no bearing in the system - a cosine is just a sine with a particular phase (of $\pi/2$).
+
+\section{The Digital Oscilloscope}
+Recall that for our DC measurements of voltage, resistance and current, the DMM was our weapon of choice for measurements and analysis. For AC measurements, the corresponding tool is the Digital Oscilloscope.
+The primary advantage of an oscilloscope over a DMM, is its ability of measure time dependent effects with a high degree of accuracy. 
+Figure~\ref{fig:TDS2012C} displays the type of oscilloscope used in this lab - the Tektronix Model TDS 2012C Digital Oscilloscope. 
+The y-axis displays voltage and the x-axis is time, giving us a dynamic “voltage vs. time” graph of the signal being measured. 
+The time and voltage scales can be easily modified using the scale knobs. 
+
+\subsection*{The Oscilloscope}
+\begin{figure}[h]
+\caption{TDS 2012C Digital Oscilloscope.}
+\label{fig:TDS2012C}
+\begin{center}
+\includegraphics[width=\textwidth]{TDS_scope}
+\end{center}
+\end{figure}
+
+You will make heavy use of the scope in virtually all remaining labs this course. Refer to the lab manual and the supplementary course information for further details on the operation and utility of the digital oscilloscope.
+
+\section{Time Domain vs Frequency Domain: Fourier Analysis}\label{sec:fourier}
+The importance of understanding the behaviour of sine waves in a system stems from a concept known as Fourier analysis. The essential concept behind Fourier analysis is that we can represent any signal as a sum of sine waves of a particular phase. There are really two sides to this coin. 
+
+\textbf{One side}, which is very useful in finding solutions to differential equations is that a given periodic function $f(t)$ with period $T= 2\pi/\omega$ can write this be written as an infinite sum of sine and cosines having integer multiples frequencies of $\omega$:
+
+$$
+f(t) = \sum_{k=0}^\infty\left[a_k\cos k\omega t + b_k\sin k\omega t\right]
+$$
+
+\noindent Figure \ref{fig:FourierSeries} shows the first few terms in the Fourier series representing a triangle wave.
+
+\begin{figure}[h]
+\caption{The first 8 terms in the Fourier series approximation of a ``sawtooth'' wave.}
+\label{fig:FourierSeries}
+\begin{center}
+\includegraphics[width=13cm]{FourierSeries.png}
+\end{center}
+\end{figure}
+
+\textbf{The other side}, which is more directly relevant to this course states that any continuous function in \textit{time} can be mapped on to a corresponding function in \textit{frequency} via a mathematical tool known as the \textit{Fourier Transform}:
+
+\begin{equation}\label{def:fouriertransform}
+F(\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty}e^{j\omega t}f(t)dt
+\end{equation}
+
+\noindent This introduces an entirely new way of looking at the world - we can either look at things happening in time, i.e. the \textit{Time Domain}, or by things happening in frequency, i.e. the \textit{Frequency Domain}. The Fourier transform acts as a gate between these two worlds. Figure \ref{fig:FourierExamples} shows a few examples of traces in the time and frequency domains.
+
+Frequency Domain analysis asserts that once we understand how a circuit responds to a sine wave of an arbitrary frequency, we understand how any signal behaves. You will become familiar with Fourier techniques in the lab sections of this course.
+
+\begin{figure}[h]
+\caption{Time and frequency domain pictures of a sine wave, a square wave, and a small signal buried in noise.}
+\label{fig:FourierExamples}
+\begin{center}
+\includegraphics[width=\textwidth]{FourierExamples}
+\end{center}
+\end{figure}
+
+
+%%% ========================================================================
+\chapter{Reactive Circuits: Capacitors and Inductors}
+
+\section{The Big Picture}
+
+Our circuits thus far have been comprised of batteries and resistors. When we place an AC voltage across a resistor, we found that we could apply the same analysis as in our DC circuits, using the RMS value for the voltage. We did not have to give any information about the frequency of the signal. This is because in our good circuit model, the current in a pure resistance responds instantaneously to the voltage. We now move to circuit elements for which there is a finite time response to a time dependant voltage, causing a frequency dependant response to the signal. The two main devices we will study are the capacitor and the inductor. 
+
+A hand wavy intuition of how these devices function stems from a simple fact about the nature of electromagnetic fields. The laws of electromagnetism are provide by fundamental laws known as Maxwell's equations. One consequence of these equations is that a changing electric field creates a magnetic field, and in turn, a changing magnetic field creates an electric field. Imagine quickly ramping on an electric field giving rise to a voltage. This time dependant voltage accelerates charges in a conductor, and as they begin to move, their motion creates (time-varying) electromagnetic fields. These fields make a new time-dependant voltage, which creates a new acceleration on the charges and so on and so forth until eventually things balance out. This process is called the time response of the field and leads to the frequency dependance of the circuit.
+
+Recalling that current is fundamentally due to the motion of the charges, we can note that the force on a charge, moving with velocity $v$ is known as the Lorenz Force and is given by:
+
+\begin{equation}\label{eq:Lorenz}
+\textbf{F} = q\textbf{E} + q\textbf{v}_\times\textbf{B}
+\end{equation}
+
+\noindent The contributions of the electric fields and magnetic fields are due primarily\footnote{I'm not sure this is 100\% accurate - might be trying too hard to wrap everything up here.} to the physical phenomena of Capacitance and Inductance respectively. The devices which give rise to these effects are known as capacitors and inductors which will be discussed presently.
+
+\section{Capacitors}
+\textit{Capacitance} is a property of any object to store an electric charge and thus electrical energy. Everything has some degree of capacitance. Formally, it is defined as the ratio of the charge $q$ that is stored between two nodes when a potential difference $V$ is placed across them $C\equiv q/V$, or:
+
+\begin{equation}\label{def:capacitance}
+q = CV
+\end{equation}
+
+\noindent The units of capacitance is the ``Farad'' named after Michael Faraday. 1F~=~1C/V. Typical Values in a circuit range from 1~nF to 1mF. 1~Farad is a very large capacitance and can deliver a dangerously high current.
+
+A capacitor is a device specifically manufactured to have a well defined capacitance. A common geometry for a capacitor is given by two parallel conducting plates of area $A$, separated by a distance $d$ wedged between an insulator (or vacuum). This setup leads to another expression of capacitance in terms of geometric quantities:
+
+\begin{equation}\label{eq:capacitor_geom}
+C = \epsilon\frac{A}{d}
+\end{equation}
+
+\noindent here $\varepsilon$ is the permittivity of the insulating medium between the two plates. The permittivity determines how hard it is to set up an electric field in a particular medium. Even in an insulator, atoms can align themselves along the potential. The unit of permittivity is F/m. Even a perfect vacuum has a permittivity which is a fundamental constant known as $\varepsilon_0$ with a value of about $8.95\times10^{-12}$~F/m. Equation \ref{eq:capacitor_geom} allows us to speak of the capacitance of an object in the same way that we did with resistance (eq. \ref{eq:def_resistance})
+
+\begin{figure}[h]
+\caption{The configuration of internal and external fields in a charged capacitor.}
+\label{fig:capcartoon}
+\begin{center}
+\includegraphics[width=\textwidth]{capcartoon.png}
+\end{center}
+\end{figure}
+
+
+It is interesting to consider the physics of the insulating dielectric in an electric field. Although by definition no current can flow, the atoms and molecules in the dielectric will align themselves in such a way that minimizes the energy of the system. This happens even in the simplest case of a Hydrogen atom which one might think of as spherically symmetric, as the electron and proton (wavefunctions) can have a net relative displacement. This polarization allows more charge to be stored for a fixed voltage and thus increases the capacitance of the device. At some point however, the electric field due to a high voltage will be sufficiently strong to rip electrons off of their cores and cause even an insulator to conduct. This effect, known as dielectric breakdown is what happens during a lightning storm for example, for which the dielectric breakdown voltage (of air in this case) is about 3,000,000 V/m. For practical capacitors, the breakdown is much lower. In the lab, note the rating of the capacitor (typically 35V, 200V etc) as exeeding this value can lead to dielectric breakdown (i.e. a loud ``pop'') and a ruined capacitor\footnote{In fact, ``blown'' capacitors are often the cause of fried computers, etc. The tell-tale trace is a capacitor with a puffed out lid where rapid internal heating due to the short caused thermal expansion}.
+
+\section{Capacitors in a Circuit}
+
+The circuit diagram for a capacitor is shown in figure \ref{fig:capz}a. Note that capacitors come in two distinct varieties: polarized and non-polarized. Polarized capacitors have an electrolytic layer which has a preferred direction. These capacitors have a marked ``-'' terminal. Current should always flow \textit{towards} this terminal, as reverse biasing can result in a shorted out capacitor.
+
+
+\begin{figure}[h]
+\caption{(a) Circuit diagrams for capacitors. (b) Hydraulic analogy. (c) Various Capacitors (Wikipedia).}
+\label{fig:capz}
+\begin{center}
+\includegraphics[width=\textwidth]{capz}
+\end{center}
+\end{figure}
+
+\subsection{Parallel Combinations of capacitors}
+In the same way as we did we can derive the effective capacitance of parallel and series combinations of capacitors. In this case, it turns out that parallel combinations are similar. To get a rough idea why, note that fro equation \ref{eq:capacitor_geom}, the capacitance is proportional to the area of the plates. A parallel combination of capacitors with  areas $A_1 $ and $A_2$ simply form a larger area, $A_1+A_2$ so that $C  = C_1+C_2$. More rigorously note that for a parallel combination, the voltages across each capacitor are equal. From the fundamental definition \ref{def:capacitance}, we have (using $i\equiv dq/dt$):
+
+\begin{equation}\label{eq:cap_AC}
+i(t) = C\frac{dV}{dt}
+\end{equation}
+
+
+\begin{align*}
+i(t) &= i_1(t) + i_2(t) \\
+C\frac{dv}{dt} &= C_1\frac{dv_1}{dt} + C_2\frac{dv_2}{dt} \\
+C\frac{dv}{dt}&= \left(C_1+C_2\right)\frac{dv}{dt} \\
+C &= C_1+C_2
+\end{align*}
+
+\begin{equation}\label{eq:parallel_cap}
+\boxed{C_{\text{parallel}} = C_1+C_2}
+\end{equation}
+
+
+\begin{marginfigure}
+\caption{Parallel and series combinations of capacitors.}
+\label{fig:cap_netwerx}
+\includegraphics[]{cap_netwerx}
+\end{marginfigure}
+
+\subsection{Series Combinations of capacitors}
+In a similar vein to the parallel case, we can derive the corresponding capacitance of a series combination. In this case, the current is constant so that:
+
+\begin{eqnarray*}
+i(t)  &= i_1(t) &= i_2(t) \\
+C\frac{dv}{dt}  &= C_1\frac{dv_1}{dt}             &= C_2\frac{dv_2}{dt} \\
+\frac{dv_1}{dt} &= \frac{C}{C_1}\frac{dv}{dt}  & \\
+\frac{dv_2}{dt} &= \frac{C}{C_2}\frac{dv}{dt}  &
+\end{eqnarray*}
+
+\noindent Then, using $v(t) = v_1(t) + v_2(t)$, we have:
+
+
+\begin{align*}
+\frac{dv}{dt} &= \frac{dv_1}{dt} + \frac{dv_2}{dt} \\
+\frac{dv}{dt} &= \left(\frac{C}{C_1}+\frac{C}{C_1}\right)\frac{dv}{dt}\\
+\frac{1}{C}&= \frac{1}{C_1} + \frac{1}{C_2}
+\end{align*}
+
+\noindent Which is the law for a series combination of capacitors:
+
+\begin{equation}\label{eq:series_cap}
+\boxed{C^{-1}_{\text{series}} = C^{-1}_1+C^{-1}_2}
+\end{equation}
+
+
+\section{Energy stored in a Capacitor}
+It turn's out that we can get a lot of mileage out of equation \ref{def:capacitance}. The first application is to determine the energy stored in a capacitor. Recall that the potential difference in a circuit is work done per charge $v = \frac{dW}{dq}$. We can calculate the energy stored in the capacitor by keeping track of the work done by charging an initially uncharged circuit from $0$ to $q$. By the work-energy theorem, the energy stored is just this work:
+
+$$
+E = \int_{q\prime=0}^{q} dW(q) =\int_{q\prime=0}^{q} v(q)dq = \int_{q\prime=0}^{q} \frac{q\prime}{C}dq\prime=\frac{1}{2}\frac{q^2}{C} 
+$$
+
+\noindent ... where we used equation \ref{def:capacitance} for the voltage. Re-using this equation to eliminate charge $q$, we have:
+
+\begin{equation}\label{eq:energy_capacitor}
+E_c=\frac{1}{2}CV^2
+\end{equation}
+
+\section{Discharging a Capacitor}
+
+Consider the circuit on the lower left side of figure \ref{fig:chargedischarge}. Initially the voltage at all points in the circle is zero and there is no current. At some later time, a switch is closed connecting a battery with voltage $v(t) = V_0 =  \text{const}$. Current will thus immediately begin to flow and charge the capacitor. As the capacitor charges, we have learned that an electric field will build up which creates anEMF opposite that of the battery so the current will decrease as the capacitor charges until there is enough charge on the capacitor to create a voltage which is equal and opposite to the battery. The capacitor is then said to be charged -- we could yank it out of the circuit, stick it in out pocket and carry it across the room and it would still have that charge. Suppose we now close the switch disconnecting the battery but leaving a complete circuit. The voltage difference between the capacitors two terminals will drive current through the capacitor, decreasing the charge, fields and voltages in the process, until eventually, there is no net charge. This is called discharging the capacitor.
+
+We can predict this behaviour more rigorously using by differentiating equation \ref{def:capacitance}:
+
+$$
+\frac{dq}{dt} \equiv i = C\frac{dv(t)}{dt}
+$$
+
+\noindent We can apply Kirchhoff's voltage rule to the closed circuit to deduce:
+
+$$
+v_{\text{batt}} -i(t)R - v_{\text{cap}}(t) = 0
+$$
+
+Combining both equations, we arrive at a differential equation for the voltage across the capacitor:
+
+
+\begin{equation}\label{eq:cap_dif_eq}
+v^\prime(t) =v_{\text{batt}} -\frac{1}{RC}v(t)
+\end{equation}
+
+Solving this equation tells us just how the voltage across the capacitor decays. For example, with a fully charged capacitor at $v_0$ when the switch is just closed. Equation \ref{eq:cap_dif_eq} now states
+
+$$
+v^\prime(t) =\frac{v(t)}{RC}
+$$
+
+\noindent The solution of this equation is:
+
+\begin{equation}\label{eq:discharge}
+v(t) = v_0e^{-t/RC} = v_0e^{-t/\tau}
+\end{equation}
+
+\noindent ... i.e. a simple exponential decay. The time constant 
+\begin{equation}\label{eq:rctimeconst}
+\tau = RC
+\end{equation}
+\noindent is known as the $RC$ (``are-see'')  time constant and will come up frequently in the material that follows.
+
+\begin{figure}[h]
+\caption{Charging and discharging a capacitor. Initially uncharged, a switch closes the circuit and the capacitor charges. The switch is then opened allowing the capacitor to uncharge.}
+\label{fig:chargedischarge}
+\begin{center}
+\includegraphics[width=\textwidth]{chargedischarge.png}
+\end{center}
+\end{figure}
+
+\section{Supercapacitors}
+Typical values for capacitance that you will encounter in the lab are pF, nF, $\mu$F, and mF. Even without a resistor connecting the terminals, the capacitor will discharge as current ``leaks through the dielectric''. This can be modelled as an large parallel resistance, forming an internal RC-circuit . A low leakage capacitor might have leakage times of seconds or even minutes, but it will eventually decay. In recent year, so-called supercapacitors or ``supercaps'' have been developed that have leakage times on the order of months and capacitance on the order of 10000F. This allows capacitors to be used in place of batteries.
+
+\noindent Supercaps fall into several categories: From wikipedia:
+
+\noindent\textbf{Electrostatic double-layer capacitors} use carbon electrodes or derivatives with much higher electrostatic double-layer capacitance than electrochemical pseudocapacitance, achieving separation of charge in a Helmholtz double layer at the interface between the surface of a conductive electrode and an electrolyte. The separation of charge is of the order of a few \r{A}ngströms (0.3--0.8 nm), much smaller than in a conventional capacitor.
+
+\noindent\textbf{Electrochemical pseudocapacitors} use metal oxide or conducting polymer electrodes with a high amount of electrochemical pseudocapacitance additional to the double-layer capacitance. Pseudocapacitance is achieved by Faradaic electron charge-transfer with redox reactions, intercalation or electrosorption.
+
+\noindent\textbf{Hybrid capacitors}, such as the lithium-ion capacitor, use electrodes with differing characteristics: one exhibiting mostly electrostatic capacitance and the other mostly electrochemical capacitance.
+
+The benefit of a supercap over a battery is that while it's energy storage is similar to a battery, it can be charged much, much faster and can survive many more cycles. Supercaps are already being used for energy harvesting, cordless tools, and regenerative braking systems for electric vehicles.
+
+\section{Capacitors in AC Circuits}
+We have seen that upon a sudden change in voltage, there is a lagged response of the current through a capacitor. What about the case of a continuously changing current, i.e. a sinusoidal voltage? We can see the effect of a sinusoidal voltage directly from equation \ref{eq:cap_AC}:
+
+\begin{align}\label{eq:ac_cap_deriv}
+i(t) &= C\frac{d}{dt}V_0\sin\left(\omega t\right) \nonumber\\
+     &= \omega C V_0\cos\left(\omega t\right) \nonumber\\
+     &= \omega C V_0\sin\left(\omega t + \frac{\pi}{2}\right)
+\end{align}
+
+\noindent Here we see two important properties: First, the current increases with frequency -- that is, there is somehow less effective resistance the higher the frequency. Second, there is a $90^\circ$ phase shift of the current with respect to the voltage.
+
+Fortunately , we have already developed a beautiful formalism for dealing with phase shifts in sinusoidal signals, namely complex numbers. Using the fact that the RMS voltages of $\cos\omega t$ and $\sin\omega t$ are equal, we can rewrite \ref{eq:ac_cap_deriv} in terms of the RMS voltage across the capacitor. Recalling that from Euler's equation, we can write a $\pi/2$ phase shift as $e^{j\pi/2} = j$:
+
+\begin{equation}\label{eq:cap_impedance}
+V_C = I\left(\frac{-j}{\omega C}\right) \equiv IZ_C
+\end{equation}
+
+Thus we can treat the response of a capacitor in an AC circuit as sort of generalized resistor obeying Ohm's law with complex, frequency-dependant resistance, known as the \textit{impedance}, denoted $z$. Impedance is an important topic to which we will return shortly.
+
+\section{Inductance}
+We have just seen that capacitors provide an impedance which decreases with frequency, varying inversely ($\vert Z \vert \propto \omega^{-1}$). In the process, they store energy in the electric field. There exist another class of components known as \textbf{inductors} whose impedance increases linearly with frequency and function by storing energy in the magnetic field.
+
+The physics of an inductor stems from the phenomenon of self-inductance. Recall that Faraday's law of induction states that a change in flux of a magnetic field through a circuit will result in an EMF which is given precisely as the time derivative of a magnetic field. Recall also that the Biot-Savard law states that whenever a current passes through a wire, a rotational magnetic field is formed around the wire. When current is passed through a wire wound coil, a large magnetic field is created (B-S law), and this in turn creates an EMF which opposes the current (Fs law). This phenomenon is know as ``self-inductance''.
+
+An inductor is thus merely a wire bend into a geometry which creates a given flux for a given current. Often the coil is wrapped around a ferromagnet to increase the magnetic flux. Since Biot-Savard law gives us a direct relation between magnetic flux and current, we can write characterize the effect of an inductor in terms of currents and voltages, bypassing descriptions of electromagnetic fields, as in equation \ref{def:capacitance}:
+
+\begin{equation}\label{def:inductance}
+v(t) = L\frac{di(t)}{dt}
+\end{equation}
+
+\noindent The constant $L$ is known as the ``inductance'' and depends entirely on the geometry of the inductor. The units of inductance are the \textit{Henry} H. Typical values are in the range of 1~mH to 1~H. The use of a ferromagnetic substance such iron increases the inductance significantly.
+
+\begin{figure}[h]
+\caption{(a) Parallel and series combinations of inductors follow the same rules as resistors. (b) Hydrostatic analogy of an inductor: a heavy turbine with inertia. (c) Various inductors. Lower is an ``RF choke'' use to filter spikes and other high frequeuncy noise.}
+\label{fig:inductors}
+\begin{center}
+\includegraphics[width=\textwidth]{inductee.png}
+\end{center}
+\end{figure}
+
+We can ask what the response of an inductor is to a sinusoidal input voltage in the same way as we did with capacitors. With equation \ref{def:inductance} as our guide, we see that when $v(t) = A\sin\omega t$ we have
+
+$$
+L\frac{di(t)}{dt} = A\sin\omega t
+$$
+
+\noindent which when integrated gives
+
+\begin{equation}\label{eq:ind_deriv}
+i(t) = i_0 -\frac{1}{\omega L}\cos\omega t = i_0 +\frac{1}{\omega L}A\sin\left(\omega t  -\frac{\pi}{2}\right)
+\end{equation}
+
+\noindent Equation \ref{eq:ind_deriv} tells us two important points. First, the current through an inductor thus \textbf{lags} the voltage by $90^\circ$. Second, in terms of RMS quantities, we have $v_\text{RMS} = \left(\omega L\right)i_\text{RMS}$. Thus, the response of the inductor is:
+
+\begin{equation}\label{eq:impedance_inductor}
+V_L = I\left(j\omega L\right) = IZ_L
+\end{equation}
+
+\section{Impedance and Reactance}
+We have seen that the current across a resistor is in phase with the applied voltage such circuits are known as ``resistive''. On the other hand, current across a capacitor or inductor is $90^\circ$ out of phase with the voltage and are known as ``reactive'' components. The significance of reactive components is that since their current is always perfectly orthogonal (i.e. $\pm90^\circ$ out of phase) with respect to the voltage, they dissipate no power. This stems form a generalized version of power dissipation: $P = \int_T i(t)v(t)dt$. 
+
+Consider an input of $v(t) = A\sin\omega t$. For a resistor, $i(t) = v(t)/R$
+
+$$
+P = \int_0^{t=T} i(t)v(t)dt = \frac{A^2}{R}\int_0^{2\pi/\omega} \sin^2\omega t = \frac{A^2}{2R} = \frac{v^2_\text{RMS}}{R}
+$$
+
+\noindent On the other hand, for a capacitor or inductor we have $i(t) = \kappa\cos\omega t$ (with $\kappa$ depending on whether we have a capacitor or inductor. In this case:
+
+$$
+P = A^2\kappa\int_0^{2\pi/\omega} \sin\omega t\cos\omega t = \frac{1}{2}A^2\kappa\int_0^{2\pi/\omega}\sin2\omega t = 0
+$$
+
+The magnitude of the impedance is known as the reactance $X$ -- there is no information with respect to the impedance, but it merely neglects the phase information. The impedance reactance and phase information is summarized in table \ref{tab:impedance}.
+
+\begin{table}[h]
+\caption{Impedance and Reactance of various components}
+\centering
+\label{tab:impedance}
+\begin{tabular}{|c|c|c|c|} \hline
+Circuit Element & Impedance, Z & Reactance, X & Phase  \\ \hline \hline
+Resistor & $R$ & $R$ & $0$ (in-phase) \\ \hline
+Capacitor & -$\frac{j}{\omega C}$ & $\frac{1}{\omega C}$ & $-\frac{\pi}{2}$ (lags) \\ \hline
+Inductor & $j \omega L$ & $\omega L$ & $\frac{\pi}{2}$ (leads) \\ \hline
+\end{tabular}
+\end{table}
+
+
+\section{Leading, Lagging and Transients}
+We have seen that resistors exhibit no phase shift, inductors have a positive phase shift and capacitors have a negative phase shift. How do we interpret this in terms of what happens to a sine wave input? Recall that when plotting any function of time $y(t)$, replacing $y(t) \rightarrow y(t+\Delta t)$ merely displaces the whole plot to the left (i.e. to an earlier time) by $\Delta t$. To see why this is note that the new function will always take the same value as the old one $\Delta t$ (seconds) earlier: at $t=-\Delta t$, we get $f(-\Delta t + \Delta t) = f(0)$. If $\Delta t = 5$, at $t=21$ we get $f(26)$ and so forth. Similarly, a negative phase shift is to the right and to a later time.
+
+\begin{figure}[h]
+\caption{Leading corresponds to a shift to the left (sooner in time) while lagging shifts a trace to the right (later in time).}
+\label{fig:leadlag}
+\begin{center}
+\includegraphics[width=\textwidth]{leadlag.png}
+\end{center}
+\end{figure}
+
+In electronics, we then speak of time delays and phase shifts synonymously. When a current or voltage experiences a positive phase shift, we say that it ``leads'' the input. When it experiences a negative phase shift, it ``lags'' the input. This is illustrated in figure \ref{fig:leadlag}.
+
+\noindent To relate the phase shift of a sine wave to a time delay, we merely write:
+
+\begin{align}\label{eq:phase_time_sine_1}
+v(t) &= \sin\left(\omega t + \phi\right) \nonumber\\
+     &= \sin\left(\omega\left(t + \frac{\phi}{\omega}\right)\right) \nonumber\\
+     &\equiv \sin\left(\omega\left(t + \Delta t\right)\right) 
+\end{align}
+
+\noindent i.e. A phase shift $\phi$ of a sine wave of frequency $\omega$ corresponds to a time shift:
+
+\begin{equation}\label{eq:phase_time_sine_2}
+\Delta t_{f,\phi} = \frac{\phi}{\omega}
+\end{equation}
+
+One thing you may find unnerving is how the output could ever \textbf{lead} the input - a notion that at first seems to defy causality. The answer to this riddle is that what we have discussed so far is the so-called ``steady state responses'' - that is, the input-output relations after the circuit has been left on for some time. Mathematically, the steady state is only exact after an infinite time but fortunately in practice it is sufficiently accurate after several periods. The response of the system when is it is first switched on is called the ``transient behaviour'' of the system. In fact, when you study differential equations such as those describing the resistor and capacitor circuits you will find that the solution to these equations can be written as a sum of steady state and transient responses. Below, I've plotted the solution to equation \ref{eq:cap_dif_eq} but with a sinusoidal input in place of the constant battery voltage. Note that the leading steady state response of an RC circuit is established during the initial transient response. Causality is safe
+
+
+\begin{figure}[h]
+\caption{Transient response of a leading output circuit.}
+\label{fig:RC_transient}
+\begin{center}
+\includegraphics[width=\textwidth]{RC_transient.png}
+\end{center}
+\end{figure}
+
+
+\section{Impedance-Based Voltage Dividers: Frequency Filters}
+So far, we have studied how individual components, such as resistors, capacitors, and inductors respond to sinusoidal inputs. We have seen that that in terms of the RMS amplitudes, inductors and capacitors form ``frequency dependant resistors''. We will now study circuits with a mix of reactive and resistive circuits which can exhibit much richer behaviour.
+
+Recall that when when we combined resistors in a voltage divider configuration, we could create an arbitrary voltage gain based on the values of these resistors. By combining several component types in a voltage divider configuration, we can now make an voltage dependant on frequency. 
+
+\begin{figure}[h]
+\caption{(a) Generalized impedances can be combined to form a voltage divider. (b) RC ``Low-Pass'' filter. (c) RL ``High Pass'' filter.}
+\label{fig:cpx_volt_div}
+\begin{center}
+\includegraphics[width=\textwidth]{cpx_volt_div.png}
+\end{center}
+\end{figure}
+
+Based on our previous analysis, we see that we can immediately replace the ``R's'' with ``Z's'' and we have the equation for the complex voltage divider:
+
+
+\begin{equation}\label{eq:cpx_volt_div}
+\frac{v_\text{out}}{v_\text{in}} \equiv G(\omega) = \frac{Z_2}{Z_1 + Z_2}
+\end{equation}
+
+\noindent We will now look at a few specific examples.
+
+\subsection{RC ``Low-Pass'' filter}
+Observe the circuit in figure \ref{fig:cpx_volt_div}b. Here, $Z_2 = -j/\omega C$ and $Z_1$ is merely $R$. Simpleminded substitution into equation \ref{eq:cpx_volt_div} gives:
+
+$$
+G(\omega) = \frac{-j/\omega C}{R - j/\omega C} 
+$$
+
+\noindent Multiplying top and bottom by $j\omega C$:
+
+$$
+G(\omega) = \frac{1}{1+j\omega RC}
+$$
+
+\noindent We see why this is called a ``low-pass'' filter: For DC signals ($\omega \rightarrow 0$) the gain is unity, i.e. $v_\text{in} =  v_\text{out}$. For very high frequencies ($\omega \rightarrow \infty$) the $\omega^{-1}$ dependance dominates and the gain tends to 0. 
+
+Recall that the gain in our formalism is a complex quantuty and thus the circuit provides both an attenuation and a phase shift, to get a better grip, we often talk of the \textit{magnitude} and \textit{phase} of the filter. Applying our now-expert skills in complex numbers:
+
+$$
+\vert G(\omega)\vert = \sqrt{GG^*} = \sqrt{\left(\frac{1}{1+j\omega RC}\right)\left(\frac{1}{1-j\omega RC}\right)}
+$$
+
+or
+
+\begin{equation}\label{eq:mag_RCLPfilt}
+\vert G(\omega)\vert  = \frac{1}{\sqrt{1+\left(\omega R C\right)^2}}
+\end{equation}
+
+
+\noindent To get the phase, we can split this into real and imaginary parts by multiplying top and bottom by the complex conjugate of the denominator:
+
+$$
+G(\omega) = \frac{1-j\omega RC}{1+\left(\omega RC\right)^2} =  \frac{1}{1+\left(\omega RC\right)^2} - j \frac{\omega RC}{1+\left(\omega RC\right)^2}
+$$
+
+\noindent The phase of the filter is thus given by $\tan\phi = \Im\text{m}G/\Re\text{e}G$:
+
+\begin{equation}\label{eq:phs_RCLPfilt}
+\phi(\omega) = -\tan^{-1}\omega R C
+\end{equation}
+
+\noindent Note that for DC signals the phase shift $\phi = 0$ and for high frequencies, $\phi \rightarrow -\pi/2$.
+
+We see that everything is characterized by the quantity $R\omega C$. When $R\omega C \approx 1$ the amplitudes begins to roll off and the phase is halfway between its extrema. We call the frequency at which this happens the \textbf{cut-off frequency} $f_\text{co}$:
+
+\begin{equation}\label{eq:f_cutoff_RC}
+f_\text{co} = \frac{1}{2\pi}\frac{1}{RC}
+\end{equation}
+
+\noindent Note that at the cutoff frequency, the magnitude of the transfer function is $1/\sqrt{2}$. The inverse of this quantity is sometimes called the ``RC time constant''.
+
+\subsection{RL ``High-Pass'' filter}
+Now, consider the circuit in figure \ref{fig:cpx_volt_div}c. Here, $Z_2 = j\omega L$ and $Z_1$ is again $R$. The voltage divider equation gives
+
+$$
+G(\omega) = \frac{j\omega L}{R+j\omega L}
+$$
+
+In the same way as before we find the magnitude of this filter to be:
+
+\begin{equation}\label{eq:mag_RLHPfilt}
+\vert G(\omega)\vert  = \frac{\omega L/R}{\sqrt{1 + \left(\omega L/R\right)^2}}
+\end{equation}
+
+\noindent Note that this serves as the counterpart to the previously mentioned low-pass: as $\omega \rightarrow 0$, the gain drops to 0 whereas as $\omega \rightarrow \infty$, $G(\omega) \rightarrow 1$.
+
+\noindent Setting the output to $1/\sqrt{2}$, we find the cutoff frequency to be
+
+\begin{equation}\label{eq:f_cutoff_RL}
+f_\text{co} = \frac{1}{2\pi}\frac{R}{L}
+\end{equation}
+
+\noindent The phase is:
+\begin{equation}\label{eq:phs_RLHPfilt}
+\phi(\omega) = \tan^{-1}\frac{R}{\omega L}
+\end{equation}
+
+\noindent... which ranges from $\pi/2$ at DC to $0$ for $f\gg f_\text{co}$.
+
+\section{Frequency Response and Bode Plots}
+We have just seen that for a particular sine wave of a particular frequency, there is a particular phase shift and attenuation. Recall from section \ref{sec:fourier} that any signal can be broken down into a weighted sum of sine waves of a given amplitude and phase. It then makes sense to look at out frequency filters in the frequency domain. The behaviour of a device for all frequencies is known as the \textit{frequency response} of the system. We have already seen two frequency responses (namely of a RC low-pass and RL high-pass filter.
+
+Since there is typically such a broad range of frequencies and signal levels, it is common (and useful!) to plot the frequency response logarithmically, producing what is called a \textbf{Bode Diagram}. First, it may be useful to recall some common properties of logarithms. 
+
+\subsection{Logarithms}
+There are a multitude of such properties  but we will stick here only to what is immediately relevant. First the definition of a logarithm is as the inverse of exponentiation:
+
+\begin{equation}\label{eq:deflog}
+b^x = y \Leftrightarrow \log_by = x
+\end{equation}
+
+\noindent Here $b$ is called the base of the logarithm. The most common logarithms are base 2 (if you're a computer scientist), base 10, (if you're an engineer,) and base $e$ (if you're a physicist). Recall that $e = 2.718\ldots$ is the natural number. When the base is not explicitly stated it is taken to be base 10. Log base $e$ is called the ``natural logarithm'' and is given a special symbol: $\log_ex\equiv \ln x$. 
+
+Logarithms are useful for at least two reasons. First, they can convert certain mathematical operations to easier ones: Since $\left(y^x\right)^n = y^{nx}$ we have:
+
+\begin{equation}\label{eq:logexp}
+\log x^n = n\log x
+\end{equation}
+
+\noindent Also, since $ x^ax^b = x^{a+b}$, we have
+
+\begin{equation}\label{eq:logmult}
+\log\left(AB\right) = \log A  + \log B
+\end{equation}
+
+This leads to the second useful property of logarithms: they allow one to visualize a wide array of frequencies on a single plot. When plotting the x axis logarithmically, we can ``zoom in'' across many different scales where each division is an order of magnitude. Often there is interesting stuff happening in the low frequency range - say from 1~Hz to 100~Hz and also in the high frequency region, from 1~MHz to 1~GHz, say. It would be impossible to visualize this on a linear scale but logarithmically it is a simple task. Such a plot is called a ``semi-log plot''. It also is useful to make so-called ``log-log'' plots where both x and y are plotted logarithmically. As an example, consider an inverse-square law:
+
+$$
+f = \frac{1}{r^2}
+$$
+
+On a log scale, this reads:
+
+$$
+\log f = \log(r^{-2}) = -2\log(r)
+$$
+
+\noindent Letting $F\equiv\log f$ and $R\equiv\log{r}$, this reads
+
+$$
+F = -2R
+$$
+\noindent Thus, on a log-log plot, power laws become linear relationships for which the slope is the power.
+
+
+\begin{figure}[h]
+\caption{Log-Log 'Bode' plot of the function $f(x) = 0.1x^{-1}+x^{-2}$. Note that in the log-log plot, the point at which the $x^{-2}$ dependance dominates is clear where in the linear case, it is not.}
+\label{ fig:BodePowers}
+\begin{center}
+\includegraphics[width=\textwidth]{BodePowers.png}
+\end{center}
+\end{figure}
+
+
+\subsection{Decibels}
+You are likely already familiar with a logarithmic scale - the so-called decibel scale used for hearing. In electronics decibels are also used frequently. The definition we use is as follows for a number\footnote{Note that like exponents and sines, the argument of a logarithm is necessarily unit-less} N:
+
+$$
+N_\text{dB} = 20\log_{10}N
+$$
+
+This definition gives rise to the fact that for every power of 10, we add 20 dB. A few sample calculations will be instructive:
+
+
+\begin{align*}
+|v_o/v_i| &= 1 \rightarrow G=0~\text{dB} \\
+|v_o/v_i| &= 10  \rightarrow G=+20~\text{dB} \\
+|v_o/v_i| &=0.1 \rightarrow G=-20~\text{dB}\\
+|v_o/v_i| &= 1/\sqrt{2} \rightarrow G\approx -3~\text{dB}
+\end{align*}
+
+The significance of -3~dB is as follows. Recall that from power \ref{eq:joule} that the power drop across a load is given by $P = V^2/R$. When the power has dropped by 1/2, the voltage drop has decreased by a factor of $1/\sqrt{2}$ and thus by 3~dB. The ``3-dB'' point is common in the nomenclature of filters which fall off at a given point, as you will recall from high- and low-pass filter analysis.
+
+\subsection{Bode Plots}
+The frequency response (in dB) and phase (in either degrees or radians) plotted on a semilog scale is known as a Bode plot. The utility of Bode plots are that the cutoff frequency, roll-off and phase shifts are clearly visible. Figure \ref{fig:bode_filts} displays Bode plots for high and low pass filters.
+
+
+\begin{figure}[h]
+\caption{Bode Plots for high and low pass filters discussed above.}
+\label{fig:bode_filts}
+\begin{center}
+\includegraphics[width=\textwidth]{bode_filts.png}
+\end{center}
+\end{figure}
+
+%%% ========================================================
 
 \chapter{Amplifiers}
 \section{Active vs. Passive Circuits}
