@@ -1814,7 +1814,7 @@ This definition gives rise to the fact that for every power of 10, we add 20 dB.
 |v_o/v_i| &= 1/\sqrt{2} \rightarrow G\approx -3~\text{dB}
 \end{align*}
 
-The significance of -3~dB is as follows. Recall that from power \ref{eq:joule} that the power drop across a load is given by $P = V^2/R$. When the power has dropped by 1/2, the voltage drop has decreased by a factor of $1/\sqrt{2}$ and thus by 3~dB. The ``3-dB'' point is common in the nomenclature of filters which fall off at a given point, as you will recall from high- and low-pass filter analysis.
+The significance of -3~dB is as follows. Recall that from power \ref{eq:joule_ohm} that the power drop across a load is given by $P = V^2/R$. When the power has dropped by 1/2, the voltage drop has decreased by a factor of $1/\sqrt{2}$ and thus by 3~dB. The ``3-dB'' point is common in the nomenclature of filters which fall off at a given point, as you will recall from high- and low-pass filter analysis.
 
 \subsection{Bode Plots}
 The frequency response (in dB) and phase (in either degrees or radians) plotted on a semilog scale is known as a Bode plot. The utility of Bode plots are that the cutoff frequency, roll-off and phase shifts are clearly visible. Figure \ref{fig:bode_filts} displays Bode plots for high and low pass filters.
@@ -1829,6 +1829,40 @@ The frequency response (in dB) and phase (in either degrees or radians) plotted 
 \end{figure}
 
 %%% ========================================================
+\chapter{Semiconductors and Diodes}
+The circuit we have studied thus far have all fallen under the regime of ``linear, passive components''. \textit{Linear} means, essentially that if we send in a sine wave, at frequency $\omega$, the output is also a sine wave, but perhaps at a different amplitude and with a different phase\footnote{A more general definition of linearity is as follows: Suppose that, given inputs $v_1^{in}$ and $v_2^{in}$, our device $D$ produces outputs $v_1^{out} = Dv_1^{in}$ and $v_2^{out} = Dv_2^{in}$. We say $D$ is a linear device if, when we send the sum of the inputs $v_3^{in} = v_1^{in} + v_2^{in}$, then the output is the sum of the individual outputs: $v_3^{out} = Dv_3^{in} =  v_1^{out} + v_2^{out}$}. \textit{Passive} means that the device does not require additional power in order to function. We will deal with non-passive devices next chapter. This chapter we will encounter our first non-linear device, namely the diode. We'll start by defining what we want out of a diode, and then move on to how to actually make one. In order to consctruct a diode we will make use of a new class of materials: ``semiconductors'' which under various circumstances behave like a conductor, an insulator, or neither.
+
+\section{The Ideal Diode}
+Before we go on to describe how to build a diode, which involves a fairly hefty diversion into solid state physics, let's incentivize ourselves to learn by describing what we could do should we have one. 
+
+\begin{marginfigure}%
+  \includegraphics[]{diodecurrentflow}
+  \caption{The circuit symbol for a diode. The direction of current flow is the way the ``arrow'' points.}
+  \label{fig:diode_sym}
+\end{marginfigure}
+
+The basic diode circuit is shown in figure \ref{fig:diode_sym}. A diode is essentially a one-way valve for current. If we pass current from terminals $a$ to $b$, the diode acts as a short circuit (ie. a wire). If we try to pass current the other way the diode acts as an open circuit and no current passes. The resistance is thus assymetric: $R_{ab} = 0~\Omega$, $R_{ba} \rightarrow \infty$
+
+The simplest reason to build use a diode is circuit protection. Many devices\footnote{You've already come across electrolytic capacitors which can be destroyed if reverse biased. Another example is pizoelectric stacks which expand nicely in forward bias but self destruct in reverse bias.} can be damaged if you try to run current through it in the wrong direction. 
+
+Another important used of diodes is signal rectification which you will explore in the lab. Suppose that we want to run current through some load (whatever it is) in one direction only. If we merely place a diode at its input current flows through the positive phase of an ac signal but is blocked for the negative phase (figure \ref{fig:rect_half_full}a). Since no current flow during this phase, no power is wasted. 
+
+A shortcoming of the half-wave rectifier is that we are only using half the signal. Power is \textit{delivered} to the load during the positive half-cycle in between half-cycles of nothing. To make use of the entire signal, a clever topology shown in figure \ref{fig:rect_half_full}b can be employed. During the positive cycle, the current takes enteres the top junction and sees only the path on the right, leading to the load. On the return path, the diode on the bottom left leads back to the source. On the negative half cycle, current flows from the bottom node through the load and up the top.
+
+\begin{myexample}[label = ex:welches_wegen_diode]{Pop Quiz!}
+Why doesn't the current go back through the load through the right diodes on the return path?
+\end{myexample}
+
+\begin{marginfigure}%
+  \includegraphics[]{rectification_half_full}
+  \caption{a) Half wave rectifier. b) Full wave rectifier. Note that regardless of the polarity of the input, current flow is always in the same direction through the load.}
+  \label{fig:rect_half_full}
+\end{marginfigure}
+
+By adding a smoothing capacitor across the load, this can be used as a "AC-adapter", converting the 60~Hz line voltage from the wall outlet to a DC signal. In lab 4, you will do just this.
+
+\section{Semiconductors}
+OK now that we know a few of the useful applications of diodes (there are plenty more, some of which we'll mention soon), it's time to figure out how we'll actually build one.
 
 \chapter{Amplifiers}
 \section{Active vs. Passive Circuits}
