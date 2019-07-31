@@ -75,7 +75,7 @@
   \end{fullwidth}
 }
 
-% CUstom Colors
+% Custom Colors
 \definecolor{greenExample}{RGB}{61,170,61}
 \definecolor{greenExampleBack}{RGB}{216,233,213}
 
@@ -1861,9 +1861,35 @@ Why doesn't the current go back through the load through the right diodes on the
 
 By adding a smoothing capacitor across the load, this can be used as a "AC-adapter", converting the 60~Hz line voltage from the wall outlet to a DC signal. In lab 4, you will do just this.
 
-\section{Semiconductors}
-OK now that we know a few of the useful applications of diodes (there are plenty more, some of which we'll mention soon), it's time to figure out how we'll actually build one.
+OK now that we know a few of the useful applications of diodes (there are plenty more, some of which we'll mention soon), it's time to figure out how we'll actually build one. 
 
+\section{Semiconductors}
+In this course so far we've focused on two classes of materials: insulators (such as glasses or plastics) with very low conductivity and conductors (such as copper or silver) with very high conductivity. There is a third class of materials known as semiconductors whose behaviour can fall between the two extremes. Two common semiconductor materials are Silicon and Germanium. On their own Si and Ge semiconductors form crystals exhibiting somewhat interesting behaviour, but by adding trace amounts of impurity we can engineer fascinating technology allowing not only for the implementation of diodes, but of amplifiers, digital logic gates in computers, specialized detectors, and low power lights. A comprehensive understanding of semiconductor physics is too much of a diversion from our understanding of laboratory electronics (you'll have to wait a year or so for your solid state physics class) but this section will serve as a condensed crash course, outlining the basic idea of their functionality.
+
+\subsection{A Microscopic Model of Conductivity: The Drude Model}
+
+Take a metal such as copper, with N valence electrons. In crystaline form, copper forms a mettalic bond with its neighbors, which is to say that the atoms are closely spaced ions with a seaof ...
+
+The standard picture of a conductor is as 
+
+This picture of a conductor makes sense, until you stop to think about it - 
+
+- TODO -
+
+\subsection{Intrinsic Semiconductors}
+- TODO -
+\subsection{N-tyoe an P-tyoe SemiConductors, and doping}
+- TODO -
+\subsection{PN Junctions}
+- TODO -
+\section{Semiconductor Diodes}
+- TODO -
+\section{Diode Circuit Analysis}
+- TODO -
+\section{Specialized Diodes}
+- TODO -
+\section{Sneek Peek Ahead: Transistors}
+- TODO -
 \chapter{Amplifiers}
 \section{Active vs. Passive Circuits}
 We now move into the regime of so-called \textit{active electronics}. Everything studied so far -- resistors and capacitors, to voltage dividers and filters, to diode rectifiers has fallen under the realm of passive electronics. Active electronic devices, in addition to standard inputs and outputs, require additional power supplies in order to function. There are great benefits to this, as we shall see: active components can output more power than at their input, and can eliminate annoying effects such as voltage loading due to input and output impedance. The first active device we'll study is the amplifier.
@@ -2020,6 +2046,10 @@ The ``goodness'' of a differential amplifier is how much it behaves like one! Ma
  
 Decent differential amplifiers have CMRR$^\text{s}$ of at least 70~dB but some applications require 120~dB or higher.
 %\subsection{Special Purpose Amplifiers}Power amplifiers, Audio Amplifiers, Instrumentation Amplifiers, oh my! Also Lock-In Amplifiers!
+
+\section{Transistor based amplifiers}
+- TODO -
+
 
 \chapter{Feedback and Op Amps}
 By far and wide, the amplifier that you will see the most of in the labs is a very high gain, differential amplifier known as an ``operational amplifier'', or \textit{Op Amp}. Op-amps form the basis of a very wide range of applications: adding and subtracting voltages, frequency filters, low-noise single-input amplifiers, circuit protection, oscillators/function generators, and analog to digital converters, (to name a few). The typical differential gain of an op-amp is insanely high - 1,000,000 or higher. The gain is so high in fact that it renders opamps useless when used as standard differential op-amps. The utility of an op-amp comes in by employing the crucial concept of negative feedback, which we will explore presently.
@@ -2222,6 +2252,15 @@ $$
   \caption{Windup error.}
   \label{fig:windup_error}
 \end{marginfigure}
+
+\chapter{Digital Logic}
+- TODO -
+
+\chapter{Data Aquasition: DAC and ADC}
+- TODO -
+
+\chapter{Sensors and Transducers}
+- TODO -
 
 
 \backmatter
