@@ -1868,17 +1868,36 @@ In this course so far we've focused on two classes of materials: insulators (suc
 
 \subsection{A Microscopic Model of Conductivity: The Drude Model}
 
-Take a metal such as copper, with N valence electrons. In crystaline form, copper forms a mettalic bond with its neighbors, which is to say that the atoms are closely spaced ions with a seaof ...
+Take a metal such as copper, with a single valence electron in its outer shell, ($4s^1$ in this case.) In crystaline form, copper forms a metallic bond with its neighbors in which the valence electron is weakly bound to its ``original nucleus'' as compared to its nearby neighbors\footnote{ Apologies to any chemists reading this. That goes for this entire section...} and so a given electron can hop over to the atom next door. Of course, this would leave a positive charge and so another electron would quickly rush in to fill the gap. In this way, a metal has a ``sea of electrons'' bound to a lattice itself of positive centers, but not bound to any particular core. 
 
-The standard picture of a conductor is as 
+This picture of a conductor makes complete sense and explains well the phenomenon of conductivity -- until you stop to think about it too much. an immediate problem that arises is that if we connect a voltage across a conductor we should get a quadratically increasing current\footnote{Why? Because a voltage drop corresponds to a electric field: if we have a constantly decreasing voltage $V$ across a distance $d$, the definition of potential gives 
+$$\vert E \vert = \vert\frac{dV}{dx}\vert = \frac{V}{d}$$ 
+Since the force on a charge is $F = m\ddot{x} = qE$, we predict a constant acceleration of the current:
+$$
+\ddot{x}_e = \frac{qV}{m_ee}
+$$
+which is clearly not what is observed!}, whereas from experience (and Ohm's law) we get a steady, constant current.
 
-This picture of a conductor makes sense, until you stop to think about it - 
+An early attempt to resolve this conundrum was a model made by Paul Drude in 1900\cite{Drude1900}. The drude model makes the following assumptions:
 
-- TODO -
+\begin{enumerate}
+  \item TODO
+  \item Two
+  \item Three
+\end{enumerate}
 
-\subsection{Intrinsic Semiconductors}
-- TODO -
-\subsection{N-tyoe an P-tyoe SemiConductors, and doping}
+\subsection{Intrinsic Semiconductors: electons and holes}
+Certain materials such as silicon are not metals\footnote{These are often classified as ``mettaloids'' on the periodic table} but can still under certain circumstances conduct electricity and are called \textit{semiconductors}. Silicon has 4 valence electrons (i.e. is tetravalent) and can form a tight lattice of covalent bonds with its four neighbors (see figure \ref{fig:SiLattice}. In this form these covalent bonds provide enough binding energy to localize the conduction electrons so that there is zero conductivity unless they are given extra energy. Thus, as $T\rightarrow 0$~K, Silicon acts as a perfect insulator. At finite temperature however, thermal vibrations can occasionally jostle one of these electrons free, having enough residual energy to meander away, leaving a positively charges ``hole'' behind. 
+
+\begin{marginfigure}%
+  \includegraphics[]{SiLattice}
+  \caption{Pure Silicon in crystalline form.}
+  \label{fig:SiLattice}
+\end{marginfigure}
+
+An interesting consequence of these holes is that they behave identically to positive charge carriers propagating along the lattice. To see this consider figure XXX.
+
+\subsection{Doped Semiconductors: N-type an P-type}
 - TODO -
 \subsection{PN Junctions}
 - TODO -
@@ -2265,8 +2284,8 @@ $$
 
 \backmatter
 
-% \bibliography{sample-handout}
-% \bibliographystyle{plainnat}
+\bibliography{Phys229LectureNotes}
+\bibliographystyle{plainnat}
 
 
 \printindex
