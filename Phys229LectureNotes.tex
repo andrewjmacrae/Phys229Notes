@@ -1878,16 +1878,16 @@ $$
 $$
 which is clearly not what is observed!}, whereas from experience (and Ohm's law) we get a steady, constant current.
 
-An early attempt to resolve this conundrum was a model made by Paul Drude in 1900\cite{Drude1900}. The drude model makes the following assumptions:
+An early attempt to resolve this conundrum was a model made by Paul Drude in 1900. The drude model makes the following assumptions:
 
 \begin{enumerate}
   \item TODO
-  \item Two
-  \item Three
+  \item TOTwo
+  \item TOThree
 \end{enumerate}
 
 \subsection{Intrinsic Semiconductors: electons and holes}
-Certain materials such as silicon are not metals\footnote{These are often classified as ``mettaloids'' on the periodic table} but can still under certain circumstances conduct electricity and are called \textit{semiconductors}. Silicon has 4 valence electrons (i.e. is tetravalent) and can form a tight lattice of covalent bonds with its four neighbors (see figure \ref{fig:SiLattice}. In this form these covalent bonds provide enough binding energy to localize the conduction electrons so that there is zero conductivity unless they are given extra energy. Thus, as $T\rightarrow 0$~K, Silicon acts as a perfect insulator. At finite temperature however, thermal vibrations can occasionally jostle one of these electrons free, having enough residual energy to meander away, leaving a positively charges ``hole'' behind. 
+Certain materials such as silicon are not metals\footnote{These are often classified as ``mettaloids'' on the periodic table} but can still under certain circumstances conduct electricity and are called \textit{semiconductors}. One such example, Silicon has 4 valence electrons (i.e. is tetravalent) and can form a tight lattice of covalent bonds with its four neighbors (see figure \ref{fig:SiLattice}). In this form these covalent bonds provide enough binding energy to localize the conduction electrons so that there is zero conductivity unless they are given extra energy. On the other hand, if we, through hook or crook, \textit{were} able to give tem more energy than this binding force, the electron would be free to zip around the crystal. This extra amount of energy required for a particular substance is called a ``band gap''\footnote{There is a lot we are glossing over here, but essentially, in a year or so you will learn about the ``band theory of materials''. If we plot the energy of an electrons that occupy the atom on a vertical, electrons in a Si atom just sitting around in their outer shell are in a range of energies called the ``valence band''. If they had enough energy to move freely, there would occupy the (first) ``conduction band''. The space between the two bands is thus called the band gap.}. 
 
 \begin{marginfigure}%
   \includegraphics[]{SiLattice}
@@ -1895,7 +1895,30 @@ Certain materials such as silicon are not metals\footnote{These are often classi
   \label{fig:SiLattice}
 \end{marginfigure}
 
-An interesting consequence of these holes is that they behave identically to positive charge carriers propagating along the lattice. To see this consider figure XXX.
+The bandgap for typical semiconductors is typically on the order of an electron volt. For Silicon it is about 1.17~eV and for Germanim it is roughly 0.74~eV\footnote{... at very low temperatures. At higher temperatures the bandgap decreases slightly.}. What does this mean? It means that if you manage to give an electon a kick of extra energy equivalent to that it would get moving across 1.2~V, it would be freely moving along the solid. In doing so, it will leave a positively charged ``hole'' behind. An interesting consequence of these holes is that they behave identically to positive charge carriers propagating along the lattice. To see this consider figure \ref{fig:olez}. A neighboring electron can jump accross the small barrier into the positive hole. Similarly, another electron can jump into this newly formed hole. Although it is really the electrons moving around from atom to atom, the situation as a whole is as if there was a positively charged particle with charge $+q_e$ that is moving along the lattice. In semiconductor electronics we treat these holes as if they we real particles (sometimes we call them quasi-particles) and often speak of ``electron--hole pairs''.
+
+How maight we create electron--hole pairs? One way is to give an electron a boost by hitting it with a high energy photon. If we maintain a voltage across the Silicon, any free electrons will contribute to a current, giving roughly 1 electron per photon. This forms the basis of a type of light detector known as a photodiode. 
+
+Another way that an electron hole pair can be created is when the lattice imparts enough energy on its electrons via thermal vibrations. The mean energy is given by 
+\begin{equation}
+\label{eq:thermal_energy}
+U_{th} = k_BT
+\end{equation}
+\noindent ... where $k_B$ is the Boltzmann constant $k_B \approx 1.38\times10^{-23}~\frac{\text{J}}{\text{K}}\approx 8.6\times10^{-5}~\frac{eV}{K}$. Of course, not every single particle has this exact energy, but are distributed according to the probability distribution:
+\begin{equation}
+\label{eq:thermal_distn}
+Pr(E) \propto \frac{1}{1+e^{E/k_BT}}
+\end{equation}
+
+\noindent At room temperature, $k_BT\approx 1/40$~eV and there are enough free electron-hole pairs to make Si a reasonable conductor, while as $T\rightarrow0$~K, the number of free electrons vanishes. THus semiconductors thus have a resistance with very sharp dependance on temperature. 
+
+What happens then when we increase the temperature significantly or bombard the semiconductor with photons? At some point there will be so many electron-hole pairs that it is very likely that many will collide. When this happens we say that the electron-hole pair annihilate one another in a phenomenon known as ``recombination''.
+
+\begin{marginfigure}%
+  \includegraphics[]{jumpin_hole}
+  \caption{At each step, an electron can ``jump'' into a neighboring site. This can be seen either as electrons shuffling to the right or a single \textit{hole} moving to the left.}
+  \label{fig:olez}
+\end{marginfigure}
 
 \subsection{Doped Semiconductors: N-type an P-type}
 - TODO -
