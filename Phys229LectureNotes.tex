@@ -1878,13 +1878,76 @@ $$
 $$
 which is clearly not what is observed!}, whereas from experience (and Ohm's law) we get a steady, constant current.
 
-An early attempt to resolve this conundrum was a model made by Paul Drude in 1900. The drude model makes the following assumptions:
+An early attempt to resolve this conundrum was a model made by Paul Drude in 1900. Not only was Drude's model successful in forming a qualitative and quantitative description of conduction in a metal, it was able to explain why metals are good thermal conductors and insulators, tyically are not\footnote{It also explained a pressing problem of the day: the Hall effect which is seen when a magnetic field is sent parallel to the current. Experimentally a voltage perpendicular to both the current and magnetic field was measured}. Unfortunately, the Drude model is also wrong - it fails to tke in statistical effects on electrons \footnote{Namely the Pauli Exclusion Principle}, the temperature dependance of conctivity, and get the numbers very, very wrong for certain substances. That being said, it is surprisingly accurate for most materials and lets us apply an intuitive picture to the nuts and bolts of electronic quantities that is not too far off the mark. For this reason, it is still taught before more recent theories which are more correct, more sophisticated, and more difficult to understand. 
+
+The drude model makes the following assumptions:
 
 \begin{enumerate}
-  \item TODO
-  \item TOTwo
-  \item TOThree
+  \item A conductor consists of heavy, immobile, positively charged centers surrounded by a gas of light electrons.
+  \item Electrons do not interact with one another or with the \textbf{fields} of the ionic cores\footnote{This is known as the independant-electron and free-electron approximations, respectively}.
+  \item Electrons thus travel in straight lines for a mean time $\tau$ between collisions with ionic cores. After collision, the electron has, on average a kinectic energy equal to the thermal equilibrium energy.
+
+  \begin{equation}
+    \label{eq:thermal_energy}
+    E = \frac{1}{2}m_ev^2 = \frac{3}{2}k_BT
+  \end{equation}
 \end{enumerate}
+
+It turns out that this is already enough to predict Ohm's law. In order to separate properties relevant to the conductor, rather than the shape of the wire, it is convenient to work with current density -- i.e. current per unit cross-sectional area, travelling in some direction $\hat{j}$:
+
+\begin{equation}
+\label{eq:current_density}
+\textbf{j} = \frac{I}{A}\hat{j}
+\end{equation}
+
+Supposing that our conductor has $n_v$ valence electrons per atom and a density of $N$ atoms per unit volume\footnote{The usual symbol $\rho$ is already spoken for in this context.}, we can relate the current density to the average velocity as:
+
+\begin{equation}
+\label{eq:current_density_velocity}
+\textbf{j} = -Nn_ve\textbf{v}_\text{av}
+\end{equation}
+
+Note that although the electrons have a non-zero average \textit{speed} according to eq. \ref{eq:thermal_energy} they are equally likely to be travelling in any direction. Thus the average \textit{velocity} and therefore current is zero. However, if we apply a voltage difference, and therefor an external field $\textbf{E}$ across the connductor, the electrons will experience a constant acceleration between collisions given by:
+
+\begin{equation}
+\label{eq:coulomb_accel}
+\textbf{a} = -\frac{e\textbf{E}}{m_e}
+\end{equation}
+
+\noindent... before being re--randomized. There will thus be an average velocity which will \textit{not} average out, given by\footnote{Since $v_f = a\tau$ and $v_i = 0$, $v_\text{av} = \frac{1}{2}a\tau$}:
+
+\begin{equation}
+\label{eq:drude_avg_velocity}
+\textbf{v} = \frac{a\tau}{2} = -\frac{eE\tau}{2}
+\end{equation}
+
+\noindent\ldots and the current density, eq. \ref{eq:current_density}, is therefore:
+
+\begin{equation}
+\label{eq:drude_ohms}
+\textbf{j} = \left(\frac{Nn_ve^2}{2m_e}\right)\textbf{E} \equiv \sigma\textbf{E}
+\end{equation}
+
+\noindent\ldots which \textbf{is} Ohm's law: namely that current is proportional to the Electric field. The constant of proportionality $\sigma$ is the conductivity from chapter 1 (i.e. the inverse of the resistivity $\rho = \sigma^{-1}$). Of course, that is not how we normally write Ohm's law. To see that it is indeed equivalent recall two facts: 
+\begin{enumerate}
+  \item Resistance through a chunk of material with resistivity $\rho$, cross-sectional area $A$ and length $L$ is $R = \rho\frac{L}{A}$.
+  \item A uniform electric field throughout a region of length $L$ corresponds to a voltage $V = EL$
+\end{enumerate}
+
+Then, equation \ref{eq:drude_ohms} becomes:
+
+$$
+\textbf{j} = \frac{I}{A} = \frac{V}{\rho L}
+$$
+
+\noindent \ldots so that 
+
+\begin{equation}
+\label{eq:drude_ohms2}
+V = I\left(\rho\frac{L}{A}\right) = IR
+\end{equation}
+
+Finally (for Physics 229 at least), we can predict use the mean free path of an electron to be rouhgly the interatomic spacing $l\approx a_0$\footnote{$a_0 \approx 0.5$~\AA~is the Bohr radius} and the fact that $l \approx v_\text{th}$ from equation \ref{eq:thermal_energy} to predict the temperature dependance of resistance. We will not go further with the Drude model -- you will get the chance in your solid state physics course, but we'll occasionally point to it when trying to understand the functionality of certain devices.
 
 \subsection{Intrinsic Semiconductors: electons and holes}
 Certain materials such as silicon are not metals\footnote{These are often classified as ``mettaloids'' on the periodic table} but can still under certain circumstances conduct electricity and are called \textit{semiconductors}. One such example, Silicon has 4 valence electrons (i.e. is tetravalent) and can form a tight lattice of covalent bonds with its four neighbors (see figure \ref{fig:SiLattice}). In this form these covalent bonds provide enough binding energy to localize the conduction electrons so that there is zero conductivity unless they are given extra energy. On the other hand, if we, through hook or crook, \textit{were} able to give tem more energy than this binding force, the electron would be free to zip around the crystal. This extra amount of energy required for a particular substance is called a ``band gap''\footnote{There is a lot we are glossing over here, but essentially, in a year or so you will learn about the ``band theory of materials''. If we plot the energy of an electrons that occupy the atom on a vertical, electrons in a Si atom just sitting around in their outer shell are in a range of energies called the ``valence band''. If they had enough energy to move freely, there would occupy the (first) ``conduction band''. The space between the two bands is thus called the band gap.}. 
@@ -1897,7 +1960,7 @@ Certain materials such as silicon are not metals\footnote{These are often classi
 
 The bandgap for typical semiconductors is typically on the order of an electron volt. For Silicon it is about 1.17~eV and for Germanim it is roughly 0.74~eV\footnote{... at very low temperatures. At higher temperatures the bandgap decreases slightly.}. What does this mean? It means that if you manage to give an electon a kick of extra energy equivalent to that it would get moving across 1.2~V, it would be freely moving along the solid. In doing so, it will leave a positively charged ``hole'' behind. An interesting consequence of these holes is that they behave identically to positive charge carriers propagating along the lattice. To see this consider figure \ref{fig:olez}. A neighboring electron can jump accross the small barrier into the positive hole. Similarly, another electron can jump into this newly formed hole. Although it is really the electrons moving around from atom to atom, the situation as a whole is as if there was a positively charged particle with charge $+q_e$ that is moving along the lattice. In semiconductor electronics we treat these holes as if they we real particles (sometimes we call them quasi-particles) and often speak of ``electron--hole pairs''.
 
-How maight we create electron--hole pairs? One way is to give an electron a boost by hitting it with a high energy photon. If we maintain a voltage across the Silicon, any free electrons will contribute to a current, giving roughly 1 electron per photon. This forms the basis of a type of light detector known as a photodiode. 
+How maight we create electron--hole pairs? One way is to give an electron a boost by hitting it with a high energy photon. If we maintain a voltage across the Silicon, any free electrons will contribute to a current, giving roughly 1 electron per photon. This forms the basis of a type of light detector known as a photodiode.
 
 Another way that an electron hole pair can be created is when the lattice imparts enough energy on its electrons via thermal vibrations. The mean energy is given by 
 \begin{equation}

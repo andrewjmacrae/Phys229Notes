@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.12)  2 AUG 2019 16:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.12)  6 AUG 2019 16:28
 entering extended mode
 **C:/Users/macrae/Documents/Teaching/Phys229/Phys229Notes/Phys229LectureNotes.t
 ex
@@ -1404,6 +1404,9 @@ LaTeX Warning: Label `fig:loadresistor' multiply defined.
 
 LaTeX Warning: Label `fig:loadresistor' multiply defined.
 
+
+LaTeX Warning: Label `eq:thermal_energy' multiply defined.
+
 )
 \openout1 = `Phys229LectureNotes.aux'.
 
@@ -2705,117 +2708,143 @@ LaTeX Warning: Marginpar on page 67 moved.
 
 LaTeX Warning: Marginpar on page 67 moved.
 
-<Images/SiLattice.png, id=971, 195.8517pt x 164.2938pt>
+
+LaTeX Warning: Marginpar on page 67 moved.
+
+
+LaTeX Warning: Marginpar on page 67 moved.
+
+
+LaTeX Warning: Marginpar on page 67 moved.
+
+
+LaTeX Warning: Marginpar on page 67 moved.
+
+[67]
+
+LaTeX Warning: Marginpar on page 68 moved.
+
+
+LaTeX Warning: Marginpar on page 68 moved.
+
+[68]
+
+LaTeX Warning: Marginpar on page 69 moved.
+
+
+LaTeX Warning: Marginpar on page 69 moved.
+
+<Images/SiLattice.png, id=997, 195.8517pt x 164.2938pt>
 File: Images/SiLattice.png Graphic file (type png)
 <use Images/SiLattice.png>
-Package pdftex.def Info: Images/SiLattice.png  used on input line 1893.
+Package pdftex.def Info: Images/SiLattice.png  used on input line 1956.
 (pdftex.def)             Requested size: 144.00455pt x 120.80086pt.
 
-LaTeX Warning: Marginpar on page 67 moved.
+LaTeX Warning: Marginpar on page 69 moved.
 
 
-LaTeX Warning: Marginpar on page 67 moved.
+LaTeX Warning: Marginpar on page 69 moved.
 
 
-LaTeX Warning: Marginpar on page 67 moved.
+LaTeX Warning: Marginpar on page 69 moved.
 
-[67 <./Images/SiLattice.png>]
-<Images/jumpin_hole.pdf, id=984, 144.13167pt x 186.57225pt>
+[69 <./Images/SiLattice.png>]
+<Images/jumpin_hole.pdf, id=1006, 144.13167pt x 186.57225pt>
 File: Images/jumpin_hole.pdf Graphic file (type pdf)
 <use Images/jumpin_hole.pdf>
-Package pdftex.def Info: Images/jumpin_hole.pdf  used on input line 1916.
+Package pdftex.def Info: Images/jumpin_hole.pdf  used on input line 1981.
 (pdftex.def)             Requested size: 144.00594pt x 186.4095pt.
- [68 <./Images/jumpin_hole.pdf>]
+ [70 <./Images/jumpin_hole.pdf>]
 
-LaTeX Warning: Marginpar on page 69 moved.
+LaTeX Warning: Marginpar on page 71 moved.
 
-<Images/SimpleAmplifier.pdf, id=1002, 113.25677pt x 41.17891pt>
+<Images/SimpleAmplifier.pdf, id=1023, 113.25677pt x 41.17891pt>
 File: Images/SimpleAmplifier.pdf Graphic file (type pdf)
 <use Images/SimpleAmplifier.pdf>
-Package pdftex.def Info: Images/SimpleAmplifier.pdf  used on input line 1963.
+Package pdftex.def Info: Images/SimpleAmplifier.pdf  used on input line 2027.
 (pdftex.def)             Requested size: 144.0073pt x 52.35945pt.
 
-LaTeX Warning: Marginpar on page 69 moved.
+LaTeX Warning: Marginpar on page 71 moved.
 
-[69
+[71
 
  <./Images/SimpleAmplifier.pdf>]
-<Images/RealAmplifier_int.pdf, id=1018, 186.64037pt x 119.18077pt>
+<Images/RealAmplifier_int.pdf, id=1039, 186.64037pt x 119.18077pt>
 File: Images/RealAmplifier_int.pdf Graphic file (type pdf)
 <use Images/RealAmplifier_int.pdf>
-Package pdftex.def Info: Images/RealAmplifier_int.pdf  used on input line 1976.
+Package pdftex.def Info: Images/RealAmplifier_int.pdf  used on input line 2040.
 
 (pdftex.def)             Requested size: 144.0097pt x 91.95859pt.
-<Images/RealAmplifier_int_out.pdf, id=1020, 207.81477pt x 119.2374pt>
+<Images/RealAmplifier_int_out.pdf, id=1041, 207.81477pt x 119.2374pt>
 File: Images/RealAmplifier_int_out.pdf Graphic file (type pdf)
 <use Images/RealAmplifier_int_out.pdf>
-Package pdftex.def Info: Images/RealAmplifier_int_out.pdf  used on input line 1
-988.
+Package pdftex.def Info: Images/RealAmplifier_int_out.pdf  used on input line 2
+052.
 (pdftex.def)             Requested size: 144.00116pt x 82.6232pt.
- [70 <./Images/RealAmplifier_int.pdf> <./Images/RealAmplifier_int_out.pdf
+ [72 <./Images/RealAmplifier_int.pdf> <./Images/RealAmplifier_int_out.pdf
 
 pdfTeX warning: pdflatex (file ./Images/RealAmplifier_int_out.pdf): PDF inclusi
 on: multiple pdfs with page group included in a single page
 >]
-<Images/amp_example.pdf, id=1045, 512.66295pt x 125.31184pt>
+<Images/amp_example.pdf, id=1066, 512.66295pt x 125.31184pt>
 File: Images/amp_example.pdf Graphic file (type pdf)
 <use Images/amp_example.pdf>
-Package pdftex.def Info: Images/amp_example.pdf  used on input line 2012.
+Package pdftex.def Info: Images/amp_example.pdf  used on input line 2076.
 (pdftex.def)             Requested size: 311.99644pt x 76.26227pt.
- [71 <./Images/amp_example.pdf>]
+ [73 <./Images/amp_example.pdf>]
 
-LaTeX Warning: Marginpar on page 72 moved.
+LaTeX Warning: Marginpar on page 74 moved.
 
 
-LaTeX Warning: Marginpar on page 72 moved.
+LaTeX Warning: Marginpar on page 74 moved.
 
-[72]
-<Images/differential_amplifier.pdf, id=1113, 201.94751pt x 65.1425pt>
+[74]
+<Images/differential_amplifier.pdf, id=1135, 201.94751pt x 65.1425pt>
 File: Images/differential_amplifier.pdf Graphic file (type pdf)
 <use Images/differential_amplifier.pdf>
 Package pdftex.def Info: Images/differential_amplifier.pdf  used on input line 
-2054.
+2118.
 (pdftex.def)             Requested size: 144.00618pt x 46.45227pt.
- [73 <./Images/differential_amplifier.pdf>] [74]
-<Images/simple_feedback.pdf, id=1140, 308.18745pt x 77.17336pt>
+ [75 <./Images/differential_amplifier.pdf>] [76]
+<Images/simple_feedback.pdf, id=1161, 308.18745pt x 77.17336pt>
 File: Images/simple_feedback.pdf Graphic file (type pdf)
 <use Images/simple_feedback.pdf>
-Package pdftex.def Info: Images/simple_feedback.pdf  used on input line 2107.
+Package pdftex.def Info: Images/simple_feedback.pdf  used on input line 2171.
 (pdftex.def)             Requested size: 312.02869pt x 78.13522pt.
- [75
+ [77
 
- <./Images/simple_feedback.pdf>] [76]
-<Images/feedback_time_dep.png, id=1161, 501.875pt x 211.79124pt>
+ <./Images/simple_feedback.pdf>] [78]
+<Images/feedback_time_dep.png, id=1182, 501.875pt x 211.79124pt>
 File: Images/feedback_time_dep.png Graphic file (type png)
 <use Images/feedback_time_dep.png>
-Package pdftex.def Info: Images/feedback_time_dep.png  used on input line 2134.
+Package pdftex.def Info: Images/feedback_time_dep.png  used on input line 2198.
 
 (pdftex.def)             Requested size: 144.00076pt x 60.76831pt.
 
 Underfull \vbox (badness 1348) has occurred while \output is active []
 
- [77 <./Images/feedback_time_dep.png>]
-<Images/inv_noninv_opamps.pdf, id=1171, 296.90186pt x 109.42271pt>
+ [79 <./Images/feedback_time_dep.png>]
+<Images/inv_noninv_opamps.pdf, id=1193, 296.90186pt x 109.42271pt>
 File: Images/inv_noninv_opamps.pdf Graphic file (type pdf)
 <use Images/inv_noninv_opamps.pdf>
-Package pdftex.def Info: Images/inv_noninv_opamps.pdf  used on input line 2170.
+Package pdftex.def Info: Images/inv_noninv_opamps.pdf  used on input line 2234.
 
 (pdftex.def)             Requested size: 312.02342pt x 114.99574pt.
- [78 <./Images/inv_noninv_opamps.pdf>] [79]
-<Images/differentiator_opamp.pdf, id=1202, 275.06148pt x 85.46504pt>
+ [80 <./Images/inv_noninv_opamps.pdf>] [81]
+<Images/differentiator_opamp.pdf, id=1223, 275.06148pt x 85.46504pt>
 File: Images/differentiator_opamp.pdf Graphic file (type pdf)
 <use Images/differentiator_opamp.pdf>
-Package pdftex.def Info: Images/differentiator_opamp.pdf  used on input line 22
-42.
+Package pdftex.def Info: Images/differentiator_opamp.pdf  used on input line 23
+06.
 (pdftex.def)             Requested size: 312.03299pt x 96.95255pt.
- [80 <./Images/differentiator_opamp.pdf>]
-<Images/integrator_opamp.pdf, id=1221, 439.96214pt x 81.43077pt>
+ [82 <./Images/differentiator_opamp.pdf>]
+<Images/integrator_opamp.pdf, id=1242, 439.96214pt x 81.43077pt>
 File: Images/integrator_opamp.pdf Graphic file (type pdf)
 <use Images/integrator_opamp.pdf>
-Package pdftex.def Info: Images/integrator_opamp.pdf  used on input line 2272.
+Package pdftex.def Info: Images/integrator_opamp.pdf  used on input line 2336.
 (pdftex.def)             Requested size: 312.01279pt x 57.74915pt.
 
-Overfull \hbox (4.23482pt too wide) detected at line 2281
+Overfull \hbox (4.23482pt too wide) detected at line 2345
 \OML/zplm/m/it/10 v[] \OT1/zplm/m/n/10 = \OMS/zplm/m/n/10  [] [] []\OT1/zplm/m/
 n/10 (\OML/zplm/m/it/10 !t\OT1/zplm/m/n/10 )\OML/zplm/m/it/10 dt \OT1/zplm/m/n/
 10 = [] [](\OML/zplm/m/it/10 !t\OT1/zplm/m/n/10 ) \OMS/zplm/m/n/10  \OT1/pplx/
@@ -2823,31 +2852,31 @@ m/n/10 0.637 []\OML/zplm/m/it/10 V []\OT1/zplm/m/n/10 (\OT1/pplx/m/n/10 2\OML/z
 plm/m/it/10  \OMS/zplm/m/n/10  \OT1/pplx/m/n/10 5 [][]\OT1/zplm/m/n/10 )
  []
 
-[81 <./Images/integrator_opamp.pdf>]
-<Images/windup_error.png, id=1238, 501.875pt x 211.79124pt>
+[83 <./Images/integrator_opamp.pdf>]
+<Images/windup_error.png, id=1259, 501.875pt x 211.79124pt>
 File: Images/windup_error.png Graphic file (type png)
 <use Images/windup_error.png>
-Package pdftex.def Info: Images/windup_error.png  used on input line 2292.
+Package pdftex.def Info: Images/windup_error.png  used on input line 2356.
 (pdftex.def)             Requested size: 144.00076pt x 60.76831pt.
- [82 <./Images/windup_error.png>] [83
+ [84 <./Images/windup_error.png>] [85
 
 ]
-[84
-
-] [85] [86
+[86
 
 ] [87] [88
 
+] [89] [90
+
 ] (Phys229LectureNotes.bbl)
 No file Phys229LectureNotes.ind.
-[89
+[91
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2315.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2315.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2379.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2379.
  (Phys229LectureNotes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2315.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2315.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2379.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2379.
 
 Package rerunfilecheck Info: File `Phys229LectureNotes.out' has not changed.
 (rerunfilecheck)             Checksum: 4200DB549C7404F95D4C7A3E0B22492A;10509.
@@ -2855,13 +2884,13 @@ Package rerunfilecheck Info: File `Phys229LectureNotes.out' has not changed.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2315.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2379.
  ) 
 Here is how much of TeX's memory you used:
- 39113 strings out of 492895
- 754082 string characters out of 3123268
- 928239 words of memory out of 3000000
- 42051 multiletter control sequences out of 15000+200000
+ 39131 strings out of 492895
+ 754351 string characters out of 3123268
+ 928749 words of memory out of 3000000
+ 42058 multiletter control sequences out of 15000+200000
  639233 words of font info for 159 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,13n,93p,1578b,1042s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2882,9 +2911,9 @@ ype1/urw/helvetic/uhvr8a.pfb><C:/Users/macrae/AppData/Local/Programs/MiKTeX 2.9
 /fonts/type1/urw/palatino/uplb8a.pfb><C:/Users/macrae/AppData/Local/Programs/Mi
 KTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Users/macrae/AppData/Local/Pro
 grams/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Phys229LectureNotes.pdf (89 pages, 9119644 bytes).
+Output written on Phys229LectureNotes.pdf (91 pages, 9128323 bytes).
 PDF statistics:
- 1390 PDF objects out of 1440 (max. 8388607)
- 308 named destinations out of 1000 (max. 500000)
+ 1414 PDF objects out of 1440 (max. 8388607)
+ 319 named destinations out of 1000 (max. 500000)
  3807 words of extra memory for PDF output out of 10000 (max. 10000000)
 
