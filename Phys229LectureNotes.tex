@@ -1990,7 +1990,73 @@ What happens then when we increase the temperature significantly or bombard the 
 \section{Semiconductor Diodes}
 - TODO -
 \section{Diode Circuit Analysis}
-- TODO -
+In circuit analysis using diodes, the details included in the Shockley diode equation are rarely of significance and we can use the simplified, step function approach. The key to analysis is as follows: if the potential placed across the diode is above the diode drop voltage $d_{dd}$, then the diode acts like an ideal EMF having potential difference $V = -V_{dd}$ opposing the current. If not, the diode acts like a voltage source equal and opposite the applied voltage:
+
+\begin{equation}
+\label{eq:effective_diode_source}
+    V_{diode}=
+    \begin{cases}
+      -V_\text{in}, & \text{if}\ V\le V_\text{dd} \\
+      -V_\text{dd}, & \text{otherwise}
+    \end{cases}
+  \end{equation}
+
+The first question to ask is: will current flow. If so, then the amount of current that flows can be determined via Kirchhoff's laws.
+
+\begin{marginfigure}
+  \includegraphics[]{simple_diode_ex}
+  \caption{Simple diode example.}
+  \label{fig:simple_diode_ex}
+\end{marginfigure}
+
+
+\begin{myexample}[label = ex:simple_diode]{Simple diode example.}
+Determine the power dissipated in the resistor in figure \ref{fig:simple_diode_ex} for: $V_\text{in} = $ (a) 500~mV, (b) -3~V, and (c) 2~V. Assume that the diode voltage drop is 0.7~V.
+\Solution
+(a) Here we must determine if the voltage across the diode is greater that the voltage drop. You might see right away that the battery doesn't have enough kick, but we can formalise this. From Kirchhoff's laws the sum of the voltage dropped across the diode plus the voltage dropped across the resistor ($iR$) must sum to 0.5~V. The maximum voltage across the diode occurs when no current flows through the resistor (the diode then must drop all the voltage by it itself). In this case there si only 0.5~V dropped and by equation \ref{eq:effective_diode_source}, the diode acts like a -0.5~V battery. No current flows in the circuit and thpower dissipated in the resistor is zero.
+
+(b) Here there is current being driven the opposite way. Again, current flowing across the resistor will only lessen the load on the diode and so there is, at zero current -3~V across the diode. Careful though! Although the magnitude is above $V_\text{dd}$ the direction is wrong - -3~V is certainly less than +0.7~V and so again by eq. \ref{eq:effective_diode_source} the diode acts like a battery with voltage +3~V, no current flows and so no power is dissipated.
+
+(c) We begin the same way: If there is no current, the voltage across the diode is 2~V, which \textit{is} greater than $V_\text{dd}$. Finally, something interesting! Here, equation \ref{eq:effective_diode_source} tells us that the diode acts like a battery with $V=-0.7V$. From Kirchhoff's voltage law, the voltage across the resistor is then $V_R = 2~V-0.7~V = 1.3~V$. From Ohm's law, we see that there is $i = V_R/R = 1.3~V/650~\Omega = 2$~mA of current flowing through the circuit. The power dissipated in the resistor is:
+$$
+P = iV_R = \left(2.0~\text{mA}\right)\times\left(1.3~\text{V}\right) = 2.6~\text{mW}
+$$
+
+\textit{Bonus Question: How much power is dissipated in the diode?}
+\end{myexample}
+
+The previous example contains the essential way we think about diodes in this course. However we can easily come up with more complicated (but highly realistic) scenarios. For example, what happens when you place several diodes in series? In this case, each diode can drop at most $V_\text{dd}$ voltage before it starts conducting, but since each in series there is only one path for the current to take, there must be enough voltage left after the first voltage drop to overcome the remainder of the barriers. If you have an AC signal as an input, there can be times where the diode conducts and other times when it does not. In this case it helps to break the circuit up into cases. The next example shows how to del with some of these issues.
+
+
+\begin{marginfigure}
+  \includegraphics[]{less_simple_diode_ex}
+  \caption{Less simple diode example.}
+  \label{fig:less_simple_diode_ex}
+\end{marginfigure}
+
+\begin{myexample}[label = ex:less_simple_diode]{Less Simple diode example.}
+Over what voltage range(s) does current flow in the circuit of figure \ref{fig:less_simple_diode_ex}? Assume that each diode has $v_\text{dd} = 0.7$~V.
+\Solution
+Here, we have an AC supply which can be either positive or negative (To remove ambiguity, we've labelled clockwise current as positive here.) Whenever the voltage is positive, there is no way that current will flow through the rightmost diode. The middle section \textbf{will} conduct whenever we have enough to overcome the potential barrier from both diodes. Here that is $2v_\text{dd} = 1.4$~V. Thus current flows when 
+
+$$
+V>1.4~\text{V}
+$$
+For negative voltages, the middle section always acts like an open circuit and current flows whenever the right most voltage has more than 0.7~V across it. Since this corresponds to counterclockwise current this is a negative voltage as per our labeling:
+$$
+V<-0.7~\text{V}
+$$
+
+Thus, abusing notation slightly, current flows whenever:
+$$
+-0.7~\text{V} > V > 1.4~V
+$$
+
+\textit{Bonus Challenge: Sketch the voltage dropped across the resistor and the total voltage on the same plot for a 4~V peak-to-peak sine wave.}
+\end{myexample}
+
+\subsection{Diode Based Rectification Circuits}
+
 \section{Specialized Diodes}
 - TODO -
 \section{Sneek Peek Ahead: Transistors}
