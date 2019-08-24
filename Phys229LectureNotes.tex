@@ -818,7 +818,7 @@ P = I^2_\text{max}R_s = I_\text{max}V\text{ideal} = 6~\text{A}\times9~\text{V} =
 $$
 \end{myexample}
 
-\noindent  \textcolor{red}{\textbf{WARNING}}: This is why you never short a battery. The very high resultant current is now being dissipated by the internal resistance $R_s$ resulting in a lot of heat. This can cause a battery to explode or catch fire (see youtube for fun videos of this).
+\noindent  \textcolor{red}{\textbf{WARNING}}: This is why you never short-out a battery\footnote(i.e. why you never connect the terminals directly with a wire.}. The very high resultant current is now being dissipated by the internal resistance $R_s$ resulting in a lot of heat. This can cause a battery to explode or catch fire (see youtube for fun videos of this).
 
 \subsection{Electromotive Force (EMF)}
 There are an number of terms you will come across in the lab when dealing with sources. Among these is electromotive force (EMF) often written as $\mathcal{E}$. EMF is formally defined as maximum work available per charge when moving from position $\textbf{r}_A$ to $\textbf{r}_B$ along a path $\Gamma$:
@@ -1537,7 +1537,7 @@ Thus we can treat the response of a capacitor in an AC circuit as sort of genera
 \section{Inductance}
 We have just seen that capacitors provide an impedance which decreases with frequency, varying inversely ($\vert Z \vert \propto \omega^{-1}$). In the process, they store energy in the electric field. There exist another class of components known as \textbf{inductors} whose impedance increases linearly with frequency and function by storing energy in the magnetic field.
 
-The physics of an inductor stems from the phenomenon of self-inductance. Recall that Faraday's law of induction states that a change in flux of a magnetic field through a circuit will result in an EMF which is given precisely as the time derivative of a magnetic field. Recall also that the Biot-Savard law states that whenever a current passes through a wire, a rotational magnetic field is formed around the wire. When current is passed through a wire wound coil, a large magnetic field is created (B-S law), and this in turn creates an EMF which opposes the current (Fs law). This phenomenon is know as ``self-inductance''.
+The physics of an inductor stems from the phenomenon of self-inductance. Recall that Faraday's law of induction states that a change in flux of a magnetic field through a circuit will result in an EMF which is given precisely as the time derivative of a magnetic field. Recall also that the Biot-Savard law states that whenever a current passes through a wire, a rotational magnetic field is formed around the wire. When current is passed through a wire wound coil, a large magnetic field is created (Biot-Savard law), and this in turn creates an EMF which opposes the current (Faradays law). This phenomenon is know as ``self-inductance''.
 
 An inductor is thus merely a wire bend into a geometry which creates a given flux for a given current. Often the coil is wrapped around a ferromagnet to increase the magnetic flux. Since Biot-Savard law gives us a direct relation between magnetic flux and current, we can write characterize the effect of an inductor in terms of currents and voltages, bypassing descriptions of electromagnetic fields, as in equation \ref{def:capacitance}:
 
@@ -2056,7 +2056,7 @@ $$
 \end{myexample}
 
 \subsection{Diode Based Rectification Circuits}
-
+One of the primaray applicatitions of diodes is ``rectification''. Rectification basically means that we take an AC voltage and produce a DC voltage. More loosely, we take a voltage that can be positive and negative and produce an output that is purely positive\footnote{\ldots or purely negative.}. The simplest such circuit is the \textit} shown in figure 
 \section{Specialized Diodes}
 - TODO -
 \section{Sneek Peek Ahead: Transistors}
