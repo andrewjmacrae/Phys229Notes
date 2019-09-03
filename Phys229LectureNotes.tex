@@ -818,7 +818,7 @@ P = I^2_\text{max}R_s = I_\text{max}V\text{ideal} = 6~\text{A}\times9~\text{V} =
 $$
 \end{myexample}
 
-\noindent  \textcolor{red}{\textbf{WARNING}}: This is why you never short-out a battery\footnote(i.e. why you never connect the terminals directly with a wire.}. The very high resultant current is now being dissipated by the internal resistance $R_s$ resulting in a lot of heat. This can cause a battery to explode or catch fire (see youtube for fun videos of this).
+\noindent  \textcolor{red}{\textbf{WARNING}}: This is why you never short-out a battery\footnote{i.e. why you never connect the terminals directly with a wire.}. The very high resultant current is now being dissipated by the internal resistance $R_s$ resulting in a lot of heat. This can cause a battery to explode or catch fire (see youtube for fun videos of this).
 
 \subsection{Electromotive Force (EMF)}
 There are an number of terms you will come across in the lab when dealing with sources. Among these is electromotive force (EMF) often written as $\mathcal{E}$. EMF is formally defined as maximum work available per charge when moving from position $\textbf{r}_A$ to $\textbf{r}_B$ along a path $\Gamma$:
@@ -1960,7 +1960,7 @@ Certain materials such as silicon are not metals\footnote{These are often classi
 
 The bandgap for typical semiconductors is typically on the order of an electron volt. For Silicon it is about 1.17~eV and for Germanim it is roughly 0.74~eV\footnote{... at very low temperatures. At higher temperatures the bandgap decreases slightly.}. What does this mean? It means that if you manage to give an electon a kick of extra energy equivalent to that it would get moving across 1.2~V, it would be freely moving along the solid. In doing so, it will leave a positively charged ``hole'' behind. An interesting consequence of these holes is that they behave identically to positive charge carriers propagating along the lattice. To see this consider figure \ref{fig:olez}. A neighboring electron can jump accross the small barrier into the positive hole. Similarly, another electron can jump into this newly formed hole. Although it is really the electrons moving around from atom to atom, the situation as a whole is as if there was a positively charged particle with charge $+q_e$ that is moving along the lattice. In semiconductor electronics we treat these holes as if they we real particles (sometimes we call them quasi-particles) and often speak of ``electron--hole pairs''.
 
-How maight we create electron--hole pairs? One way is to give an electron a boost by hitting it with a high energy photon. If we maintain a voltage across the Silicon, any free electrons will contribute to a current, giving roughly 1 electron per photon. This forms the basis of a type of light detector known as a photodiode.
+How might we create electron--hole pairs? One way is to give an electron a boost by hitting it with a high energy photon. If we maintain a voltage across the Silicon, any free electrons will contribute to a current, giving roughly 1 electron per photon. This forms the basis of a type of light detector known as a photodiode.
 
 Another way that an electron hole pair can be created is when the lattice imparts enough energy on its electrons via thermal vibrations. The mean energy is given by 
 \begin{equation}
@@ -1984,7 +1984,10 @@ What happens then when we increase the temperature significantly or bombard the 
 \end{marginfigure}
 
 \subsection{Doped Semiconductors: N-type an P-type}
-- TODO -
+Although the sharp temperature dependance of semiconductor conductivity is interesting, it is not terribly usefull in and of itself. First, temperature control within an circuit is a notorious pain and for the most part, you try to design circuits which are \textit{temperature insensitive}. Next, even if we take a blowtorch to our circuit the cinductivity remains too low to be very useful. Fortunately, nature has given us a very convenient trick known as \textbf{doping}.
+
+Recalling that Silicon is tetravalent and forms these beautiful covalent bond-based lattices, what happens if we put a trivalent or pentavalent atom which is nearby on the periodic table\footnote{\ldots or is roughly the same size.} within the lattice? For example, suppose we place a Boron atom, having 5 electrons in between a bunch of Silicon atoms. The extra "impurity" atom will fit right into the lattice and can use 4 of its 5 valence electrons to form a covalent bond with its neighbors. But what about the fith valence electron?
+
 \subsection{PN Junctions}
 - TODO -
 \section{Semiconductor Diodes}
@@ -2056,7 +2059,7 @@ $$
 \end{myexample}
 
 \subsection{Diode Based Rectification Circuits}
-One of the primaray applicatitions of diodes is ``rectification''. Rectification basically means that we take an AC voltage and produce a DC voltage. More loosely, we take a voltage that can be positive and negative and produce an output that is purely positive\footnote{\ldots or purely negative.}. The simplest such circuit is the \textit} shown in figure 
+One of the primaray applicatitions of diodes is ``rectification''. Rectification basically means that we take an AC voltage and produce a DC voltage. More loosely, we take a voltage that can be positive and negative and produce an output that is purely positive\footnote{\ldots or purely negative.}. The simplest such circuit is the \textit{half-wave rectifier} shown in figure  XXX.
 \section{Specialized Diodes}
 - TODO -
 \section{Sneek Peek Ahead: Transistors}
