@@ -1950,7 +1950,7 @@ V = I\left(\rho\frac{L}{A}\right) = IR
 Finally (for Physics 229 at least), we can predict use the mean free path of an electron to be rouhgly the interatomic spacing $l\approx a_0$\footnote{$a_0 \approx 0.5$~\AA~is the Bohr radius} and the fact that $l \approx v_\text{th}$ from equation \ref{eq:thermal_energy} to predict the temperature dependance of resistance. We will not go further with the Drude model -- you will get the chance in your solid state physics course, but we'll occasionally point to it when trying to understand the functionality of certain devices.
 
 \subsection{Intrinsic Semiconductors: electons and holes}
-Certain materials such as silicon are not metals\footnote{These are often classified as ``mettaloids'' on the periodic table} but can still under certain circumstances conduct electricity and are called \textit{semiconductors}. One such example, Silicon has 4 valence electrons (i.e. is tetravalent) and can form a tight lattice of covalent bonds with its four neighbors (see figure \ref{fig:SiLattice}). In this form these covalent bonds provide enough binding energy to localize the conduction electrons so that there is zero conductivity unless they are given extra energy. On the other hand, if we, through hook or crook, \textit{were} able to give tem more energy than this binding force, the electron would be free to zip around the crystal. This extra amount of energy required for a particular substance is called a ``band gap''\footnote{There is a lot we are glossing over here, but essentially, in a year or so you will learn about the ``band theory of materials''. If we plot the energy of an electrons that occupy the atom on a vertical, electrons in a Si atom just sitting around in their outer shell are in a range of energies called the ``valence band''. If they had enough energy to move freely, there would occupy the (first) ``conduction band''. The space between the two bands is thus called the band gap.}. 
+Certain materials such as silicon are not metals\footnote{These are often classified as ``mettaloids'' on the periodic table} but can still under certain circumstances conduct electricity and are called \textit{semiconductors}. One such example, Silicon has 4 valence electrons (i.e. is tetravalent) and can form a tight lattice of covalent bonds with its four neighbors (see figure \ref{fig:SiLattice}). In this form these covalent bonds provide enough binding energy to localize the conduction electrons so that there is zero conductivity unless they are given extra energy. On the other hand, if we, through hook or crook, \textit{were} able to give them more energy than this binding force, the electron would be free to zip around the crystal. This extra amount of energy required for a particular substance is called a ``band gap''\footnote{There is a lot we are glossing over here, but essentially, in a year or so you will learn about the ``band theory of materials''. If we plot the energy of an electrons that occupy the atom on a vertical, electrons in a Si atom just sitting around in their outer shell are in a range of energies called the ``valence band''. If they had enough energy to move freely, there would occupy the (first) ``conduction band''. The space between the two bands is thus called the band gap.}. 
 
 \begin{marginfigure}%
   \includegraphics[]{SiLattice}
@@ -1973,7 +1973,7 @@ U_{th} = k_BT
 Pr(E) \propto \frac{1}{1+e^{E/k_BT}}
 \end{equation}
 
-\noindent At room temperature, $k_BT\approx 1/40$~eV and there are enough free electron-hole pairs to make Si a reasonable conductor, while as $T\rightarrow0$~K, the number of free electrons vanishes. THus semiconductors thus have a resistance with very sharp dependance on temperature. 
+\noindent At room temperature, $k_BT\approx 1/40$~eV and there are enough free electron-hole pairs to make Si a reasonable conductor, while as $T\rightarrow0$~K, the number of free electrons vanishes. Thus semiconductors thus have a resistance with very sharp dependance on temperature. 
 
 What happens then when we increase the temperature significantly or bombard the semiconductor with photons? At some point there will be so many electron-hole pairs that it is very likely that many will collide. When this happens we say that the electron-hole pair annihilate one another in a phenomenon known as ``recombination''.
 
@@ -1986,12 +1986,27 @@ What happens then when we increase the temperature significantly or bombard the 
 \subsection{Doped Semiconductors: N-type an P-type}
 Although the sharp temperature dependance of semiconductor conductivity is interesting, it is not terribly usefull in and of itself. First, temperature control within an circuit is a notorious pain and for the most part, you try to design circuits which are \textit{temperature insensitive}. Next, even if we take a blowtorch to our circuit the cinductivity remains too low to be very useful. Fortunately, nature has given us a very convenient trick known as \textbf{doping}.
 
-Recalling that Silicon is tetravalent and forms these beautiful covalent bond-based lattices, we can try to put a similar atom \footnote{i.e. an atom that is nearby on the periodic table, and has roughly the same size.} If the atom is trivalent (three valence electrons) or pentavalent (5 valence electrons) the atom is still able to form the bond with the neighboring Silicon, but will have one fewer or one extra electron. For example, suppose we place a Phosphorous "impurity" atom, having 5 electrons in between a bunch of Silicon atoms. The impurity atom will fit right into the lattice and can use 4 of its 5 valence electrons to form a covalent bond with its neighbors. Of course it still has an extra electron kicking around and interesting, it will be heavily shielded from the shell. For example, whereas a single electron in a Hydrogen atom is held in a potential well of $-13.6$~eV, the extra Phosphorous electron will be held by a shallow -0.1~eV well, over 100 times less! This weakly bound electron will very easily leave its original home and wander freely through the lattice, leaving a small potential well behind. 
+\begin{marginfigure}%
+  \includegraphics[]{SC_Dope}
+  \caption{a) Silicon, which is tetravalent may be ``doped'' by either trivalent impurity atoms such as Boron, or by pentavalent atoms, such as Phosphorous. b) When doped with Phosphorous, the extra electron gives a mobile negative charge, yeilding an N-type semiconductor. c) When doped with Boron, positive ``holes'' are formed resulting in a P-Type semiconductor is formed as }
+  \label{fig:lance_armstrong}
+\end{marginfigure}
 
-A similar 
+Recalling that Silicon is tetravalent and forms these beautiful covalent bond-based lattices, we can try to put a similar atom \footnote{i.e. an atom that is nearby on the periodic table, and has roughly the same size.} If the atom is trivalent (three valence electrons) or pentavalent (5 valence electrons, see figure \ref{fig:lance_armstrong}a) the atom is still able to form the bond with the neighboring Silicon, but will have one fewer or one extra electron. 
+
+Suppose we place a Phosphorous "impurity" atom, having 5 electrons in between a bunch of Silicon atoms. The impurity atom will fit right into the lattice and can use 4 of its 5 valence electrons to form a covalent bond with its neighbors (see figure \ref{fig:lance_armstrong}c). Of cou0rse it still has an extra electron kicking around and interesting, it will be heavily shielded from the shell. For example, whereas a single electron in a Hydrogen atom is held in a potential well of $-13.6$~eV, the extra Phosphorous electron will be held by a shallow -0.1~eV well, over 100 times less! This weakly bound electron will very easily leave its original home and wander freely through the lattice, leaving a small potential well behind.
+
+A similar behaviour exists when a Boron is used as the impurity atom, but now three of its electrons will form a bond, leaving a small potential well for electrons to fall into as in figure \ref{fig:olez}. When this occurs, the Boron gains a net negative charge and ``donates'' a positive hole. Since the donor here is positive, this is called a P-Type semiconductor.
+
+Typical doping densities are on the order of one part in $10^7$. Despite this, there are \textit{far} more free charge carriers in a doped semiconductor as compared to pure Si. For example, at room temperature, the density of electron hole pairs in pure Si is about $10^{10}~\text{cm}^{-3}$. In contrast, the same volume of doped semiconductor will have about $10\times N_A \approx 10^{24}$ atoms and thus, with standard dopant concentration, $10^{24}\times10^{-7} = 10^{17}$ carriers, more than one million times as much!
+
+For this reason, the charge carriers resulting from doping are called the ``majority carriers'' while the intrisic electrons from the pure silicon are called the ``minority carriers''. Thus, in P-type semiconductors, holes are the majority carriers, while electrons are the minority carriers. In an N-type semiconductor, the situation is reversed: electrons are the majority carriers, and holes are the minority carriers.
 
 \subsection{PN Junctions}
-- TODO -
+The temperature dependance of conductivity for pure Si is a neat trick and the fact that we can greatly engineer and enhance it with doping is borderline useful, but the real magic happens when we combine P-type and N-Tyoe semiconductors at a so-call P-N junction.
+
+
+
 \section{Semiconductor Diodes}
 - TODO -
 \section{Diode Circuit Analysis}
