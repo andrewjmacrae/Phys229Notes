@@ -260,7 +260,7 @@ A key concept is that of electrical ground, often called \textit{ground}, or ``e
 
 The name ground is quite literal -- it is often connected to a large stake driven into the Earth (fig. \ref{fig:ground_ref}a. The reason for this is that the (literal) ground provides a very large neutral body which whose potential will not change even when large amount of current are flowing into it. This would not be the case for a small metal plate which would develop a large charge imbalance and thus acquire a positive voltage. It is important to note that although not explicitly drawn, all ground connections are connected as if by a physical wire. 
 
-The potential of the dirt outside your window need not be the reference voltage for $V=0$. Devices powered by a battery are clearly not connected physically to earth ground. Such devices are said to be \textit{floating} and the ground is often defined as the negative terminal of the battery. The term floating means that while the voltage \textbf{differences} are well defined along the circuit, their \textbf{absolute value} compared to an external reference are not and thus the ground level of two separate devices may float around with respect to one another. This can cause a significant danger when two floating devices are connected: since they do not have a common value for ground, they high potential differences between the two devices can exist which will damage the device. 
+The potential of the dirt outside your window need not be the reference voltage for $V=0$. Devices powered by a battery are clearly not connected physically to earth ground. Such devices are said to be \textit{floating} and the ground is often defined as the negative terminal of the battery. The term floating means that while the voltage \textbf{differences} are well defined along the circuit, their \textbf{absolute value} compared to an external reference are not and thus the ground level of two separate devices may float around with respect to one another. This can cause a significant danger when two floating devices are connected: since they do not have a common value for ground, high potential differences between the two devices can exist which will damage the device. 
 
 \section{Wires, conductors, and insulators}
 Just as masses in a gravitational potential will tend to accelerate to the lower potential, so to will current flow from a higher to a lower potential. To do so however, they charges need a path. As electrons are typically bound to their atoms via the coulomb force, they are typically sitting in their own potential well. This is why current isn't spontaneously flowing from one terminal of a battery to the other despite having a potential difference. Note however that if a sufficiently strong voltage is applied current will flow - even in vacuum. Certain materials however have electronic structure such that an individual electron is not bound to a particular atom and is free to move along an atomic ensemble, as long as it is replaced by another. These materials, known as conductors form the basis of electronic conductors. As long as one conductor maintains good contact with another, current may flow freely between them. The ease by which current flows is parametrized by the \textit{conductance} $\rho$ and has units of Siemens per meter.
@@ -1507,7 +1507,7 @@ Typical values for capacitance that you will encounter in the lab are pF, nF, $\
 
 \noindent Supercaps fall into several categories: From wikipedia:
 
-\noindent\textbf{Electrostatic double-layer capacitors} use carbon electrodes or derivatives with much higher electrostatic double-layer capacitance than electrochemical pseudocapacitance, achieving separation of charge in a Helmholtz double layer at the interface between the surface of a conductive electrode and an electrolyte. The separation of charge is of the order of a few \r{A}ngströms (0.3--0.8 nm), much smaller than in a conventional capacitor.
+\noindent\textbf{Electrostatic double-layer capacitors} use carbon electrodes or derivatives with much higher electrostatic double-layer capacitance than electrochemical pseudocapacitance, achieving separation of charge in a Helmholtz double layer at the interface between the surface of a conductive electrode and an electrolyte. The separation of charge is of the order of a few \r{A}ngstr{\"o}ms (0.3--0.8 nm), much smaller than in a conventional capacitor.
 
 \noindent\textbf{Electrochemical pseudocapacitors} use metal oxide or conducting polymer electrodes with a high amount of electrochemical pseudocapacitance additional to the double-layer capacitance. Pseudocapacitance is achieved by Faradaic electron charge-transfer with redox reactions, intercalation or electrosorption.
 
@@ -1983,7 +1983,7 @@ What happens then when we increase the temperature significantly or bombard the 
   \label{fig:olez}
 \end{marginfigure}
 
-\subsection{Doped Semiconductors: N-type an P-type}
+\subsection{Extrinsic Semiconductors: N-type an P-type Doping}
 Although the sharp temperature dependance of semiconductor conductivity is interesting, it is not terribly usefull in and of itself. First, temperature control within an circuit is a notorious pain and for the most part, you try to design circuits which are \textit{temperature insensitive}. Next, even if we take a blowtorch to our circuit the cinductivity remains too low to be very useful. Fortunately, nature has given us a very convenient trick known as \textbf{doping}.
 
 \begin{marginfigure}%
@@ -2006,6 +2006,17 @@ For this reason, the charge carriers resulting from doping are called the ``majo
 The temperature dependance of conductivity for pure Si is a neat trick and the fact that we can greatly engineer and enhance it with doping is borderline useful, but the real magic happens when we combine P-type and N-Tyoe semiconductors at a so-call P-N junction.
 
 
+=======
+Recalling that Silicon is tetravalent and forms these beautiful covalent bond-based lattices, we can try to put a similar atom \footnote{i.e. an atom that is nearby on the periodic table, and has roughly the same size.} If the atom is trivalent (three valence electrons) or pentavalent (5 valence electrons) the atom is still able to form the bond with the neighboring Silicon, but will have one fewer or one extra electron. For example, suppose we place a Phosphorous "impurity" atom, having 5 electrons in between a bunch of Silicon atoms. The impurity atom will fit right into the lattice and can use 4 of its 5 valence electrons to form a covalent bond with its neighbors. Of course it still has an extra electron kicking around and interesting, it will be heavily shielded from the shell. For example, whereas a single electron in a Hydrogen atom is held in a potential well of $-13.6$~eV, the extra Phosphorous electron will be held by a shallow $-0.1$~eV well, over 100 times less! This weakly bound electron will very easily leave its original home and wander freely through the lattice, leaving a small potential well behind. 
+
+A similar picture exists for the holes in a trivalent atom such as Boron. The neighboring hole next to an atom corresponds to a very shallow energy gap and the electron has no problem acquiring enough energy to ``hop to the right'', or equivalently, the hole ``hops to the left'' (see figure \ref{fig:olez}).
+
+The very shallow potential wells binding the electrons or holes leads to a constant diffusion of these charge carriers throughout the material. In the absence of and applied field, this diffusion is due to thermal jostling of the lattice and is the same in every direction yielding a net-zero current. Since these charge carriers are primarily responsible for any current, they are called the \textit{majority carriers} whereas the other charges are minority carriers. For example, in an N-type extrinsic semiconductor, the majority carriers are electrons and the minority carriers are holes. In a P-type semiconductor, the holes are the majority carriers and the remaining electrons are minority carriers.
+
+A vast increase in extrinsic conduction can occur with a minute amount of doping. Typically the ratio of impurity to intrinsic atoms is anywhere between $10^{-6}$ to $10^{-9}$.
+
+\subsection{PN Junctions}
+The real magic occurs when a P-type and an N-type semiconductor are wedged against one another, creating a situation known as a \textit{PN junction}. This is diagrammed in figure [XXX]. Recalling that there is a constant diffusion of majority carriers in each semiconductures, 
 
 \section{Semiconductor Diodes}
 - TODO -
