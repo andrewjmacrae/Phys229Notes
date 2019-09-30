@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  27 SEP 2019 11:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  28 SEP 2019 09:19
 entering extended mode
- \write18 enabled.
- file:line:error style messages enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **Phys229LectureNotes.tex
 (./Phys229LectureNotes.tex
@@ -85,14 +84,11 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 ))
-runsystem(uname -s > "Phys229LectureNotes.w18")...executed.
 
+Package ifplatform Warning: 
+    shell escape is disabled, so I can only detect \ifwindows.
 
-(./Phys229LectureNotes.w18)
-runsystem(rm -- "Phys229LectureNotes.w18")...executed.
-
-)
-(/usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+) (/usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \hw@charcount=\count83
@@ -2549,7 +2545,7 @@ Package pdftex.def Info: Images/jumpin_hole.pdf used on input line 1981.
 LaTeX Warning: Marginpar on page 70 moved.
 
 [70 <./Images/jumpin_hole.pdf>]
-Overfull \hbox (2.05971pt too wide) in paragraph at lines 2009--2010
+Overfull \hbox (2.05971pt too wide) in paragraph at lines 2014--2015
 []\T1/pplj/m/n/10 The first ques-tion to ask is: will cur-rent flow. If so, the
 n the amount 
  []
@@ -2558,143 +2554,143 @@ n the amount
 File: Images/simple_diode_ex.pdf Graphic file (type pdf)
 
 <use Images/simple_diode_ex.pdf>
-Package pdftex.def Info: Images/simple_diode_ex.pdf used on input line 2012.
+Package pdftex.def Info: Images/simple_diode_ex.pdf used on input line 2017.
 (pdftex.def)             Requested size: 144.00911pt x 74.82607pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2019--2020
+Underfull \hbox (badness 10000) in paragraph at lines 2024--2025
 []\T1/pplj/m/n/10 Determine the power dis-si-pated in the re-sis-tor in fig-ure
  [][]1.48[][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2019--2020
+Underfull \hbox (badness 10000) in paragraph at lines 2024--2025
 \T1/pplj/m/n/10 for: $\OML/zplm/m/it/10 V[] \OT1/zplm/m/n/10 =$ \T1/pplj/m/n/10
  (a) 500 mV, (b) -3 V, and (c) 2 V. As-sume that the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2021--2022
+Underfull \hbox (badness 10000) in paragraph at lines 2026--2027
 []\T1/pplj/m/n/10 (a) Here we must de-ter-mine if the volt-age across the diode
  is
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2021--2022
+Underfull \hbox (badness 10000) in paragraph at lines 2026--2027
 \T1/pplj/m/n/10 greater that the volt-age drop. You might see right away that
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2021--2022
+Underfull \hbox (badness 10000) in paragraph at lines 2026--2027
 \T1/pplj/m/n/10 the bat-tery doesn't have enough kick, but we can for-malise
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2021--2022
+Underfull \hbox (badness 10000) in paragraph at lines 2026--2027
 \T1/pplj/m/n/10 this. From Kirch-hoff's laws the sum of the volt-age dropped
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2021--2022
+Underfull \hbox (badness 10000) in paragraph at lines 2026--2027
 \T1/pplj/m/n/10 across the diode plus the volt-age dropped across the re-sis-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2021--2022
+Underfull \hbox (badness 10000) in paragraph at lines 2026--2027
 \T1/pplj/m/n/10 tor ($\OML/zplm/m/it/10 iR$\T1/pplj/m/n/10 ) must sum to 0.5 V.
  The max-i-mum volt-age across the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2021--2022
+Underfull \hbox (badness 10000) in paragraph at lines 2026--2027
 \T1/pplj/m/n/10 diode oc-curs when no cur-rent flows through the re-sis-tor (th
 e
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2021--2022
+Underfull \hbox (badness 10000) in paragraph at lines 2026--2027
 \T1/pplj/m/n/10 diode then must drop all the volt-age by it it-self). In this c
 ase
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2021--2022
+Underfull \hbox (badness 10000) in paragraph at lines 2026--2027
 \T1/pplj/m/n/10 there si only 0.5 V dropped and by equa-tion [][]1.76[][], the 
 diode
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2021--2022
+Underfull \hbox (badness 10000) in paragraph at lines 2026--2027
 \T1/pplj/m/n/10 acts like a -0.5 V bat-tery. No cur-rent flows in the cir-cuit 
 and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2023--2024
+Underfull \hbox (badness 10000) in paragraph at lines 2028--2029
 []\T1/pplj/m/n/10 (b) Here there is cur-rent be-ing driven the op-po-site way.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2023--2024
+Underfull \hbox (badness 10000) in paragraph at lines 2028--2029
 \T1/pplj/m/n/10 Again, cur-rent flow-ing across the re-sis-tor will only lessen
  the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2023--2024
+Underfull \hbox (badness 10000) in paragraph at lines 2028--2029
 \T1/pplj/m/n/10 load on the diode and so there is, at zero cur-rent -3 V across
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2023--2024
+Underfull \hbox (badness 10000) in paragraph at lines 2028--2029
 \T1/pplj/m/n/10 the diode. Care-ful though! Al-though the mag-ni-tude is above
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2023--2024
+Underfull \hbox (badness 10000) in paragraph at lines 2028--2029
 \OML/zplm/m/it/10 V[]$ \T1/pplj/m/n/10 the di-rec-tion is wrong - -3 V is cer-t
 ainly less than +0.7 V
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2023--2024
+Underfull \hbox (badness 10000) in paragraph at lines 2028--2029
 \T1/pplj/m/n/10 and so again by eq. [][]1.76[][] the diode acts like a bat-tery
  with
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2025--2026
+Underfull \hbox (badness 10000) in paragraph at lines 2030--2031
 []\T1/pplj/m/n/10 (c) We be-gin the same way: If there is no cur-rent, the volt
 -age
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2025--2026
+Underfull \hbox (badness 10000) in paragraph at lines 2030--2031
 \T1/pplj/m/n/10 across the diode is 2 V, which \T1/pplj/m/it/10 is \T1/pplj/m/n
 /10 greater than $\OML/zplm/m/it/10 V[]$\T1/pplj/m/n/10 . Fi-nally,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2025--2026
+Underfull \hbox (badness 10000) in paragraph at lines 2030--2031
 \T1/pplj/m/n/10 some-thing in-ter-est-ing! Here, equa-tion [][]1.76[][] tells u
 s that the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2025--2026
+Underfull \hbox (badness 10000) in paragraph at lines 2030--2031
 \T1/pplj/m/n/10 diode acts like a bat-tery with $\OML/zplm/m/it/10 V \OT1/zplm/
 m/n/10 = \OMS/zplm/m/n/10 ^^@\OT1/pplx/m/n/10 0.7\OML/zplm/m/it/10 V$\T1/pplj/m
 /n/10 . From Kirch-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2025--2026
+Underfull \hbox (badness 10000) in paragraph at lines 2030--2031
 \T1/pplj/m/n/10 hoff's volt-age law, the volt-age across the re-sis-tor is then
 
  []
 
 
-Underfull \hbox (badness 1077) in paragraph at lines 2025--2026
+Underfull \hbox (badness 1077) in paragraph at lines 2030--2031
 \OML/zplm/m/it/10 V[] \OT1/zplm/m/n/10 = \OT1/pplx/m/n/10 2 []\OML/zplm/m/it/10
  V \OMS/zplm/m/n/10 ^^@ \OT1/pplx/m/n/10 0.7 []\OML/zplm/m/it/10 V \OT1/zplm/m/
 n/10 = \OT1/pplx/m/n/10 1.3 []\OML/zplm/m/it/10 V$\T1/pplj/m/n/10 . From Ohm's 
@@ -2702,80 +2698,80 @@ law, we see that
  []
 
 [71 <./Images/simple_diode_ex.pdf>]
-<Images/less_simple_diode_ex.pdf, id=1054, 105.5172pt x 84.07552pt>
+<Images/less_simple_diode_ex.pdf, id=1055, 105.5172pt x 84.07552pt>
 File: Images/less_simple_diode_ex.pdf Graphic file (type pdf)
 
 <use Images/less_simple_diode_ex.pdf>
-Package pdftex.def Info: Images/less_simple_diode_ex.pdf used on input line 203
-7.
+Package pdftex.def Info: Images/less_simple_diode_ex.pdf used on input line 204
+2.
 (pdftex.def)             Requested size: 144.00058pt x 114.73886pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2043--2044
+Underfull \hbox (badness 10000) in paragraph at lines 2048--2049
 []\T1/pplj/m/n/10 Over what volt-age range(s) does cur-rent flow in the cir-cui
 t of
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2045--2046
+Underfull \hbox (badness 10000) in paragraph at lines 2050--2051
 []\T1/pplj/m/n/10 Here, we have an AC sup-ply which can be ei-ther pos-i-tive o
 r
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2045--2046
+Underfull \hbox (badness 10000) in paragraph at lines 2050--2051
 \T1/pplj/m/n/10 neg-a-tive (To re-move am-bi-gu-ity, we've la-belled clock-wise
  cur-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2045--2046
+Underfull \hbox (badness 10000) in paragraph at lines 2050--2051
 \T1/pplj/m/n/10 rent as pos-i-tive here.) When-ever the volt-age is pos-i-tive,
  there
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2045--2046
+Underfull \hbox (badness 10000) in paragraph at lines 2050--2051
 \T1/pplj/m/n/10 is no way that cur-rent will flow through the right-most diode.
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2045--2046
+Underfull \hbox (badness 10000) in paragraph at lines 2050--2051
 \T1/pplj/m/n/10 The mid-dle sec-tion \T1/pplj/b/n/10 will \T1/pplj/m/n/10 con-d
 uct when-ever we have enough
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2045--2046
+Underfull \hbox (badness 10000) in paragraph at lines 2050--2051
 \T1/pplj/m/n/10 to over-come the po-ten-tial bar-rier from both diodes. Here th
 at
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2049--2051
+Underfull \hbox (badness 10000) in paragraph at lines 2054--2056
 \T1/pplj/m/n/10 For neg-a-tive volt-ages, the mid-dle sec-tion al-ways acts lik
 e an
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2049--2051
+Underfull \hbox (badness 10000) in paragraph at lines 2054--2056
 \T1/pplj/m/n/10 open cir-cuit and cur-rent flows when-ever the right most volt-
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2049--2051
+Underfull \hbox (badness 10000) in paragraph at lines 2054--2056
 \T1/pplj/m/n/10 age has more than 0.7 V across it. Since this cor-re-sponds to
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2049--2051
+Underfull \hbox (badness 10000) in paragraph at lines 2054--2056
 \T1/pplj/m/n/10 coun-ter-clock-wise cur-rent this is a neg-a-tive volt-age as p
 er our
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2060--2061
+Underfull \hbox (badness 10000) in paragraph at lines 2065--2066
 []\T1/pplj/m/it/10 Bonus Chal-lenge: Sketch the volt-age dropped across the re-
 sis-tor and
  []
@@ -2793,41 +2789,40 @@ LaTeX Warning: Marginpar on page 73 moved.
 
 LaTeX Warning: Marginpar on page 75 moved.
 
-<Images/SimpleAmplifier.pdf, id=1082, 113.25677pt x 41.17891pt>
+<Images/SimpleAmplifier.pdf, id=1083, 113.25677pt x 41.17891pt>
 File: Images/SimpleAmplifier.pdf Graphic file (type pdf)
 
 <use Images/SimpleAmplifier.pdf>
-Package pdftex.def Info: Images/SimpleAmplifier.pdf used on input line 2098.
+Package pdftex.def Info: Images/SimpleAmplifier.pdf used on input line 2103.
 (pdftex.def)             Requested size: 144.0073pt x 52.35945pt.
 
 
 LaTeX Warning: Marginpar on page 75 moved.
 
 [75 <./Images/SimpleAmplifier.pdf>]
-<Images/RealAmplifier_int.pdf, id=1099, 186.64037pt x 119.18077pt>
+<Images/RealAmplifier_int.pdf, id=1100, 186.64037pt x 119.18077pt>
 File: Images/RealAmplifier_int.pdf Graphic file (type pdf)
 
 <use Images/RealAmplifier_int.pdf>
-Package pdftex.def Info: Images/RealAmplifier_int.pdf used on input line 2111.
+Package pdftex.def Info: Images/RealAmplifier_int.pdf used on input line 2116.
 (pdftex.def)             Requested size: 144.0097pt x 91.95859pt.
 
-<Images/RealAmplifier_int_out.pdf, id=1101, 207.81477pt x 119.2374pt>
+<Images/RealAmplifier_int_out.pdf, id=1102, 207.81477pt x 119.2374pt>
 File: Images/RealAmplifier_int_out.pdf Graphic file (type pdf)
 
 <use Images/RealAmplifier_int_out.pdf>
 Package pdftex.def Info: Images/RealAmplifier_int_out.pdf used on input line 21
-23.
+28.
 (pdftex.def)             Requested size: 144.00116pt x 82.6232pt.
  [76 <./Images/RealAmplifier_int.pdf> <./Images/RealAmplifier_int_out.pdf
 
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Images/RealAmplifier_int_o
-ut.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-
->] <Images/amp_example.pdf, id=1126, 512.66295pt x 125.31184pt>
+pdfTeX warning: pdflatex (file ./Images/RealAmplifier_int_out.pdf): PDF inclusi
+on: multiple pdfs with page group included in a single page
+>] <Images/amp_example.pdf, id=1127, 512.66295pt x 125.31184pt>
 File: Images/amp_example.pdf Graphic file (type pdf)
 
 <use Images/amp_example.pdf>
-Package pdftex.def Info: Images/amp_example.pdf used on input line 2147.
+Package pdftex.def Info: Images/amp_example.pdf used on input line 2152.
 (pdftex.def)             Requested size: 311.99644pt x 76.26227pt.
  [77 <./Images/amp_example.pdf>]
 
@@ -2836,56 +2831,56 @@ LaTeX Warning: Marginpar on page 78 moved.
 
 LaTeX Warning: Marginpar on page 78 moved.
 
-[78] <Images/differential_amplifier.pdf, id=1194, 201.94751pt x 65.1425pt>
+[78] <Images/differential_amplifier.pdf, id=1195, 201.94751pt x 65.1425pt>
 File: Images/differential_amplifier.pdf Graphic file (type pdf)
 
 <use Images/differential_amplifier.pdf>
 Package pdftex.def Info: Images/differential_amplifier.pdf used on input line 2
-189.
+194.
 (pdftex.def)             Requested size: 144.00618pt x 46.45227pt.
  [79 <./Images/differential_amplifier.pdf>] [80] <Images/simple_feedback.pdf, i
-d=1221, 308.18745pt x 77.17336pt>
+d=1222, 308.18745pt x 77.17336pt>
 File: Images/simple_feedback.pdf Graphic file (type pdf)
 
 <use Images/simple_feedback.pdf>
-Package pdftex.def Info: Images/simple_feedback.pdf used on input line 2242.
+Package pdftex.def Info: Images/simple_feedback.pdf used on input line 2247.
 (pdftex.def)             Requested size: 312.02869pt x 78.13522pt.
  [81
 
  <./Images/simple_feedback.pdf>] [82]
-<Images/feedback_time_dep.png, id=1243, 501.875pt x 211.79124pt>
+<Images/feedback_time_dep.png, id=1244, 501.875pt x 211.79124pt>
 File: Images/feedback_time_dep.png Graphic file (type png)
 
 <use Images/feedback_time_dep.png>
-Package pdftex.def Info: Images/feedback_time_dep.png used on input line 2269.
+Package pdftex.def Info: Images/feedback_time_dep.png used on input line 2274.
 (pdftex.def)             Requested size: 144.00076pt x 60.76831pt.
 
 Underfull \vbox (badness 1348) has occurred while \output is active []
 
  [83 <./Images/feedback_time_dep.png>]
-<Images/inv_noninv_opamps.pdf, id=1253, 296.90186pt x 109.42271pt>
+<Images/inv_noninv_opamps.pdf, id=1254, 296.90186pt x 109.42271pt>
 File: Images/inv_noninv_opamps.pdf Graphic file (type pdf)
 
 <use Images/inv_noninv_opamps.pdf>
-Package pdftex.def Info: Images/inv_noninv_opamps.pdf used on input line 2305.
+Package pdftex.def Info: Images/inv_noninv_opamps.pdf used on input line 2310.
 (pdftex.def)             Requested size: 312.02342pt x 114.99574pt.
  [84 <./Images/inv_noninv_opamps.pdf>]
-[85] <Images/differentiator_opamp.pdf, id=1284, 275.06148pt x 85.46504pt>
+[85] <Images/differentiator_opamp.pdf, id=1285, 275.06148pt x 85.46504pt>
 File: Images/differentiator_opamp.pdf Graphic file (type pdf)
 
 <use Images/differentiator_opamp.pdf>
-Package pdftex.def Info: Images/differentiator_opamp.pdf used on input line 237
-7.
+Package pdftex.def Info: Images/differentiator_opamp.pdf used on input line 238
+2.
 (pdftex.def)             Requested size: 312.03299pt x 96.95255pt.
  [86 <./Images/differentiator_opamp.pdf>]
-<Images/integrator_opamp.pdf, id=1303, 439.96214pt x 81.43077pt>
+<Images/integrator_opamp.pdf, id=1304, 439.96214pt x 81.43077pt>
 File: Images/integrator_opamp.pdf Graphic file (type pdf)
 
 <use Images/integrator_opamp.pdf>
-Package pdftex.def Info: Images/integrator_opamp.pdf used on input line 2407.
+Package pdftex.def Info: Images/integrator_opamp.pdf used on input line 2412.
 (pdftex.def)             Requested size: 312.01279pt x 57.74915pt.
 
-Overfull \hbox (4.23482pt too wide) detected at line 2416
+Overfull \hbox (4.23482pt too wide) detected at line 2421
 \OML/zplm/m/it/10 v[] \OT1/zplm/m/n/10 = \OMS/zplm/m/n/10 ^^@[] [] []\OT1/zplm/
 m/n/10 (\OML/zplm/m/it/10 !t\OT1/zplm/m/n/10 )\OML/zplm/m/it/10 dt \OT1/zplm/m/
 n/10 = [] [](\OML/zplm/m/it/10 !t\OT1/zplm/m/n/10 ) \OMS/zplm/m/n/10 ^^Y \OT1/p
@@ -2895,11 +2890,11 @@ ML/zplm/m/it/10 ^^Y \OMS/zplm/m/n/10 ^^B \OT1/pplx/m/n/10 5 [][]\OT1/zplm/m/n/1
  []
 
 [87 <./Images/integrator_opamp.pdf>]
-<Images/windup_error.png, id=1320, 501.875pt x 211.79124pt>
+<Images/windup_error.png, id=1321, 501.875pt x 211.79124pt>
 File: Images/windup_error.png Graphic file (type png)
 
 <use Images/windup_error.png>
-Package pdftex.def Info: Images/windup_error.png used on input line 2427.
+Package pdftex.def Info: Images/windup_error.png used on input line 2432.
 (pdftex.def)             Requested size: 144.00076pt x 60.76831pt.
  [88 <./Images/windup_error.png>] [89
 
@@ -2917,11 +2912,11 @@ Package natbib Warning: Empty `thebibliography' environment on input line 8.
 ) (./Phys229LectureNotes.ind) [95
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2450.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2450.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2455.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2455.
  (./Phys229LectureNotes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2450.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2450.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2455.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2455.
 
 Package rerunfilecheck Info: File `Phys229LectureNotes.out' has not changed.
 (rerunfilecheck)             Checksum: 54F70E9E2134B1D79DEF82DB0112F4D8;10456.
@@ -2929,13 +2924,13 @@ Package rerunfilecheck Info: File `Phys229LectureNotes.out' has not changed.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2450.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2455.
  ) 
 Here is how much of TeX's memory you used:
- 35961 strings out of 492995
- 684400 string characters out of 6132704
- 872827 words of memory out of 5000000
- 38531 multiletter control sequences out of 15000+600000
+ 35953 strings out of 492995
+ 684235 string characters out of 6132704
+ 872727 words of memory out of 5000000
+ 38526 multiletter control sequences out of 15000+600000
  110535 words of font info for 149 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,13n,93p,10544b,1002s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2954,10 +2949,10 @@ ic/uhvb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/helvetic/uhvr
 8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/l
 ocal/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Phys229LectureNotes.pdf (95 pages, 9000868 bytes).
+Output written on Phys229LectureNotes.pdf (95 pages, 9001646 bytes).
 PDF statistics:
- 1477 PDF objects out of 1728 (max. 8388607)
- 1099 compressed objects within 11 object streams
+ 1478 PDF objects out of 1728 (max. 8388607)
+ 1100 compressed objects within 11 object streams
  324 named destinations out of 1000 (max. 500000)
  3817 words of extra memory for PDF output out of 10000 (max. 10000000)
 
