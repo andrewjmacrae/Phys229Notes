@@ -162,7 +162,7 @@ and the use of the \doccls{tufte-book} and \doccls{tufte-handout} document class
 
 \section{What is Electronics?}
 
-\newthought{Take an electronic device} which can be as simple (a flashlight) or as complicated (a smartphone) as you like. Fundamentally, these devices function by using electric and magnetic fields to push around charged particles which wiggle and bump into one another in just the right way to work as they do. All of this behaviour can be precisely calculated using Maxwell's equations (which you will see very soon in your physics career if you haven't already). Although that is what is truly what is going on ``behind the scenes'', it is a terribly impractical and unpleasant way of thinking about a flashlight. The goal of electronics is to encapsulate all of this complexity into much simpler abstract models. In other words, we want to simplify the flashlight into a cartoon drawing, the flashlight in the same way that we simplify the motor, suspension, and materials of a car in first year physics (figure \ref{fig:abstraction}).
+\newthought{Take an electronic device} which can be as simple (a flashlight) or as complicated (a smart phone) as you like. Fundamentally, these devices function by using electric and magnetic fields to push around charged particles which wiggle and bump into one another in just the right way to work as they do. All of this behavior can be precisely calculated using Maxwell's equations (which you will see very soon in your physics career if you haven't already). Although that is what is truly what is going on ``behind the scenes'', it is a terribly impractical and unpleasant way of thinking about a flashlight. The goal of electronics is to encapsulate all of this complexity into much simpler abstract models. In other words, we want to simplify the flashlight into a cartoon drawing, the flashlight in the same way that we simplify the motor, suspension, and materials of a car in first year physics (figure \ref{fig:abstraction}).
 
 \begin{figure}
   \includegraphics{abstraction}
@@ -537,7 +537,7 @@ Earlier, we saw that often, a nasty network of resistors such as in figure~\ref{
 \end{figure}
 
 
-Kirchhoff's ``Laws'' are sometimes called Kirchhoff's rules because they are not law really \textit{laws} in the sense that Newton's Laws are laws. Rather, they are rules which are highly accurate when applied under a certain set of approximations which are consistant with the ``Good Circuit" Approximation''. I say this only because they seem to stem from fundamental physics such as the conservation of energy and of charge whereas this is not strictly true. \footnote{Specifically, Kirchhoff's laws hold in the so-called ``lumped element'' approximation. In this model, a resistor is like a point object with an nput and an output. In reality, the voltage and current can vary or even change direction withing the element. The element can also affect and be affected by other circuit elements through electric and magnetic fields even if there are no wires connecting them. This considerations typically become important at high frequencies, where electromagnetic readiation can be significant and where the inputs change faster than the time it takes the change to propagate throught the circuit.}
+Kirchhoff's ``Laws'' are sometimes called Kirchhoff's rules because they are not law really \textit{laws} in the sense that Newton's Laws are laws. Rather, they are rules which are highly accurate when applied under a certain set of approximations which are consistent with the ``Good Circuit" Approximation''. I say this only because they seem to stem from fundamental physics such as the conservation of energy and of charge whereas this is not strictly true. \footnote{Specifically, Kirchhoff's laws hold in the so-called ``lumped element'' approximation. In this model, a resistor is like a point object with an input and an output. In reality, the voltage and current can vary or even change direction withing the element. The element can also affect and be affected by other circuit elements through electric and magnetic fields even if there are no wires connecting them. This considerations typically become important at high frequencies, where electromagnetic radiation can be significant and where the inputs change faster than the time it takes the change to propagate through the circuit.}
 
 \subsection{Statement of Kirchhoff's rules}
 Consider the simple circuit containing a battery, and a few resistors in figure \ref{fig:kirchhoff_deriv1}. 
@@ -619,7 +619,7 @@ Hence the sum of voltage drops around any closed loop is zero. This can be seen 
 
 \noindent\textbf{Approximation II: no charge accumulates at the terminals or nodes (low frequency and zero resistance wires)}
 
-In this case since the number of electrons (not to mention holes) is conserved, zero accumulation implies that the charge in must equal the charge out, of any node (see figure). Really, this is a statement that (a) we have well defined nodes that act as infinitessimal points and (b) that have accounted for every possible current path. In this case,
+In this case since the number of electrons (not to mention holes) is conserved, zero accumulation implies that the charge in must equal the charge out, of any node (see figure). Really, this is a statement that (a) we have well defined nodes that act as infinitesimal points and (b) that have accounted for every possible current path. In this case,
 
 $$
 \sum_ki_k=0
@@ -637,7 +637,7 @@ $$
 
 Kirchhoff's Laws allow us to solve any circuit we might come across, but it can be much more tedious than the reduction technique of example \ref{ex:elem_circuit_anal}. Typically the strategy is split into two steps:
 
-\begin{myexample}[label = ex:kirchhoff_calculation]{Example Circuit Analysis Using Kirchhoffs Laws}
+\begin{myexample}[label = ex:kirchhoff_calculation]{Example Circuit Analysis Using Kirchhoff's Laws}
 
 We will analyze the circuit in \ref{fig:kirchhoff_ex}a by applying Kirchoff's rules. 
 
@@ -667,7 +667,7 @@ We now move on to applying Kirchhoff's voltage law. There are three loops to con
 -2I_1 + 2I_2 &=& 3 
 \end{eqnarray}
 
-\noindent Addind these equations yields $I_2 = 2$ mA, and reinserting this value yeilds $I_1 = 0.5$ mA. Finally, Kirchoff's current law gives $I_3 = 2.5$ mA:
+\noindent Addind these equations yields $I_2 = 2$ mA, and reinserting this value yields $I_1 = 0.5$ mA. Finally, Kirchoff's current law gives $I_3 = 2.5$ mA:
 
 
 \begin{empheq}[box=\fbox]{align}
@@ -690,7 +690,7 @@ Note that we can now solve for the any other quantity in the circuit. For exampl
 
 \section{The Superposition Principle in Circuits}
 
-Another way to solve the circtui ion example \ref{ex:kirchhoff_calculation} is to make use of the superposition principle, inherent to linear systems. In terms of electronic circuits, we note that since the electric potential obeys the superposition principle, we can think of the response of the system (i.e. the current resulting from the potentials) as the sum of all of the individual voltage sources acting at once. This is outlined in figure \ref{fig:superposition_circuits}. We look at the circuit when only the 6~V battery is applied and calculated the currents as in \ref{ex:elem_circuit_anal}. We do the same for the circuit when only the 9~V battery is applied. The resultant current is simply the sum of the currents in each case, for which we find a result consistent with example \ref{ex:kirchhoff_calculation}.
+Another way to solve the circuit ion example \ref{ex:kirchhoff_calculation} is to make use of the superposition principle, inherent to linear systems. In terms of electronic circuits, we note that since the electric potential obeys the superposition principle, we can think of the response of the system (i.e. the current resulting from the potentials) as the sum of all of the individual voltage sources acting at once. This is outlined in figure \ref{fig:superposition_circuits}. We look at the circuit when only the 6~V battery is applied and calculated the currents as in \ref{ex:elem_circuit_anal}. We do the same for the circuit when only the 9~V battery is applied. The resultant current is simply the sum of the currents in each case, for which we find a result consistent with example \ref{ex:kirchhoff_calculation}.
 
 \begin{figure}[h]
 \caption{Using the superposition principle in place of Kirchhoff's Rules to solve a circuit.}
@@ -744,7 +744,7 @@ R_{tot} = R_1 + R_2 > \frac{9\text{ V}}{0.01\text{ A}} = 900~\Omega
 \end{myexample}
 
 
-Although it may not look like it, equation \ref{eq:voltagedivider} is one of the more important equations of the course. The reason why is that it is applicable not only to resistors, but also to inductors and capacitors which we will soon learn about. This simple setup will then allow for the creation of not only voltage sources but also filters which will only let fast or slow components of a time dependant signal through.
+Although it may not look like it, equation \ref{eq:voltagedivider} is one of the more important equations of the course. The reason why is that it is applicable not only to resistors, but also to inductors and capacitors which we will soon learn about. This simple setup will then allow for the creation of not only voltage sources but also filters which will only let fast or slow components of a time dependent signal through.
 
 
 \subsection{Circuit Loading} In the derivation of the voltage divider equation \ref{eq:voltagedivider}, we assumed that all current flows through resistor $R_2$. However, this assumption is violated as soon as we plug our voltage divider into anything!. Observe figure \ref{fig:voltagedivider}c -- with the circuit plugged in, the output voltage is now $I^\prime R_2$:
@@ -792,7 +792,7 @@ Recall that we defined a real voltage source as a device which maintains a fixed
 
 
 \begin{marginfigure}
-\caption{A real voltage source is modelled as an ideal source in series with an internal resistance.}
+\caption{A real voltage source is modeled as an ideal source in series with an internal resistance.}
 \label{fig:real_vs_ideal_voltage}
 \includegraphics{real_vs_ideal_voltage}
 \end{marginfigure}
@@ -840,7 +840,7 @@ This can be a confusing term for many reasons.
 \noindent where $\phi$ and $\mathbf{A}$ are the electrodynamic scalar and vector potentials respectively. 
 
 
-\noindent $\mathcal{E}$ and voltage are thus equivalent as long as $\frac{d}{dt}\int_a^b\mathbf{A}\cdot d\mathbf{l}  = 0$.} $\mathcal{E}$ is the work per unit charge and voltage is the difference in electric potential. However, in the regime relevant to electronics, they are practcally the same (see margin note).
+\noindent $\mathcal{E}$ and voltage are thus equivalent as long as $\frac{d}{dt}\int_a^b\mathbf{A}\cdot d\mathbf{l}  = 0$.} $\mathcal{E}$ is the work per unit charge and voltage is the difference in electric potential. However, in the regime relevant to electronics, they are practically the same (see margin note).
 \item EMF is sometimes used as a noun (i.e. the voltage) and sometimes used as a verb (the thing that causes the voltage.)
 \end{enumerate}
 
@@ -907,7 +907,7 @@ With reference to figure \ref{fig:thevenin}, Th\'evenin's theorem states that th
 
 Suppose that we have a complicated circuit that we want to drive a load with and we want to know the internal voltage and output impedance. How might we do this?
 
-\noindent Note that Thevenin's theroem states that we can always reduce the circuit to a voltage divider driving a load. Suppose that when we plug a 25$~\Omega$ load resistor in the circuit, we measure a 2~V drop and when we use a 400$~\Omega$ load, we find a voltage drop of 8~V. This gives us two equations in 2 unknowns and is sufficient to solve the system completely. Using:
+\noindent Note that Thevenin's theorem states that we can always reduce the circuit to a voltage divider driving a load. Suppose that when we plug a 25$~\Omega$ load resistor in the circuit, we measure a 2~V drop and when we use a 400$~\Omega$ load, we find a voltage drop of 8~V. This gives us two equations in 2 unknowns and is sufficient to solve the system completely. Using:
 \begin{eqnarray*}
 V_L & = &  \frac{R_L}{R_\text{th} + R_L}V_\text{th}\text{             ... or} \\
 V_\text{th} R_L &=& \left(R_\text{th} + R_L\right)V_\text{th}
@@ -944,7 +944,7 @@ We can also determine the Thevenin equivalent circuit theoretically. As it turns
 \begin{myexample}[label = ex:thev_theo]{Determining $V_\text{th}$ and $R_\text{th}$}
 We mentioned that we can use a voltage divider to provide a voltage source of desired voltage. How does circuit loading affect the voltage divider circuit?
 
-\noindent We can use the Thevenin approach to determine the output resistance and effective voltage of our voltage divider. Figure~\ref{fig:thvn_ex_2}a shows our circuit with an arbitrary load $R_L$ connencted. We proceed to use the Thevenin algorithm:
+\noindent We can use the Thevenin approach to determine the output resistance and effective voltage of our voltage divider. Figure~\ref{fig:thvn_ex_2}a shows our circuit with an arbitrary load $R_L$ connected. We proceed to use the Thevenin algorithm:
 
 \noindent \textbf{Step 1}: Remove the load and determine the equivalent voltage (figure ~\ref{fig:thvn_ex_2}b). We see that the voltage is just that of the original, ideal voltage that we already have studied:
 
@@ -1047,9 +1047,9 @@ V_{pp}\equiv V_\text{max} - V_\text{min}
 \end{equation}
 
 \subsection{RMS and Peak to Peak Voltage}
-Recall that the power delivered to a resistor by a DC voltage is given by $V^2/R$ (eq. \ref{eq:joule_ohm}). Since the voltage in an AC signal is time dependant, so is the power delivered at a given time. However, given the definition of power as the energy delivered per unit time $P\equiv dE/dt$, one would like to know the average power delivered to a resistor over many cycles. For example, a load plugged into the wall voltage goes through 60 cycles per second - so how much energy is deposited over that second? For this we can use the average power per cycle. 
+Recall that the power delivered to a resistor by a DC voltage is given by $V^2/R$ (eq. \ref{eq:joule_ohm}). Since the voltage in an AC signal is time dependent, so is the power delivered at a given time. However, given the definition of power as the energy delivered per unit time $P\equiv dE/dt$, one would like to know the average power delivered to a resistor over many cycles. For example, a load plugged into the wall voltage goes through 60 cycles per second - so how much energy is deposited over that second? For this we can use the average power per cycle. 
 
-Note that the average voltage over one (or many) cycles is zero, but owing to the square of the voltage in eq. eq. \ref{eq:joule_ohm}, the power delivered is independent of the sign. Clearly then the power is non-zero and positive. In fact it is given by $\bar{V^2}/R$. Comparing this to $V^2/R$, we see that this is equivalent to a DC voltage of a given voltage known as the RMS or \textit{root-mean-square} voltage defined as the squared voltage, averaged over one complete cycle:
+Note that the average voltage over one (or many) cycles is zero, but owing to the square of the voltage in eq. \ref{eq:joule_ohm}, the power delivered is independent of the sign. Clearly then the power is non-zero and positive. In fact it is given by $\bar{V^2}/R$. Comparing this to $V^2/R$, we see that this is equivalent to a DC voltage of a given voltage known as the RMS or \textit{root-mean-square} voltage defined as the squared voltage, averaged over one complete cycle:
 
 \begin{equation}\label{def:Vrms}
 V_\text{RMS}\equiv \sqrt{\langle v^2(t)\rangle_T} = \sqrt{\frac{\int_0^Tv^2(t)dt}{T}}
@@ -1083,7 +1083,7 @@ So far we have analyzed sine waves with zero-mean but this is generally not the 
 \includegraphics[width=\textwidth]{ACcomp}
 \end{marginfigure}
 
-In experimental physics we are interested in a small perturbation of a large net signal. For example we may want to observe a periodic emission of single photons from an atomic vapour or the dip in light due the transient of an exo-planet in front of a star. In these cases we are strictly interested in the AC signal and the DC signal is a nuisance. Later in the course and in the labs, we will construct circuit elements known as ``filters'' which isolate the AC- and DC- components of a given signal.
+In experimental physics we are interested in a small perturbation of a large net signal. For example we may want to observe a periodic emission of single photons from an atomic vapor or the dip in light due the transient of an exo-planet in front of a star. In these cases we are strictly interested in the AC signal and the DC signal is a nuisance. Later in the course and in the labs, we will construct circuit elements known as ``filters'' which isolate the AC- and DC- components of a given signal.
 
 %%% ========================================================================
 \section{Complex Numbers}
@@ -1128,7 +1128,7 @@ z = a + ib
 
 Complex numbers can be added subtracted, multiplied and divided as you could any other number. The trick, as laid out in the following example, is to treat $j$ as a variable, but replace $j^2$ with $-1$.
 
-\begin{myexample}[label = ex:its_complicated]{Complex Artithmetic.}
+\begin{myexample}[label = ex:its_complicated]{Complex Arithmetic.}
 Let $z_1 = 2+3j$ and $z_2 = 1-4j$. Compute (a) $z_3 = z_1 + z_2$ and (b) $z4 = z_1\times z_2$.
 
 (a) \begin{align*}
@@ -1197,13 +1197,13 @@ Thus:
 \end{align*}
 }
 
-\noindent Eulers Formula allows us to choose between ``Cartesian'' or ``polar'' representations of complex numbers. You can go from one to the other easily:
+\noindent Euler's Formula allows us to choose between ``Cartesian'' or ``polar'' representations of complex numbers. You can go from one to the other easily:
 
-\noindent\textbf{polar $\rightarrow$ cartesian}: Starting with $z = re^{j\theta}$, we directly write $z = r\cos\theta + rj\sin\theta$ and so $z = a + jb$ with $a = r\cos\theta$ and $b = r\sin\theta$.
+\noindent\textbf{polar $\rightarrow$ Cartesian}: Starting with $z = re^{j\theta}$, we directly write $z = r\cos\theta + rj\sin\theta$ and so $z = a + jb$ with $a = r\cos\theta$ and $b = r\sin\theta$.
 
-\noindent\textbf{cartesian $\rightarrow$ polar}: Starting with $z = a+ib$, we have the magnitude $r = \sqrt{a^2+b^2}$. The angle we get from the Argand diagram: $b/a = \tan\theta$, or $\theta = \arctan\frac{b}{a}$. We then use these values and write $z = re^{j\theta}$.
+\noindent\textbf{Cartesian $\rightarrow$ polar}: Starting with $z = a+ib$, we have the magnitude $r = \sqrt{a^2+b^2}$. The angle we get from the Argand diagram: $b/a = \tan\theta$, or $\theta = \arctan\frac{b}{a}$. We then use these values and write $z = re^{j\theta}$.
 
-\noindent While both representations are equivalent, one may be more convenient that the other for a particular operation. For example, division and multiplication requires some algebra in cartesian coordinates but is trivial in polar:
+\noindent While both representations are equivalent, one may be more convenient that the other for a particular operation. For example, division and multiplication requires some algebra in Cartesian coordinates but is trivial in polar:
 
 $$
 r_1e^{j\theta_1}\times r_2e^{j\theta_2} = r_1r_2e^{j\left(\theta_1+\theta_2\right)}
@@ -1246,7 +1246,7 @@ Let $z_1 = 1 + 3j$ and $z_2 = 2 + j$. Compute
 $$
 \frac{z_1}{z_2} = \frac{1 + 3j}{2 + j}
 $$
-\noindent... (a) in cartesian form and (b) in polar form
+\noindent... (a) in Cartesian form and (b) in polar form
 
 (a) \begin{align*}
 \frac{z_1}{z_2}  &= \frac{z_1\bar{z_2}}{z_2\bar{z_2}} \\
@@ -1269,7 +1269,7 @@ Now that we have gone through all of the trouble of learning complex numbers it'
 \begin{enumerate}
 \item We represent the oscillating voltage as a complex exponential: $A\cos\omega t \rightarrow Ae^{j\omega t + \phi}$
 \item We perform all our mathematical operation on the signal $Ae^{j\omega t + \phi}\rightarrow A'e^{j\omega t +\phi'}$
-\item We get the mesaurable signal by \textbf{taking the real part} of the number: $A'e^{j\omega t +\phi'} \rightarrow A'\cos(j\omega t +\phi')$
+\item We get the measurable signal by \textbf{taking the real part} of the number: $A'e^{j\omega t +\phi'} \rightarrow A'\cos(j\omega t +\phi')$
 \end{enumerate}
 
 Note that a complex number has 2 degrees of freedom - that is, a single complex number contains two independent pieces of information. This is crucial to their utility as it allows is to encapsulate both the magnitude and phase of a signal at once. Also note that we used $\cos$ in place of $\sin$. This was merely for convenience and has no bearing in the system - a cosine is just a sine with a particular phase (of $\pi/2$).
@@ -1293,7 +1293,7 @@ The time and voltage scales can be easily modified using the scale knobs.
 You will make heavy use of the scope in virtually all remaining labs this course. Refer to the lab manual and the supplementary course information for further details on the operation and utility of the digital oscilloscope.
 
 \section{Time Domain vs Frequency Domain: Fourier Analysis}\label{sec:fourier}
-The importance of understanding the behaviour of sine waves in a system stems from a concept known as Fourier analysis. The essential concept behind Fourier analysis is that we can represent any signal as a sum of sine waves of a particular phase. There are really two sides to this coin. 
+The importance of understanding the behavior of sine waves in a system stems from a concept known as Fourier analysis. The essential concept behind Fourier analysis is that we can represent any signal as a sum of sine waves of a particular phase. There are really two sides to this coin. 
 
 \textbf{One side}, which is very useful in finding solutions to differential equations is that a given periodic function $f(t)$ with period $T= 2\pi/\omega$ can write this be written as an infinite sum of sine and cosines having integer multiples frequencies of $\omega$:
 
@@ -1335,9 +1335,9 @@ Frequency Domain analysis asserts that once we understand how a circuit responds
 
 \section{The Big Picture}
 
-Our circuits thus far have been comprised of batteries and resistors. When we place an AC voltage across a resistor, we found that we could apply the same analysis as in our DC circuits, using the RMS value for the voltage. We did not have to give any information about the frequency of the signal. This is because in our good circuit model, the current in a pure resistance responds instantaneously to the voltage. We now move to circuit elements for which there is a finite time response to a time dependant voltage, causing a frequency dependant response to the signal. The two main devices we will study are the capacitor and the inductor. 
+Our circuits thus far have been comprised of batteries and resistors. When we place an AC voltage across a resistor, we found that we could apply the same analysis as in our DC circuits, using the RMS value for the voltage. We did not have to give any information about the frequency of the signal. This is because in our good circuit model, the current in a pure resistance responds instantaneously to the voltage. We now move to circuit elements for which there is a finite time response to a time dependent voltage, causing a frequency dependent response to the signal. The two main devices we will study are the capacitor and the inductor. 
 
-A hand wavy intuition of how these devices function stems from a simple fact about the nature of electromagnetic fields. The laws of electromagnetism are provide by fundamental laws known as Maxwell's equations. One consequence of these equations is that a changing electric field creates a magnetic field, and in turn, a changing magnetic field creates an electric field. Imagine quickly ramping on an electric field giving rise to a voltage. This time dependant voltage accelerates charges in a conductor, and as they begin to move, their motion creates (time-varying) electromagnetic fields. These fields make a new time-dependant voltage, which creates a new acceleration on the charges and so on and so forth until eventually things balance out. This process is called the time response of the field and leads to the frequency dependance of the circuit.
+A hand wavy intuition of how these devices function stems from a simple fact about the nature of electromagnetic fields. The laws of electromagnetism are provide by fundamental laws known as Maxwell's equations. One consequence of these equations is that a changing electric field creates a magnetic field, and in turn, a changing magnetic field creates an electric field. Imagine quickly ramping on an electric field giving rise to a voltage. This time dependent voltage accelerates charges in a conductor, and as they begin to move, their motion creates (time-varying) electromagnetic fields. These fields make a new time-dependent voltage, which creates a new acceleration on the charges and so on and so forth until eventually things balance out. This process is called the time response of the field and leads to the frequency dependence of the circuit.
 
 Recalling that current is fundamentally due to the motion of the charges, we can note that the force on a charge, moving with velocity $v$ is known as the Lorenz Force and is given by:
 
@@ -1373,7 +1373,7 @@ C = \epsilon\frac{A}{d}
 \end{figure}
 
 
-It is interesting to consider the physics of the insulating dielectric in an electric field. Although by definition no current can flow, the atoms and molecules in the dielectric will align themselves in such a way that minimizes the energy of the system. This happens even in the simplest case of a Hydrogen atom which one might think of as spherically symmetric, as the electron and proton (wavefunctions) can have a net relative displacement. This polarization allows more charge to be stored for a fixed voltage and thus increases the capacitance of the device. At some point however, the electric field due to a high voltage will be sufficiently strong to rip electrons off of their cores and cause even an insulator to conduct. This effect, known as dielectric breakdown is what happens during a lightning storm for example, for which the dielectric breakdown voltage (of air in this case) is about 3,000,000 V/m. For practical capacitors, the breakdown is much lower. In the lab, note the rating of the capacitor (typically 35V, 200V etc) as exeeding this value can lead to dielectric breakdown (i.e. a loud ``pop'') and a ruined capacitor\footnote{In fact, ``blown'' capacitors are often the cause of fried computers, etc. The tell-tale trace is a capacitor with a puffed out lid where rapid internal heating due to the short caused thermal expansion}.
+It is interesting to consider the physics of the insulating dielectric in an electric field. Although by definition no current can flow, the atoms and molecules in the dielectric will align themselves in such a way that minimizes the energy of the system. This happens even in the simplest case of a Hydrogen atom which one might think of as spherically symmetric, as the electron and proton (wavefunctions) can have a net relative displacement. This polarization allows more charge to be stored for a fixed voltage and thus increases the capacitance of the device. At some point however, the electric field due to a high voltage will be sufficiently strong to rip electrons off of their cores and cause even an insulator to conduct. This effect, known as dielectric breakdown is what happens during a lightning storm for example, for which the dielectric breakdown voltage (of air in this case) is about 3,000,000 V/m. For practical capacitors, the breakdown is much lower. In the lab, note the rating of the capacitor (typically 35V, 200V etc) as exceeding this value can lead to dielectric breakdown (i.e. a loud ``pop'') and a ruined capacitor\footnote{In fact, ``blown'' capacitors are often the cause of fried computers, etc. The tell-tale trace is a capacitor with a puffed out lid where rapid internal heating due to the short caused thermal expansion}.
 
 \section{Capacitors in a Circuit}
 
@@ -1441,7 +1441,7 @@ C\frac{dv}{dt}  &= C_1\frac{dv_1}{dt}             &= C_2\frac{dv_2}{dt} \\
 
 
 \section{Energy stored in a Capacitor}
-It turn's out that we can get a lot of mileage out of equation \ref{def:capacitance}. The first application is to determine the energy stored in a capacitor. Recall that the potential difference in a circuit is work done per charge $v = \frac{dW}{dq}$. We can calculate the energy stored in the capacitor by keeping track of the work done by charging an initially uncharged circuit from $0$ to $q$. By the work-energy theorem, the energy stored is just this work:
+It turn out that we can get a lot of mileage out of equation \ref{def:capacitance}. The first application is to determine the energy stored in a capacitor. Recall that the potential difference in a circuit is work done per charge $v = \frac{dW}{dq}$. We can calculate the energy stored in the capacitor by keeping track of the work done by charging an initially uncharged circuit from $0$ to $q$. By the work-energy theorem, the energy stored is just this work:
 
 $$
 E = \int_{q\prime=0}^{q} dW(q) =\int_{q\prime=0}^{q} v(q)dq = \int_{q\prime=0}^{q} \frac{q\prime}{C}dq\prime=\frac{1}{2}\frac{q^2}{C} 
@@ -1457,7 +1457,7 @@ E_c=\frac{1}{2}CV^2
 
 Consider the circuit on the lower left side of figure \ref{fig:chargedischarge}. Initially the voltage at all points in the circle is zero and there is no current. At some later time, a switch is closed connecting a battery with voltage $v(t) = V_0 =  \text{const}$. Current will thus immediately begin to flow and charge the capacitor. As the capacitor charges, we have learned that an electric field will build up which creates anEMF opposite that of the battery so the current will decrease as the capacitor charges until there is enough charge on the capacitor to create a voltage which is equal and opposite to the battery. The capacitor is then said to be charged -- we could yank it out of the circuit, stick it in out pocket and carry it across the room and it would still have that charge. Suppose we now close the switch disconnecting the battery but leaving a complete circuit. The voltage difference between the capacitors two terminals will drive current through the capacitor, decreasing the charge, fields and voltages in the process, until eventually, there is no net charge. This is called discharging the capacitor.
 
-We can predict this behaviour more rigorously using by differentiating equation \ref{def:capacitance}:
+We can predict this behavior more rigorously using by differentiating equation \ref{def:capacitance}:
 
 $$
 \frac{dq}{dt} \equiv i = C\frac{dv(t)}{dt}
@@ -1495,7 +1495,7 @@ v(t) = v_0e^{-t/RC} = v_0e^{-t/\tau}
 \noindent is known as the $RC$ (``are-see'')  time constant and will come up frequently in the material that follows.
 
 \begin{figure}[h]
-\caption{Charging and discharging a capacitor. Initially uncharged, a switch closes the circuit and the capacitor charges. The switch is then opened allowing the capacitor to uncharge.}
+\caption{Charging and discharging a capacitor. Initially uncharged, a switch closes the circuit and the capacitor charges. The switch is then opened allowing the capacitor to discharge.}
 \label{fig:chargedischarge}
 \begin{center}
 \includegraphics[width=\textwidth]{chargedischarge.png}
@@ -1503,7 +1503,7 @@ v(t) = v_0e^{-t/RC} = v_0e^{-t/\tau}
 \end{figure}
 
 \section{Supercapacitors}
-Typical values for capacitance that you will encounter in the lab are pF, nF, $\mu$F, and mF. Even without a resistor connecting the terminals, the capacitor will discharge as current ``leaks through the dielectric''. This can be modelled as an large parallel resistance, forming an internal RC-circuit . A low leakage capacitor might have leakage times of seconds or even minutes, but it will eventually decay. In recent year, so-called supercapacitors or ``supercaps'' have been developed that have leakage times on the order of months and capacitance on the order of 10000F. This allows capacitors to be used in place of batteries.
+Typical values for capacitance that you will encounter in the lab are pF, nF, $\mu$F, and mF. Even without a resistor connecting the terminals, the capacitor will discharge as current ``leaks through the dielectric''. This can be modeled as an large parallel resistance, forming an internal RC-circuit . A low leakage capacitor might have leakage times of seconds or even minutes, but it will eventually decay. In recent year, so-called supercapacitors or ``supercaps'' have been developed that have leakage times on the order of months and capacitance on the order of 10000F. This allows capacitors to be used in place of batteries.
 
 \noindent Supercaps fall into several categories: From wikipedia:
 
@@ -1532,12 +1532,12 @@ Fortunately , we have already developed a beautiful formalism for dealing with p
 V_C = I\left(\frac{-j}{\omega C}\right) \equiv IZ_C
 \end{equation}
 
-Thus we can treat the response of a capacitor in an AC circuit as sort of generalized resistor obeying Ohm's law with complex, frequency-dependant resistance, known as the \textit{impedance}, denoted $z$. Impedance is an important topic to which we will return shortly.
+Thus we can treat the response of a capacitor in an AC circuit as sort of generalized resistor obeying Ohm's law with complex, frequency-dependent resistance, known as the \textit{impedance}, denoted $z$. Impedance is an important topic to which we will return shortly.
 
 \section{Inductance}
 We have just seen that capacitors provide an impedance which decreases with frequency, varying inversely ($\vert Z \vert \propto \omega^{-1}$). In the process, they store energy in the electric field. There exist another class of components known as \textbf{inductors} whose impedance increases linearly with frequency and function by storing energy in the magnetic field.
 
-The physics of an inductor stems from the phenomenon of self-inductance. Recall that Faraday's law of induction states that a change in flux of a magnetic field through a circuit will result in an EMF which is given precisely as the time derivative of a magnetic field. Recall also that the Biot-Savard law states that whenever a current passes through a wire, a rotational magnetic field is formed around the wire. When current is passed through a wire wound coil, a large magnetic field is created (Biot-Savard law), and this in turn creates an EMF which opposes the current (Faradays law). This phenomenon is know as ``self-inductance''.
+The physics of an inductor stems from the phenomenon of self-inductance. Recall that Faraday's law of induction states that a change in flux of a magnetic field through a circuit will result in an EMF which is given precisely as the time derivative of a magnetic field. Recall also that the Biot-Savard law states that whenever a current passes through a wire, a rotational magnetic field is formed around the wire. When current is passed through a wire wound coil, a large magnetic field is created (Biot-Savard law), and this in turn creates an EMF which opposes the current (Faraday's law). This phenomenon is know as ``self-inductance''.
 
 An inductor is thus merely a wire bend into a geometry which creates a given flux for a given current. Often the coil is wrapped around a ferromagnet to increase the magnetic flux. Since Biot-Savard law gives us a direct relation between magnetic flux and current, we can write characterize the effect of an inductor in terms of currents and voltages, bypassing descriptions of electromagnetic fields, as in equation \ref{def:capacitance}:
 
@@ -1548,7 +1548,7 @@ v(t) = L\frac{di(t)}{dt}
 \noindent The constant $L$ is known as the ``inductance'' and depends entirely on the geometry of the inductor. The units of inductance are the \textit{Henry} H. Typical values are in the range of 1~mH to 1~H. The use of a ferromagnetic substance such iron increases the inductance significantly.
 
 \begin{figure}[h]
-\caption{(a) Parallel and series combinations of inductors follow the same rules as resistors. (b) Hydrostatic analogy of an inductor: a heavy turbine with inertia. (c) Various inductors. Lower is an ``RF choke'' use to filter spikes and other high frequeuncy noise.}
+\caption{(a) Parallel and series combinations of inductors follow the same rules as resistors. (b) Hydrostatic analogy of an inductor: a heavy turbine with inertia. (c) Various inductors. Lower is an ``RF choke'' use to filter spikes and other high frequency noise.}
 \label{fig:inductors}
 \begin{center}
 \includegraphics[width=\textwidth]{inductee.png}
@@ -1630,7 +1630,7 @@ v(t) &= \sin\left(\omega t + \phi\right) \nonumber\\
 \Delta t_{f,\phi} = \frac{\phi}{\omega}
 \end{equation}
 
-One thing you may find unnerving is how the output could ever \textbf{lead} the input - a notion that at first seems to defy causality. The answer to this riddle is that what we have discussed so far is the so-called ``steady state responses'' - that is, the input-output relations after the circuit has been left on for some time. Mathematically, the steady state is only exact after an infinite time but fortunately in practice it is sufficiently accurate after several periods. The response of the system when is it is first switched on is called the ``transient behaviour'' of the system. In fact, when you study differential equations such as those describing the resistor and capacitor circuits you will find that the solution to these equations can be written as a sum of steady state and transient responses. Below, I've plotted the solution to equation \ref{eq:cap_dif_eq} but with a sinusoidal input in place of the constant battery voltage. Note that the leading steady state response of an RC circuit is established during the initial transient response. Causality is safe
+One thing you may find unnerving is how the output could ever \textbf{lead} the input - a notion that at first seems to defy causality. The answer to this riddle is that what we have discussed so far is the so-called ``steady state responses'' - that is, the input-output relations after the circuit has been left on for some time. Mathematically, the steady state is only exact after an infinite time but fortunately in practice it is sufficiently accurate after several periods. The response of the system when is it is first switched on is called the ``transient behavior'' of the system. In fact, when you study differential equations such as those describing the resistor and capacitor circuits you will find that the solution to these equations can be written as a sum of steady state and transient responses. Below, I've plotted the solution to equation \ref{eq:cap_dif_eq} but with a sinusoidal input in place of the constant battery voltage. Note that the leading steady state response of an RC circuit is established during the initial transient response. Causality is safe
 
 
 \begin{figure}[h]
@@ -1643,9 +1643,9 @@ One thing you may find unnerving is how the output could ever \textbf{lead} the 
 
 
 \section{Impedance-Based Voltage Dividers: Frequency Filters}
-So far, we have studied how individual components, such as resistors, capacitors, and inductors respond to sinusoidal inputs. We have seen that that in terms of the RMS amplitudes, inductors and capacitors form ``frequency dependant resistors''. We will now study circuits with a mix of reactive and resistive circuits which can exhibit much richer behaviour.
+So far, we have studied how individual components, such as resistors, capacitors, and inductors respond to sinusoidal inputs. We have seen that that in terms of the RMS amplitudes, inductors and capacitors form ``frequency dependent resistors''. We will now study circuits with a mix of reactive and resistive circuits which can exhibit much richer behavior.
 
-Recall that when when we combined resistors in a voltage divider configuration, we could create an arbitrary voltage gain based on the values of these resistors. By combining several component types in a voltage divider configuration, we can now make an voltage dependant on frequency. 
+Recall that when when we combined resistors in a voltage divider configuration, we could create an arbitrary voltage gain based on the values of these resistors. By combining several component types in a voltage divider configuration, we can now make an voltage dependent on frequency. 
 
 \begin{figure}[h]
 \caption{(a) Generalized impedances can be combined to form a voltage divider. (b) RC ``Low-Pass'' filter. (c) RL ``High Pass'' filter.}
@@ -1677,7 +1677,7 @@ $$
 G(\omega) = \frac{1}{1+j\omega RC}
 $$
 
-\noindent We see why this is called a ``low-pass'' filter: For DC signals ($\omega \rightarrow 0$) the gain is unity, i.e. $v_\text{in} =  v_\text{out}$. For very high frequencies ($\omega \rightarrow \infty$) the $\omega^{-1}$ dependance dominates and the gain tends to 0. 
+\noindent We see why this is called a ``low-pass'' filter: For DC signals ($\omega \rightarrow 0$) the gain is unity, i.e. $v_\text{in} =  v_\text{out}$. For very high frequencies ($\omega \rightarrow \infty$) the $\omega^{-1}$ dependence dominates and the gain tends to 0. 
 
 Recall that the gain in our formalism is a complex quantuty and thus the circuit provides both an attenuation and a phase shift, to get a better grip, we often talk of the \textit{magnitude} and \textit{phase} of the filter. Applying our now-expert skills in complex numbers:
 
@@ -1743,7 +1743,7 @@ f_\text{co} = \frac{1}{2\pi}\frac{R}{L}
 \noindent... which ranges from $\pi/2$ at DC to $0$ for $f\gg f_\text{co}$.
 
 \section{Frequency Response and Bode Plots}
-We have just seen that for a particular sine wave of a particular frequency, there is a particular phase shift and attenuation. Recall from section \ref{sec:fourier} that any signal can be broken down into a weighted sum of sine waves of a given amplitude and phase. It then makes sense to look at out frequency filters in the frequency domain. The behaviour of a device for all frequencies is known as the \textit{frequency response} of the system. We have already seen two frequency responses (namely of a RC low-pass and RL high-pass filter.
+We have just seen that for a particular sine wave of a particular frequency, there is a particular phase shift and attenuation. Recall from section \ref{sec:fourier} that any signal can be broken down into a weighted sum of sine waves of a given amplitude and phase. It then makes sense to look at out frequency filters in the frequency domain. The behavior of a device for all frequencies is known as the \textit{frequency response} of the system. We have already seen two frequency responses (namely of a RC low-pass and RL high-pass filter.
 
 Since there is typically such a broad range of frequencies and signal levels, it is common (and useful!) to plot the frequency response logarithmically, producing what is called a \textbf{Bode Diagram}. First, it may be useful to recall some common properties of logarithms. 
 
@@ -1789,7 +1789,7 @@ $$
 
 
 \begin{figure}[h]
-\caption{Log-Log 'Bode' plot of the function $f(x) = 0.1x^{-1}+x^{-2}$. Note that in the log-log plot, the point at which the $x^{-2}$ dependance dominates is clear where in the linear case, it is not.}
+\caption{Log-Log 'Bode' plot of the function $f(x) = 0.1x^{-1}+x^{-2}$. Note that in the log-log plot, the point at which the $x^{-2}$ dependence dominates is clear where in the linear case, it is not.}
 \label{ fig:BodePowers}
 \begin{center}
 \includegraphics[width=\textwidth]{BodePowers.png}
@@ -1830,10 +1830,10 @@ The frequency response (in dB) and phase (in either degrees or radians) plotted 
 
 %%% ========================================================
 \chapter{Semiconductors and Diodes}
-The circuit we have studied thus far have all fallen under the regime of ``linear, passive components''. \textit{Linear} means, essentially that if we send in a sine wave, at frequency $\omega$, the output is also a sine wave, but perhaps at a different amplitude and with a different phase\footnote{A more general definition of linearity is as follows: Suppose that, given inputs $v_1^{in}$ and $v_2^{in}$, our device $D$ produces outputs $v_1^{out} = Dv_1^{in}$ and $v_2^{out} = Dv_2^{in}$. We say $D$ is a linear device if, when we send the sum of the inputs $v_3^{in} = v_1^{in} + v_2^{in}$, then the output is the sum of the individual outputs: $v_3^{out} = Dv_3^{in} =  v_1^{out} + v_2^{out}$}. \textit{Passive} means that the device does not require additional power in order to function. We will deal with non-passive devices next chapter. This chapter we will encounter our first non-linear device, namely the diode. We'll start by defining what we want out of a diode, and then move on to how to actually make one. In order to consctruct a diode we will make use of a new class of materials: ``semiconductors'' which under various circumstances behave like a conductor, an insulator, or neither.
+The circuit we have studied thus far have all fallen under the regime of ``linear, passive components''. \textit{Linear} means, essentially that if we send in a sine wave, at frequency $\omega$, the output is also a sine wave, but perhaps at a different amplitude and with a different phase\footnote{A more general definition of linearity is as follows: Suppose that, given inputs $v_1^{in}$ and $v_2^{in}$, our device $D$ produces outputs $v_1^{out} = Dv_1^{in}$ and $v_2^{out} = Dv_2^{in}$. We say $D$ is a linear device if, when we send the sum of the inputs $v_3^{in} = v_1^{in} + v_2^{in}$, then the output is the sum of the individual outputs: $v_3^{out} = Dv_3^{in} =  v_1^{out} + v_2^{out}$}. \textit{Passive} means that the device does not require additional power in order to function. We will deal with non-passive devices next chapter. This chapter we will encounter our first non-linear device, namely the diode. We'll start by defining what we want out of a diode, and then move on to how to actually make one. In order to construct a diode we will make use of a new class of materials: ``semiconductors'' which under various circumstances behave like a conductor, an insulator, or neither.
 
 \section{The Ideal Diode}
-Before we go on to describe how to build a diode, which involves a fairly hefty diversion into solid state physics, let's incentivize ourselves to learn by describing what we could do should we have one. 
+Before we go on to describe how to build a diode, which involves a fairly hefty diversion into solid state physics, let's incentivise ourselves to learn by describing what we could do should we have one. 
 
 \begin{marginfigure}%
   \includegraphics[]{diodecurrentflow}
@@ -1841,13 +1841,13 @@ Before we go on to describe how to build a diode, which involves a fairly hefty 
   \label{fig:diode_sym}
 \end{marginfigure}
 
-The basic diode circuit is shown in figure \ref{fig:diode_sym}. A diode is essentially a one-way valve for current. If we pass current from terminals $a$ to $b$, the diode acts as a short circuit (ie. a wire). If we try to pass current the other way the diode acts as an open circuit and no current passes. The resistance is thus assymetric: $R_{ab} = 0~\Omega$, $R_{ba} \rightarrow \infty$
+The basic diode circuit is shown in figure \ref{fig:diode_sym}. A diode is essentially a one-way valve for current. If we pass current from terminals $a$ to $b$, the diode acts as a short circuit (i.e. a wire). If we try to pass current the other way the diode acts as an open circuit and no current passes. The resistance is thus asymmetric: $R_{ab} = 0~\Omega$, $R_{ba} \rightarrow \infty$
 
-The simplest reason to build use a diode is circuit protection. Many devices\footnote{You've already come across electrolytic capacitors which can be destroyed if reverse biased. Another example is pizoelectric stacks which expand nicely in forward bias but self destruct in reverse bias.} can be damaged if you try to run current through it in the wrong direction. 
+The simplest reason to use a diode is circuit protection. Many devices\footnote{You've already come across electrolytic capacitors which can be destroyed if reverse biased. Another example is piezoelectric stacks which expand nicely in forward bias but self destruct in reverse bias.} can be damaged if you try to run current through them in the wrong direction. 
 
-Another important used of diodes is signal rectification which you will explore in the lab. Suppose that we want to run current through some load (whatever it is) in one direction only. If we merely place a diode at its input current flows through the positive phase of an ac signal but is blocked for the negative phase (figure \ref{fig:rect_half_full}a). Since no current flow during this phase, no power is wasted. 
+Another important used of diodes is signal rectification which you will explore in the lab. Suppose that we want to run current through some load (whatever it is) in one direction only. If we merely place a diode at its input, current will flow through the positive phase of an ac signal but is blocked for the negative phase (figure \ref{fig:rect_half_full}a). Since no current flows during this phase, no power is wasted. 
 
-A shortcoming of the half-wave rectifier is that we are only using half the signal. Power is \textit{delivered} to the load during the positive half-cycle in between half-cycles of nothing. To make use of the entire signal, a clever topology shown in figure \ref{fig:rect_half_full}b can be employed. During the positive cycle, the current takes enteres the top junction and sees only the path on the right, leading to the load. On the return path, the diode on the bottom left leads back to the source. On the negative half cycle, current flows from the bottom node through the load and up the top.
+A shortcoming of the half-wave rectifier is that we are only using half the signal. Power is \textit{delivered} to the load during the positive half-cycle in between half-cycles of nothing. To make use of the entire signal, a clever topology shown in figure \ref{fig:rect_half_full}b can be employed to effectively take the absolute value of the signal. We will return to the full- and half-wave rectifier circuits later in the chapter.
 
 \begin{myexample}[label = ex:welches_wegen_diode]{Pop Quiz!}
 Why doesn't the current go back through the load through the right diodes on the return path?
@@ -1859,16 +1859,15 @@ Why doesn't the current go back through the load through the right diodes on the
   \label{fig:rect_half_full}
 \end{marginfigure}
 
-By adding a smoothing capacitor across the load, this can be used as a "AC-adapter", converting the 60~Hz line voltage from the wall outlet to a DC signal. In lab 4, you will do just this.
 
 OK now that we know a few of the useful applications of diodes (there are plenty more, some of which we'll mention soon), it's time to figure out how we'll actually build one. 
 
 \section{Semiconductors}
-In this course so far we've focused on two classes of materials: insulators (such as glasses or plastics) with very low conductivity and conductors (such as copper or silver) with very high conductivity. There is a third class of materials known as semiconductors whose behaviour can fall between the two extremes. Two common semiconductor materials are Silicon and Germanium. On their own Si and Ge semiconductors form crystals exhibiting somewhat interesting behaviour, but by adding trace amounts of impurity we can engineer fascinating technology allowing not only for the implementation of diodes, but of amplifiers, digital logic gates in computers, specialized detectors, and low power lights. A comprehensive understanding of semiconductor physics is too much of a diversion from our understanding of laboratory electronics (you'll have to wait a year or so for your solid state physics class) but this section will serve as a condensed crash course, outlining the basic idea of their functionality.
+In this course so far we've focused on two classes of materials: insulators (such as glasses or plastics) with very low conductivity and conductors (such as copper or silver) with very high conductivity. There is a third class of materials known as semiconductors whose behavior can fall between the two extremes. Two common semiconductor materials are Silicon and Germanium. On their own Si and Ge semiconductors form crystals exhibiting somewhat interesting behavior, but by adding trace amounts of impurity we can engineer fascinating technology allowing not only for the implementation of diodes, but of amplifiers, digital logic gates in computers, specialized detectors, and low power lights. A comprehensive understanding of semiconductor physics is too much of a diversion from our understanding of laboratory electronics (you'll have to wait a year or so for your solid state physics class) but this section will serve as a condensed crash course, outlining the basic idea of their functionality.
 
 \subsection{A Microscopic Model of Conductivity: The Drude Model}
 
-Take a metal such as copper, with a single valence electron in its outer shell, ($4s^1$ in this case.) In crystaline form, copper forms a metallic bond with its neighbors in which the valence electron is weakly bound to its ``original nucleus'' as compared to its nearby neighbors\footnote{ Apologies to any chemists reading this. That goes for this entire section...} and so a given electron can hop over to the atom next door. Of course, this would leave a positive charge and so another electron would quickly rush in to fill the gap. In this way, a metal has a ``sea of electrons'' bound to a lattice itself of positive centers, but not bound to any particular core. 
+Take a metal such as copper, with a single valence electron in its outer shell, ($4s^1$ in this case.) In crystalline form, copper forms a metallic bond with its neighbors in which the valence electron is weakly bound to its ``original nucleus'' as compared to its nearby neighbors\footnote{ Apologies to any chemists reading this. That goes for this entire section...} and so a given electron can hop over to the atom next door. Of course, this would leave a positive charge and so another electron would quickly rush in to fill the gap. In this way, a metal has a ``sea of electrons'' bound to a lattice itself of positive centers, but not bound to any particular core. 
 
 This picture of a conductor makes complete sense and explains well the phenomenon of conductivity -- until you stop to think about it too much. an immediate problem that arises is that if we connect a voltage across a conductor we should get a quadratically increasing current\footnote{Why? Because a voltage drop corresponds to a electric field: if we have a constantly decreasing voltage $V$ across a distance $d$, the definition of potential gives 
 $$\vert E \vert = \vert\frac{dV}{dx}\vert = \frac{V}{d}$$ 
@@ -1878,14 +1877,14 @@ $$
 $$
 which is clearly not what is observed!}, whereas from experience (and Ohm's law) we get a steady, constant current.
 
-An early attempt to resolve this conundrum was a model made by Paul Drude in 1900. Not only was Drude's model successful in forming a qualitative and quantitative description of conduction in a metal, it was able to explain why metals are good thermal conductors and insulators, tyically are not\footnote{It also explained a pressing problem of the day: the Hall effect which is seen when a magnetic field is sent parallel to the current. Experimentally a voltage perpendicular to both the current and magnetic field was measured}. Unfortunately, the Drude model is also wrong - it fails to tke in statistical effects on electrons \footnote{Namely the Pauli Exclusion Principle}, the temperature dependance of conctivity, and get the numbers very, very wrong for certain substances. That being said, it is surprisingly accurate for most materials and lets us apply an intuitive picture to the nuts and bolts of electronic quantities that is not too far off the mark. For this reason, it is still taught before more recent theories which are more correct, more sophisticated, and more difficult to understand. 
+An early attempt to resolve this conundrum was a model made by Paul Drude in 1900. Not only was Drude's model successful in forming a qualitative and quantitative description of conduction in a metal, it was able to explain why metals are good thermal conductors and insulators, typically are not\footnote{It also explained a pressing problem of the day: the Hall effect which is seen when a magnetic field is sent parallel to the current. Experimentally a voltage perpendicular to both the current and magnetic field was measured}. Unfortunately, the Drude model is also wrong - it fails to the in statistical effects on electrons \footnote{Namely the Pauli Exclusion Principle}, the temperature dependence of conductivity, and get the numbers very, very wrong for certain substances. That being said, it is surprisingly accurate for most materials and lets us apply an intuitive picture to the nuts and bolts of electronic quantities that is not too far off the mark. For this reason, it is still taught before more recent theories which are more correct, more sophisticated, and more difficult to understand. 
 
 The drude model makes the following assumptions:
 
 \begin{enumerate}
   \item A conductor consists of heavy, immobile, positively charged centers surrounded by a gas of light electrons.
-  \item Electrons do not interact with one another or with the \textbf{fields} of the ionic cores\footnote{This is known as the independant-electron and free-electron approximations, respectively}.
-  \item Electrons thus travel in straight lines for a mean time $\tau$ between collisions with ionic cores. After collision, the electron has, on average a kinectic energy equal to the thermal equilibrium energy.
+  \item Electrons do not interact with one another or with the \textbf{fields} of the ionic cores\footnote{This is known as the independent-electron and free-electron approximations, respectively}.
+  \item Electrons thus travel in straight lines for a mean time $\tau$ between collisions with ionic cores. After collision, the electron has, on average a kinetic energy equal to the thermal equilibrium energy.
 
   \begin{equation}
     \label{eq:thermal_energy}
@@ -1893,7 +1892,7 @@ The drude model makes the following assumptions:
   \end{equation}
 \end{enumerate}
 
-It turns out that this is already enough to predict Ohm's law. In order to separate properties relevant to the conductor, rather than the shape of the wire, it is convenient to work with current density -- i.e. current per unit cross-sectional area, travelling in some direction $\hat{j}$:
+It turns out that this is already enough to predict Ohm's law. In order to separate properties relevant to the conductor, rather than the shape of the wire, it is convenient to work with current density -- i.e. current per unit cross-sectional area, traveling in some direction $\hat{j}$:
 
 \begin{equation}
 \label{eq:current_density}
@@ -1907,7 +1906,7 @@ Supposing that our conductor has $n_v$ valence electrons per atom and a density 
 \textbf{j} = -Nn_ve\textbf{v}_\text{av}
 \end{equation}
 
-Note that although the electrons have a non-zero average \textit{speed} according to eq. \ref{eq:thermal_energy} they are equally likely to be travelling in any direction. Thus the average \textit{velocity} and therefore current is zero. However, if we apply a voltage difference, and therefor an external field $\textbf{E}$ across the connductor, the electrons will experience a constant acceleration between collisions given by:
+Note that although the electrons have a non-zero average \textit{speed} according to eq. \ref{eq:thermal_energy} they are equally likely to be traveling in any direction. Thus the average \textit{velocity} and therefore current is zero. However, if we apply a voltage difference, and therefor an external field $\textbf{E}$ across the conductor, the electrons will experience a constant acceleration between collisions given by:
 
 \begin{equation}
 \label{eq:coulomb_accel}
@@ -1947,10 +1946,10 @@ $$
 V = I\left(\rho\frac{L}{A}\right) = IR
 \end{equation}
 
-Finally (for Physics 229 at least), we can predict use the mean free path of an electron to be rouhgly the interatomic spacing $l\approx a_0$\footnote{$a_0 \approx 0.5$~\AA~is the Bohr radius} and the fact that $l \approx v_\text{th}$ from equation \ref{eq:thermal_energy} to predict the temperature dependance of resistance. We will not go further with the Drude model -- you will get the chance in your solid state physics course, but we'll occasionally point to it when trying to understand the functionality of certain devices.
+Finally (for Physics 229 at least), we can predict use the mean free path of an electron to be roughly the inter-atomic spacing $l\approx a_0$\footnote{$a_0 \approx 0.5$~\AA~is the Bohr radius} and the fact that $l \approx v_\text{th}$ from equation \ref{eq:thermal_energy} to predict the temperature dependence of resistance. We will not go further with the Drude model -- you will get the chance in your solid state physics course, but we'll occasionally point to it when trying to understand the functionality of certain devices.
 
-\subsection{Intrinsic Semiconductors: electons and holes}
-Certain materials such as silicon are not metals\footnote{These are often classified as ``mettaloids'' on the periodic table} but can still under certain circumstances conduct electricity and are called \textit{semiconductors}. One such example, Silicon has 4 valence electrons (i.e. is tetravalent) and can form a tight lattice of covalent bonds with its four neighbors (see figure \ref{fig:SiLattice}). In this form these covalent bonds provide enough binding energy to localize the conduction electrons so that there is zero conductivity unless they are given extra energy. On the other hand, if we, through hook or crook, \textit{were} able to give them more energy than this binding force, the electron would be free to zip around the crystal. This extra amount of energy required for a particular substance is called a ``band gap''\footnote{There is a lot we are glossing over here, but essentially, in a year or so you will learn about the ``band theory of materials''. If we plot the energy of an electrons that occupy the atom on a vertical, electrons in a Si atom just sitting around in their outer shell are in a range of energies called the ``valence band''. If they had enough energy to move freely, there would occupy the (first) ``conduction band''. The space between the two bands is thus called the band gap.}. 
+\subsection{Intrinsic Semiconductors: electrons and holes}
+Certain materials such as silicon are not metals\footnote{These are often classified as ``metalloids'' on the periodic table} but can still under certain circumstances conduct electricity and are called \textit{semiconductors}. One such example, Silicon has 4 valence electrons (i.e. is tetravalent) and can form a tight lattice of covalent bonds with its four neighbors (see figure \ref{fig:SiLattice}). In this form these covalent bonds provide enough binding energy to localize the conduction electrons so that there is zero conductivity unless they are given extra energy. On the other hand, if we, through hook or crook, \textit{were} able to give them more energy than this binding force, the electron would be free to zip around the crystal. This extra amount of energy required for a particular substance is called a ``band gap''\footnote{There is a lot we are glossing over here, but essentially, in a year or so you will learn about the ``band theory of materials''. If we plot the energy of an electrons that occupy the atom on a vertical, electrons in a Si atom just sitting around in their outer shell are in a range of energies called the ``valence band''. If they had enough energy to move freely, there would occupy the (first) ``conduction band''. The space between the two bands is thus called the band gap.}. 
 
 \begin{marginfigure}%
   \includegraphics[]{SiLattice}
@@ -1958,7 +1957,7 @@ Certain materials such as silicon are not metals\footnote{These are often classi
   \label{fig:SiLattice}
 \end{marginfigure}
 
-The bandgap for typical semiconductors is typically on the order of an electron volt. For Silicon it is about 1.17~eV and for Germanim it is roughly 0.74~eV\footnote{... at very low temperatures. At higher temperatures the bandgap decreases slightly.}. What does this mean? It means that if you manage to give an electon a kick of extra energy equivalent to that it would get moving across 1.2~V, it would be freely moving along the solid. In doing so, it will leave a positively charged ``hole'' behind. An interesting consequence of these holes is that they behave identically to positive charge carriers propagating along the lattice. To see this consider figure \ref{fig:olez}. A neighboring electron can jump accross the small barrier into the positive hole. Similarly, another electron can jump into this newly formed hole. Although it is really the electrons moving around from atom to atom, the situation as a whole is as if there was a positively charged particle with charge $+q_e$ that is moving along the lattice. In semiconductor electronics we treat these holes as if they we real particles (sometimes we call them quasi-particles) and often speak of ``electron--hole pairs''.
+The band gap for typical semiconductors is typically on the order of an electron volt. For Silicon it is about 1.17~eV and for Germanium it is roughly 0.74~eV\footnote{... at very low temperatures. At higher temperatures the band gap decreases slightly.}. What does this mean? It means that if you manage to give an electron a kick of extra energy equivalent to that it would get moving across 1.2~V, it would be freely moving along the solid. In doing so, it will leave a positively charged ``hole'' behind. An interesting consequence of these holes is that they behave identically to positive charge carriers propagating along the lattice. To see this consider figure \ref{fig:olez}. A neighboring electron can jump across the small barrier into the positive hole. Similarly, another electron can jump into this newly formed hole. Although it is really the electrons moving around from atom to atom, the situation as a whole is as if there was a positively charged particle with charge $+q_e$ that is moving along the lattice. In semiconductor electronics we treat these holes as if they we real particles (sometimes we call them quasi-particles) and often speak of ``electron--hole pairs''.
 
 How might we create electron--hole pairs? One way is to give an electron a boost by hitting it with a high energy photon. If we maintain a voltage across the Silicon, any free electrons will contribute to a current, giving roughly 1 electron per photon. This forms the basis of a type of light detector known as a photodiode.
 
@@ -1973,7 +1972,7 @@ U_{th} = k_BT
 Pr(E) \propto \frac{1}{1+e^{E/k_BT}}
 \end{equation}
 
-\noindent At room temperature, $k_BT\approx 1/40$~eV and there are enough free electron-hole pairs to make Si a reasonable conductor, while as $T\rightarrow0$~K, the number of free electrons vanishes. Thus semiconductors thus have a resistance with very sharp dependance on temperature. 
+\noindent At room temperature, $k_BT\approx 1/40$~eV and there are enough free electron-hole pairs to make Si a reasonable conductor, while as $T\rightarrow0$~K, the number of free electrons vanishes. Thus semiconductors thus have a resistance with very sharp dependence on temperature. 
 
 What happens then when we increase the temperature significantly or bombard the semiconductor with photons? At some point there will be so many electron-hole pairs that it is very likely that many will collide. When this happens we say that the electron-hole pair annihilate one another in a phenomenon known as ``recombination''.
 
@@ -1984,44 +1983,79 @@ What happens then when we increase the temperature significantly or bombard the 
 \end{marginfigure}
 
 \subsection{Extrinsic Semiconductors: N-type an P-type Doping}
-Although the sharp temperature dependance of semiconductor conductivity is interesting, it is not terribly usefull in and of itself. First, temperature control within an circuit is a notorious pain and for the most part, you try to design circuits which are \textit{temperature insensitive}. Next, even if we take a blowtorch to our circuit the cinductivity remains too low to be very useful. Fortunately, nature has given us a very convenient trick known as \textbf{doping}.
+Although the sharp temperature dependence of semiconductor conductivity is interesting, it is not terribly useful in and of itself. First, temperature control within an circuit is a notorious pain and for the most part, you try to design circuits which are \textit{temperature insensitive}. Next, even if we take a blowtorch to our circuit the conductivity remains too low to be very useful. Fortunately, nature has given us a very convenient trick known as \textbf{doping}.
 
 \begin{marginfigure}%
   \includegraphics[]{SC_Dope}
-  \caption{a) Silicon, which is tetravalent may be ``doped'' by either trivalent impurity atoms such as Boron, or by pentavalent atoms, such as Phosphorous. b) When doped with Phosphorous, the extra electron gives a mobile negative charge, yeilding an N-type semiconductor. c) When doped with Boron, positive ``holes'' are formed resulting in a P-Type semiconductor is formed as }
+  \caption{a) Silicon, which is tetravalent may be ``doped'' by either trivalent impurity atoms such as Boron, or by pentavalent atoms, such as Phosphorous. b) When doped with Phosphorous, the extra electron gives a mobile negative charge, yielding an N-type semiconductor. c) When doped with Boron, positive ``holes'' are formed resulting in a P-Type semiconductor is formed as }
   \label{fig:lance_armstrong}
 \end{marginfigure}
 
 Recalling that Silicon is tetravalent and forms these beautiful covalent bond-based lattices, we can try to put a similar atom \footnote{i.e. an atom that is nearby on the periodic table, and has roughly the same size.} If the atom is trivalent (three valence electrons) or pentavalent (5 valence electrons, see figure \ref{fig:lance_armstrong}a) the atom is still able to form the bond with the neighboring Silicon, but will have one fewer or one extra electron. 
 
-Suppose we place a Phosphorous "impurity" atom, having 5 electrons in between a bunch of Silicon atoms. The impurity atom will fit right into the lattice and can use 4 of its 5 valence electrons to form a covalent bond with its neighbors (see figure \ref{fig:lance_armstrong}c). Of cou0rse it still has an extra electron kicking around and interesting, it will be heavily shielded from the shell. For example, whereas a single electron in a Hydrogen atom is held in a potential well of $-13.6$~eV, the extra Phosphorous electron will be held by a shallow -0.1~eV well, over 100 times less! This weakly bound electron will very easily leave its original home and wander freely through the lattice, leaving a small potential well behind.
+Suppose we place a Phosphorous "impurity" atom, having 5 electrons in between a bunch of Silicon atoms. The impurity atom will fit right into the lattice and can use 4 of its 5 valence electrons to form a covalent bond with its neighbors (see figure \ref{fig:lance_armstrong}c). Of course it still has an extra electron kicking around and interesting, it will be heavily shielded from the shell. For example, whereas a single electron in a Hydrogen atom is held in a potential well of $-13.6$~eV, the extra Phosphorous electron will be held by a shallow -0.1~eV well, over 100 times less! This weakly bound electron will very easily leave its original home and wander freely through the lattice, leaving a small potential well behind.
 
-A similar behaviour exists when a Boron is used as the impurity atom, but now three of its electrons will form a bond, leaving a small potential well for electrons to fall into as in figure \ref{fig:olez}. When this occurs, the Boron gains a net negative charge and ``donates'' a positive hole. Since the donor here is positive, this is called a P-Type semiconductor.
+A similar behavior exists when a Boron is used as the impurity atom, but now three of its electrons will form a bond, leaving a small potential well for electrons to fall into as in figure \ref{fig:olez}. When this occurs, the Boron gains a net negative charge and ``donates'' a positive hole. Since the donor here is positive, this is called a P-Type semiconductor.
 
 Typical doping densities are on the order of one part in $10^7$. Despite this, there are \textit{far} more free charge carriers in a doped semiconductor as compared to pure Si. For example, at room temperature, the density of electron hole pairs in pure Si is about $10^{10}~\text{cm}^{-3}$. In contrast, the same volume of doped semiconductor will have about $10\times N_A \approx 10^{24}$ atoms and thus, with standard dopant concentration, $10^{24}\times10^{-7} = 10^{17}$ carriers, more than one million times as much!
 
-For this reason, the charge carriers resulting from doping are called the ``majority carriers'' while the intrisic electrons from the pure silicon are called the ``minority carriers''. Thus, in P-type semiconductors, holes are the majority carriers, while electrons are the minority carriers. In an N-type semiconductor, the situation is reversed: electrons are the majority carriers, and holes are the minority carriers.
+A vast increase in extrinsic conduction can occur with a minute amount of doping. Typically the ratio of impurity to intrinsic atoms is anywhere between $10^{-6}$ to $10^{-9}$ and at this point the majority of conduction is due to these added electrons and holes. For this reason, the charge carriers resulting from doping are called the ``majority carriers'' while the intrinsic electrons from the pure silicon are called the ``minority carriers''. Thus, in P-type semiconductors, holes are the majority carriers, while electrons are the minority carriers. In an N-type semiconductor, the situation is reversed: electrons are the majority carriers, and holes are the minority carriers.
+
+
 
 \subsection{PN Junctions}
-The temperature dependance of conductivity for pure Si is a neat trick and the fact that we can greatly engineer and enhance it with doping is borderline useful, but the real magic happens when we combine P-type and N-Tyoe semiconductors at a so-call P-N junction.
+The real magic occurs when a P-type and an N-type semiconductor are wedged against one another, creating a situation known as a \textit{PN junction}. This is diagrammed in figure \ref{fig:PN_Junk}. We start with a P-type and N-type semiconductor, both of which are electrically neutral \footnote{This is important to reiterate! Although P-type semiconductors have an abundance of \textbf{mobile} positive carriers and the N-types have an excess of negative \textbf{mobile} carriers, they have an equal number of oppositely charge \textbf{immobile} carriers and are thus electrically neutral on the whole.}. Recalling that there is a constant diffusion of majority carriers in each semiconductor, the holes in P region will tend to drift into the N region and the electrons in the N region will drift into the P region. Since the P region is both losing positive holes and gaining extra negative electrons, it will acquire an overall negative net charge. The opposite is true on the N side (\ref{fig:PN_Junk}b). This region of net charge imbalance is known as the \textit{depletion region}.
 
+\begin{marginfigure}%
+  \includegraphics[]{PN_Junction}
+  \caption{a) By creating an interface between P- and N- type semiconductors, a "PN Junction" is formed. b) The depletion of majority carriers in the neighborhood of the junction leads to a net charge distribution. c) The charge distribution, in turn leads to a potential barrier, preventing further conduction.}
+  \label{fig:PN_Junk}
+\end{marginfigure}
 
-=======
-Recalling that Silicon is tetravalent and forms these beautiful covalent bond-based lattices, we can try to put a similar atom \footnote{i.e. an atom that is nearby on the periodic table, and has roughly the same size.} If the atom is trivalent (three valence electrons) or pentavalent (5 valence electrons) the atom is still able to form the bond with the neighboring Silicon, but will have one fewer or one extra electron. For example, suppose we place a Phosphorous "impurity" atom, having 5 electrons in between a bunch of Silicon atoms. The impurity atom will fit right into the lattice and can use 4 of its 5 valence electrons to form a covalent bond with its neighbors. Of course it still has an extra electron kicking around and interesting, it will be heavily shielded from the shell. For example, whereas a single electron in a Hydrogen atom is held in a potential well of $-13.6$~eV, the extra Phosphorous electron will be held by a shallow $-0.1$~eV well, over 100 times less! This weakly bound electron will very easily leave its original home and wander freely through the lattice, leaving a small potential well behind. 
-
-A similar picture exists for the holes in a trivalent atom such as Boron. The neighboring hole next to an atom corresponds to a very shallow energy gap and the electron has no problem acquiring enough energy to ``hop to the right'', or equivalently, the hole ``hops to the left'' (see figure \ref{fig:olez}).
-
-The very shallow potential wells binding the electrons or holes leads to a constant diffusion of these charge carriers throughout the material. In the absence of and applied field, this diffusion is due to thermal jostling of the lattice and is the same in every direction yielding a net-zero current. Since these charge carriers are primarily responsible for any current, they are called the \textit{majority carriers} whereas the other charges are minority carriers. For example, in an N-type extrinsic semiconductor, the majority carriers are electrons and the minority carriers are holes. In a P-type semiconductor, the holes are the majority carriers and the remaining electrons are minority carriers.
-
-A vast increase in extrinsic conduction can occur with a minute amount of doping. Typically the ratio of impurity to intrinsic atoms is anywhere between $10^{-6}$ to $10^{-9}$.
-
-\subsection{PN Junctions}
-The real magic occurs when a P-type and an N-type semiconductor are wedged against one another, creating a situation known as a \textit{PN junction}. This is diagrammed in figure [XXX]. Recalling that there is a constant diffusion of majority carriers in each semiconductures, 
+You will see however that this process cannot continue indefinitely, for as soon as this charge builds, a barrier for like charges is built up which tends to oppose further diffusion. From earlier chapters, we know that this charge distribution corresponds to a potential difference $V$ leading to a net current in the opposite direction of the aforementioned diffusion. Quickly, an equilibrium is reached wherein the current due to the diffusion is equal to the current due to the barrier. Thus in the steady state, a PN junction corresponds to an internal potential barrier. If we try to run current through the junction, we must first overcome this barrier. This is the foundation of the PN-Junction based diode.
 
 \section{Semiconductor Diodes}
-- TODO -
+
+The directionality of the potential barrier allows for the creation of semiconductor-based diodes as diagrammed in figure \ref{fig:FWD_Bias}, i.e. a one-way valve for current. Ideally the diode behaves like an open circuit $R-\rightarrow \infty$ one way, and a short circuit ($R=0$) the other way. We will find shortly, that the semiconductor diode approximates this behavior, but at the cost of a small voltage drop.
+
+\begin{marginfigure}%
+  \includegraphics[]{forward_bias}
+  \caption{In forward bias, the P-side is held at a higher potential than the N side, reducing the potential barrier.}
+  \label{fig:FWD_Bias}
+\end{marginfigure}
+
+\subsection{Forward Bias}
+ Suppose that we hook up a battery to the diode such that the P-side is at a higher potential than the N side - a configuration known as \textit{forward bias}. Forward bias reduces the charge imbalance in the depletion region thus lowering the potential barrier at the junction. If enough of a voltage is placed across the PN junction, the barrier disappears completely and the diode begins to conduct. After entering conduction mode, there is an approximately constant voltage drop across the diode (about 0.7~V for Si-based signal diodes), no matter the input voltage.
+
+\subsection{Reverse Bias}
+ If we instead wire up the diode in \textit{reverse bias}, with the N-type side more positive than the P-type side, the depletion region is widened further leading to an even bigger potential barrier against current. The PN junction thus behaves like a one-way valve for current, with the caveat that the forward bias conduction costs some voltage to set up.
+
+\begin{marginfigure}%
+  \includegraphics[]{reverse_bias}
+  \caption{In reverse bias the barrier is made even steeper such that no current flows.}
+  \label{fig:REV_Bias}
+\end{marginfigure}
+
+\section{The Shockley Equation}
+A quantitative description of relation between current and applied voltage is named after one of its inventors William Shockley (no, I am not making that up) and is called the \textit{Shockley Equation}:
+
+\begin{equation}
+\label{eq:schockley}
+I(V) = I_s\left(e^\frac{eV}{k_BT}-1\right)
+\end{equation}
+
+Here, $e$ is the electron charge, and $k_B \approx 1.38\times10^{-23}$J/K is known as the Boltzmann constant. The term $k_BT$ is ubiquitous in physics and gives the thermal energy per particle, inside an ensemble at temperature $T$. The term in the  exponential is thus the ratio of electronic to thermal energy. At room temperature, $k_BT$ is about 1/40~eV so that the exponential rises incredibly quickly: $I(V) \propto e^{40V}$. The prefactor $I_s$, known as the reverse saturation current, is determined by the material properties. For Silicon it is about $0.1$~nA while for Germanium it can be around $10~\mu$A.
+
+
 \section{Diode Circuit Analysis}
-In circuit analysis using diodes, the details included in the Shockley diode equation are rarely of significance and we can use the simplified, step function approach. The key to analysis is as follows: if the potential placed across the diode is above the diode drop voltage $d_{dd}$, then the diode acts like an ideal EMF having potential difference $V = -V_{dd}$ opposing the current. If not, the diode acts like a voltage source equal and opposite the applied voltage:
+\begin{marginfigure}%
+  \includegraphics[]{shockley_approx}
+  \caption{Often, a simple ``on-off'' model provides a good approximation to the behavior of a diode.}
+  \label{fig:shockplot}
+\end{marginfigure}
+
+
+In circuit analysis using diodes, the details included in the Shockley diode equation are rarely of significance and we can use the simplified, step function approach. Figure \ref{fig:shockplot} shows this approximation for Silicon. The key to analysis is as follows: if the potential placed across the diode is above the diode drop voltage $d_{dd}$, then the diode acts like an ideal EMF having potential difference $V = -V_{dd}$ opposing the current. If not, the diode acts like a voltage source equal and opposite the applied voltage:
 
 \begin{equation}
 \label{eq:effective_diode_source}
@@ -2044,7 +2078,7 @@ The first question to ask is: will current flow. If so, then the amount of curre
 \begin{myexample}[label = ex:simple_diode]{Simple diode example.}
 Determine the power dissipated in the resistor in figure \ref{fig:simple_diode_ex} for: $V_\text{in} = $ (a) 500~mV, (b) -3~V, and (c) 2~V. Assume that the diode voltage drop is 0.7~V.
 \Solution
-(a) Here we must determine if the voltage across the diode is greater that the voltage drop. You might see right away that the battery doesn't have enough kick, but we can formalise this. From Kirchhoff's laws the sum of the voltage dropped across the diode plus the voltage dropped across the resistor ($iR$) must sum to 0.5~V. The maximum voltage across the diode occurs when no current flows through the resistor (the diode then must drop all the voltage by it itself). In this case there si only 0.5~V dropped and by equation \ref{eq:effective_diode_source}, the diode acts like a -0.5~V battery. No current flows in the circuit and thpower dissipated in the resistor is zero.
+(a) Here we must determine if the voltage across the diode is greater that the voltage drop. You might see right away that the battery doesn't have enough kick, but we can formalize this. From Kirchhoff's laws the sum of the voltage dropped across the diode plus the voltage dropped across the resistor ($iR$) must sum to 0.5~V. The maximum voltage across the diode occurs when no current flows through the resistor (the diode then must drop all the voltage by it itself). In this case there si only 0.5~V dropped and by equation \ref{eq:effective_diode_source}, the diode acts like a -0.5~V battery. No current flows in the circuit and the power dissipated in the resistor is zero.
 
 (b) Here there is current being driven the opposite way. Again, current flowing across the resistor will only lessen the load on the diode and so there is, at zero current -3~V across the diode. Careful though! Although the magnitude is above $V_\text{dd}$ the direction is wrong - -3~V is certainly less than +0.7~V and so again by eq. \ref{eq:effective_diode_source} the diode acts like a battery with voltage +3~V, no current flows and so no power is dissipated.
 
@@ -2056,7 +2090,7 @@ $$
 \textit{Bonus Question: How much power is dissipated in the diode?}
 \end{myexample}
 
-The previous example contains the essential way we think about diodes in this course. However we can easily come up with more complicated (but highly realistic) scenarios. For example, what happens when you place several diodes in series? In this case, each diode can drop at most $V_\text{dd}$ voltage before it starts conducting, but since each in series there is only one path for the current to take, there must be enough voltage left after the first voltage drop to overcome the remainder of the barriers. If you have an AC signal as an input, there can be times where the diode conducts and other times when it does not. In this case it helps to break the circuit up into cases. The next example shows how to del with some of these issues.
+The previous example contains the essential way we think about diodes in this course. However we can easily come up with more complicated (but highly realistic) scenarios. For example, what happens when you place several diodes in series? In this case, each diode can drop at most $V_\text{dd}$ voltage before it starts conducting, but since each in series there is only one path for the current to take, there must be enough voltage left after the first voltage drop to overcome the remainder of the barriers. If you have an AC signal as an input, there can be times where the diode conducts and other times when it does not. In this case it helps to break the circuit up into cases. The next example shows how to deal with some of these issues.
 
 
 \begin{marginfigure}
@@ -2068,7 +2102,7 @@ The previous example contains the essential way we think about diodes in this co
 \begin{myexample}[label = ex:less_simple_diode]{Less Simple diode example.}
 Over what voltage range(s) does current flow in the circuit of figure \ref{fig:less_simple_diode_ex}? Assume that each diode has $v_\text{dd} = 0.7$~V.
 \Solution
-Here, we have an AC supply which can be either positive or negative (To remove ambiguity, we've labelled clockwise current as positive here.) Whenever the voltage is positive, there is no way that current will flow through the rightmost diode. The middle section \textbf{will} conduct whenever we have enough to overcome the potential barrier from both diodes. Here that is $2v_\text{dd} = 1.4$~V. Thus current flows when 
+Here, we have an AC supply which can be either positive or negative (To remove ambiguity, we've labeled clockwise current as positive here.) Whenever the voltage is positive, there is no way that current will flow through the rightmost diode. The middle section \textbf{will} conduct whenever we have enough to overcome the potential barrier from both diodes. Here that is $2v_\text{dd} = 1.4$~V. Thus current flows when 
 
 $$
 V>1.4~\text{V}
@@ -2087,11 +2121,93 @@ $$
 \end{myexample}
 
 \subsection{Diode Based Rectification Circuits}
-One of the primaray applicatitions of diodes is ``rectification''. Rectification basically means that we take an AC voltage and produce a DC voltage. More loosely, we take a voltage that can be positive and negative and produce an output that is purely positive\footnote{\ldots or purely negative.}. The simplest such circuit is the \textit{half-wave rectifier} shown in figure  XXX.
+As mentioned earlier in the chapter, one of the primary applications of diodes is ``rectification''. Rectification basically means that we take an AC voltage and produce a DC voltage. More loosely, we take a voltage that can be positive and negative and produce an output that is purely positive\footnote{\ldots or purely negative.}. The simplest such circuit is the \textit{half-wave rectifier} shown in figure \ref{fig:halfwave_rectifier}.
+
+\begin{marginfigure}
+  \includegraphics[]{halfwave}
+  \caption{Halfwave rectifier.}
+  \label{fig:halfwave_rectifier}
+\end{marginfigure}
+
+Since current only flows through the load in the positive half-cycle, the voltage drop $\Delta V_\text{load} \ge 0$. Thus, although the input has zero mean voltage, the output has a positive mean. 
+
+A drawback of the half-wave rectifier is that only half of the input is used at a particular time. \footnote{In addition to losing half of the signal, close inspection of figure \ref{fig:halfwave_rectifier}b shows that their is also a slight drop in peak positive voltage due to the diode drop.} This is remedied by a clever topology known as the ``full-wave rectifier'', shown in figure \ref{fig:fullwave}.
+
+ To understand how this circuit works, it is useful to break down the positive and negative half cycles into separate cases. Starting with the positive case the current reaches the top junction and can only go to the right. At the rightmost junction it can only go through the load, from top to bottom and to the left junction. Here it seems that there is two directions for the current to go: up or down -- but in the bottom is at a lower potential, and current always falls to the lowest potential. Thus the circuit is complete. For the negative half-cycle, the current flows from the bottom to the right and, importantly \textbf{moves through the load in the same direction}, before moving up and completing the circuit. Thus, although the input voltage is oscillating between positive and negative, the load always sees the voltage as positive (it is always higher above than below.)
+
+
+\begin{figure}[h]
+\caption{Full-wave rectification.}
+\label{fig:fullwave}
+\begin{center}
+\includegraphics[width=\textwidth]{fullwave_explanation}
+\end{center}
+\end{figure}
+
+The absolute value of the sine wave that we get is surely only positive but it is a bit of a stretch to call it DC. To accomplish this, a smoothing capacitor can be placed across the output yielding a signal with only a small amount of ``ripple''.  
+
+As the voltage decreases from the peak value, the output decays across the capacitor with an RC time constant determined by the capacitor and load. As long as this time constant is much greater than the period of the rectified wave: $RC \gg \delta T_{AC}$, the decay is roughly linear and much less than the peak voltage in magnitude. The output then takes the form of a DC signal with a small ripple (Fig. \ref{fig:waveforms}).
+
+An approximate expression for this ripple can be obtained: Recall that for the capacitor, $i = C (dv/dt)$. With the assumption that the $RC$ time constant is large, or equivalently that the change in voltage is small, we can write:
+
+\begin{equation}
+\label{eq:ripple_fullwave}
+\Delta V \equiv v_{ripple} \approx \frac{dv}{dt}\Delta t = \frac{i}{C}\Delta t
+\end{equation}
+
+Noting that the frequency of the rectified wave is twice that of the input sine wave: $f_0 = 2/\Delta t$, we can write:
+
+\begin{equation}
+\label{eq:abs_ripple}
+v_{ripple} \approx  \frac{i}{2f_0C}
+\end{equation}
+
+\noindent By dividing both sides by the peak voltage $V_{pk}$ and approximating the current as a constant $i = V_{pk}/R$, we can write the relative ripple $\delta_v$ as:
+
+\begin{equation}
+\label{eq:rel_ripple}
+\delta_v \equiv  \frac{v_{ripple}}{V_{pk}} \approx  \frac{1}{2f_0RC}
+\end{equation}
+
+This can be further improved with a specialized diode known as a Zener diode, discussed presently.
+
 \section{Specialized Diodes}
-- TODO -
-\section{Sneek Peek Ahead: Transistors}
-- TODO -
+The diode we have studied now are ofter referred to as vanilla "junction-diodes". There are a number of specialized diodes which have useful characteristics for particular applications.
+
+\subsection{Zener Diodes}
+Normally, reverse-biasing a semiconductor diode above the breakdown voltage results in a damaged diode - as high current suddenly flows through the internal resistance, Joule heating quickly burns the diode. 
+Zener diodes on the other hand are designed to safely conduct large amounts of current when operated above breakdown voltage. 
+Furthermore, the Zener breakdown voltage $v_Z$ can be configured to a precise value. 
+By operating a Zener diode in reverse bias configuration, above the breakdown voltage, we ensure that a potential of precisely $v_Z$ is held across its terminals. 
+The remaining voltage is dissipated internally as heat.
+The Zener diode can thus be used as a precision voltage regulator, starting with a larger, noisy voltage, and producing a smaller, constant DC voltage. 
+By reverse biasing a Zener diode across the output of a smoothed rectifier circuit, the ripple voltage can be completely eliminated, producing a high quality voltage source. 
+
+\subsection{Light Emitting Diodes (LEDs)}
+When an electron $e$ crosses the barrier $v_{dd}$ in a diode in forward bias, it has lost energy $\Delta E = ev_{dd}$. But where does this energy go? For the Si or Ge diodes, this energy is lost primarily to heat, in what is called a non-radiative transition. Typically, this involves cascade of a number of small  energy transitions. For certain semiconductors, Gallium Phosphate for example, the electron is able to lose energy in one giant step, emitting a photon with energy\footnote{Recall $h \approx 6.6261\times10^{-34}$~Js or $4.136\times10^{-15}$~eVs.} $E_{ph} = hc/\lambda \approx ev_{dd}$ along the way much like in an isolated atom or molecule. This process, known as electroluminescence allows for a light emitting diode. LEDs typically have a translucent case and a rounded top that acts like a lens.
+
+\begin{myexample}[label = ex:led_wavelength]{Wavelength of an GaP LED.}
+The typical diode drop of a Gallium Phosphate LED is $v_{dd}\approx 1.95$~V. Estimate it's emission wavelength.
+\Solution
+Equating the electronic and photonic energy, we have:
+$$
+E_{ph} = \frac{hc}{\lambda}  = ev_{dd} = E_e
+$$
+Thus:
+\begin{align}
+\lambda &= \frac{hc}{ev_{dd}} \\
+&= \frac{(4.14\times10^{-15}\text{eVs})(2.99\times10^8\text{m/s})}{1.95\text{eV}} \\
+&\approx 636~\text{nm}
+\end{align}
+\end{myexample}
+\subsection{Photodiodes}
+In contrast to LEDs which convert a recombined electron to an optical photon, a photodiode converts optical photons to electrons. The semiconductor can be reverse-biased with voltage $V_R$, so that nominally\footnote{In reality this occurs with some probability $\eta$ known as the quantum efficiency.} each photon is converted to a single conduction electron, resulting in current proportional to photons/second. Alternatively the diode can be unbiased, operating in photo-voltaic mode. This is the basic principle in solar cells.
+
+% \subsection{Schottky Diodes}
+
+
+% \section{Sneek Peek Ahead: Transistors}
+% - TODO -
 \chapter{Amplifiers}
 \section{Active vs. Passive Circuits}
 We now move into the regime of so-called \textit{active electronics}. Everything studied so far -- resistors and capacitors, to voltage dividers and filters, to diode rectifiers has fallen under the realm of passive electronics. Active electronic devices, in addition to standard inputs and outputs, require additional power supplies in order to function. There are great benefits to this, as we shall see: active components can output more power than at their input, and can eliminate annoying effects such as voltage loading due to input and output impedance. The first active device we'll study is the amplifier.
@@ -2249,8 +2365,8 @@ The ``goodness'' of a differential amplifier is how much it behaves like one! Ma
 Decent differential amplifiers have CMRR$^\text{s}$ of at least 70~dB but some applications require 120~dB or higher.
 %\subsection{Special Purpose Amplifiers}Power amplifiers, Audio Amplifiers, Instrumentation Amplifiers, oh my! Also Lock-In Amplifiers!
 
-\section{Transistor based amplifiers}
-- TODO -
+% \section{Transistor based amplifiers}
+% - TODO -
 
 
 \chapter{Feedback and Op Amps}
@@ -2302,7 +2418,7 @@ Of course, we can do much more with opamps than to create a voltage buffer. Ther
 \subsection{Inverting Opamps}
 The next simplest opamp to analyze is the inverting opamp, seen in figure \ref{fig:inv_noninv_opamps}a. Here the gain is a negative number so that a positive input produced a negative output and vice versa. 
 
-To understand the functionality of this opamp, we apply the golden rules. First, since the non-inverting output is shorted to ground \textbf{GR II} tells us that the noninverting terminal is also clamped to ground. In this situation, the node at the inverting terminal is said to be a \textit{virtual ground}. The current through the first resistor $R_1$ is thus:
+To understand the functionality of this opamp, we apply the golden rules. First, since the non-inverting output is shorted to ground \textbf{GR II} tells us that the non-inverting terminal is also clamped to ground. In this situation, the node at the inverting terminal is said to be a \textit{virtual ground}. The current through the first resistor $R_1$ is thus:
 
 \begin{equation}
 \label{eq:inverting_opamp_deriv_1}
@@ -2347,12 +2463,12 @@ Rearranging to solve for $v_\text{out}$, we find:
 \label{eq:noninverting_opamp}
 v_\text{out} = \left(1+\frac{R_2}{R_1}\right)v_\text{in}
 \end{equation}
-Although the noninverting output has the benefit of a positive gain, a limitation is that unlike its inverting counterpart, it can not have $\vert G\vert < 1$.
+Although the non-inverting output has the benefit of a positive gain, a limitation is that unlike its inverting counterpart, it can not have $\vert G\vert < 1$.
 
 \subsection{Differential Amplifiers}
 Although the ultra-high gain of an opamp makes it fairly useless as a direct differential amplifier, we can make a differential amplifier circuit using an opamp. The use of feedback can ensure low output impedance, tunable differential gain, and high CMRR.
 
-The opamp-based differential amplifier is shown in figure [zzz]. Pairs of matched resistors $\left(R_1,R_2\right)$ are used for the feedback path. As usual, we can derive the output in terms of the golden rules: \textbf{GR I} tells us that the top and bottom paths form voltage dividers between $v_1\rightarrow v_\text{out}$ and $v_2\rightarrow \text{GND}$ respectively, ie.
+The opamp-based differential amplifier is shown in figure [zzz]. Pairs of matched resistors $\left(R_1,R_2\right)$ are used for the feedback path. As usual, we can derive the output in terms of the golden rules: \textbf{GR I} tells us that the top and bottom paths form voltage dividers between $v_1\rightarrow v_\text{out}$ and $v_2\rightarrow \text{GND}$ respectively, i.e.
 
 \begin{align*}
 \frac{v_--v_\text{out}}{v_1-v_\text{out}} &= \frac{R_2}{R_1+R_2} \\
@@ -2375,13 +2491,13 @@ From \textbf{GR II} we know that these inputs are equal. Equating them and multi
 v_\text{out} = \frac{R_2}{R_1}\left(v_2-v_1\right)
 \end{equation}
 
-We thus have a differential amplifier with adjustible gain ($R_2/R_1$). There are two issues with this design however. First, it requires perfectly matched resistors or else the output will not be directly proportional to the voltage difference. Next, small differences in the input stages of real opamps lead to imperfect cancellation of common mode signals. For this reason, some opamps provide extra ``offset-null'' pins which can be used to compensate for these differences. In the lab you will build your own differential opamp and do just this.
+We thus have a differential amplifier with adjustable gain ($R_2/R_1$). There are two issues with this design however. First, it requires perfectly matched resistors or else the output will not be directly proportional to the voltage difference. Next, small differences in the input stages of real opamps lead to imperfect cancellation of common mode signals. For this reason, some opamps provide extra ``offset-null'' pins which can be used to compensate for these differences. In the lab you will build your own differential opamp and do just this.
 
 \subsection{Differentiator and Integrator Opamps}
-We now consider the effect of general impedances in the construction of opamp feedback circuits. Fortunately, out generalized Ohm's law analysis that we analyzed earlier allows us to quickly determine the gain of the circuit, which when using reactive components is generally frequency dependant. 
+We now consider the effect of general impedances in the construction of opamp feedback circuits. Fortunately, out generalized Ohm's law analysis that we analyzed earlier allows us to quickly determine the gain of the circuit, which when using reactive components is generally frequency dependent. 
 
 \subsection{Differentiator Circuit}
-Consider first, the circuit in figure \ref{fig:differentiator_opamp}a. \textbf{GR I} tells us that the current throught the capacitor is equal to that of the resistor $i_C = i_R \equiv \left(v_--v_\text{out}\right)/R$, while \textbf{GR II} tells us that $v_-$ is a virtual ground ($v_- = 0$). Recalling the definition of a capacitor:
+Consider first, the circuit in figure \ref{fig:differentiator_opamp}a. \textbf{GR I} tells us that the current through the capacitor is equal to that of the resistor $i_C = i_R \equiv \left(v_--v_\text{out}\right)/R$, while \textbf{GR II} tells us that $v_-$ is a virtual ground ($v_- = 0$). Recalling the definition of a capacitor:
 
 \begin{equation}
 \label{eq:defn_capacitor_rep}
