@@ -2203,11 +2203,20 @@ Thus:
 \subsection{Photodiodes}
 In contrast to LEDs which convert a recombined electron to an optical photon, a photodiode converts optical photons to electrons. The semiconductor can be reverse-biased with voltage $V_R$, so that nominally\footnote{In reality this occurs with some probability $\eta$ known as the quantum efficiency.} each photon is converted to a single conduction electron, resulting in current proportional to photons/second. Alternatively the diode can be unbiased, operating in photo-voltaic mode. This is the basic principle in solar cells.
 
-% \subsection{Schottky Diodes}
+\subsection{Schottky Diodes}
+Instead of creating a junction between a P-type and N-type semiconductor, a Schottky diode is formed with a doped semiconductor (P or N) and a metal. This design leads to a very fast response time and a typically lower voltage drop ($0.1$~V to $0.2$~V.)
+
+\section{Sneak Peek Ahead: Bipolar Junction Transistors}
+While diodes form an incredibly useful circuit element by combining a PN junction, an even more useful device can be made by adding one more layer, forming a NPN or PNP junction (see figure ([{XXX}])). By injecting current into the middle layer, we will be able to control the current through the device as a whole, effectively having a current-controlled resistor. For this reason this device was called the ``current TRANSfer resISTOR'' but is now just called a \textit{transistor}. The NPN or PNP can be seen as a pair of diodes placed in opposite directions, i.e. having opposite polarity. Thus this is technically called a ``bipolar junction transistor'' (BJT) but is typically just referred to as a transistor. There is another common type of transistor called the ``field effect transistor'' (FET) which is commonly just called a ``FET'' in the lab.\footnote{Among FETs there is the MOSFET and JFET, and so on. The topic of transistors is a fairly lengthy one and we will concentrate soleley on NJTs in this course.}
+
+\subsection{Physical Operation of Transistors}
+Tizzle Dizzle
+\subsection{Transistors as amplifiers}
+Tizzle Dizzle
+\subsection{Transistors as switches}
+Tizzle Dizzle
 
 
-% \section{Sneek Peek Ahead: Transistors}
-% - TODO -
 \chapter{Amplifiers}
 \section{Active vs. Passive Circuits}
 We now move into the regime of so-called \textit{active electronics}. Everything studied so far -- resistors and capacitors, to voltage dividers and filters, to diode rectifiers has fallen under the realm of passive electronics. Active electronic devices, in addition to standard inputs and outputs, require additional power supplies in order to function. There are great benefits to this, as we shall see: active components can output more power than at their input, and can eliminate annoying effects such as voltage loading due to input and output impedance. The first active device we'll study is the amplifier.
@@ -2572,7 +2581,7 @@ $$
 \end{marginfigure}
 
 \chapter{Digital Logic}
-- TODO -
+
 
 \chapter{Data Aquasition: DAC and ADC}
 - TODO -
